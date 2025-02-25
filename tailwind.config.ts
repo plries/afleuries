@@ -14,10 +14,12 @@ export default {
         },
         blue: {
           100: "var(--color-blue-100)",
+          10: "var(--color-blue-10)",
         },
         green: "var(--color-green-100)",
         tan: {
           100: "var(--color-tan-100)",
+          50: "var(--color-tan-50)",
           30: "var(--color-tan-30)",
           20: "var(--color-tan-20)",
           10: "var(--color-tan-10)",
