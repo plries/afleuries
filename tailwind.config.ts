@@ -9,8 +9,23 @@ export default {
   theme: {
     extend: {
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        red: {
+          100: "var(--color-red-100)",
+        },
+        blue: {
+          100: "var(--color-blue-100)",
+        },
+        green: "var(--color-green-100)",
+        tan: {
+          100: "var(--color-tan-100)",
+          30: "var(--color-tan-30)",
+          20: "var(--color-tan-20)",
+          10: "var(--color-tan-10)",
+        },
+      },
+      fontFamily: {
+        geologica: "var(--font-geologica)",
+        instrument: "var(--font-instrument-serif)",
       },
     },
   },
