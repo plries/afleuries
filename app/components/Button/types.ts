@@ -3,4 +3,5 @@ export type ButtonPropTypes = Readonly<{
     additionalClasses?: {
         button?: string[];
     };
+    onClick?: any
 }>
