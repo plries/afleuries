@@ -17,6 +17,14 @@ export const AFLEURIES_ILLUSTRATED = {
     },
     HOW_IT_WORKS: {
         HEADING: ["How ", "it Works"],
+        ICON_LEFT: {
+            SRC: "/icons/ChevronLeft.svg",
+            ALT: "Chevron Icon"
+        },
+        ICON_RIGHT: {
+            SRC: "/icons/ChevronRight.svg",
+            ALT: "Chevron Icon"
+        },
         STEPS: [
             {
                 ICON: {
