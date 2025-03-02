@@ -5,7 +5,7 @@ import { AFLEURIES_ILLUSTRATED } from "../const";
 export const NavBar = () => {
     return (
         <header className="
-            h-fit sticky z-50 top-0 left-0 p-6 -mx-6 gap-4
+            h-fit sticky z-40 top-0 left-0 p-6 -mx-6 gap-4
             col-span-4 md:col-span-8 lg:col-span-12
             flex flex-row items-top justify-between
             bg-gradient-to-b from-tan-20 from-25% to-transparent
@@ -13,7 +13,7 @@ export const NavBar = () => {
         ">
         <ButtonLink
             onClick="#"
-            additionalClasses={{ button: ['border-none', 'shadow-none', 'hover:shadow-none', 'hover:scale-100', 'hover:rotate-0'] }}
+            additionalClasses={{ button: ['border-none', 'shadow-none', 'hover:shadow-none', 'hover:scale-100', 'hover:rotate-0', '!p-0'] }}
         >
             <Image
                 src="/AfleuriesLogo.svg"

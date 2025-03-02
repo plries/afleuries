@@ -19,6 +19,7 @@ export default {
         green: "var(--color-green-100)",
         tan: {
           100: "var(--color-tan-100)",
+          90: "var(--color-tan-90)",
           50: "var(--color-tan-50)",
           40: "var(--color-tan-40)",
           30: "var(--color-tan-30)",

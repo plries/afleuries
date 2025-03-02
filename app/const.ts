@@ -51,5 +51,36 @@ export const AFLEURIES_ILLUSTRATED = {
                 PARAGRAPH: "Before heading out, swing by to grab your personalized drawing. It’s the perfect keepsake to take home!"
             }
         ]
+    },
+    CONTACT: {
+        HEADING: ["Get ", "in Touch"],
+        PARAGRAPHS: {
+            ONE: "Have questions? Ready to book?",
+            TWO: "Fill out the form and let's bring your event to life with unique digital portraits!",
+        },
+        FORM: {
+            FIRST_NAME: {
+                LABEL: "First Name",
+                PLACEHOLDER: "Enter your first name",
+                FOR: "fname",
+            },
+            LAST_NAME: {
+                LABEL: "Last Name",
+                PLACEHOLDER: "Enter your last name",
+                FOR: "lname",
+            },
+            EMAIL: {
+                LABEL: "Email",
+                PLACEHOLDER: "Enter your email",
+                DESCRIPTION: ["Please ", "double check ", "your email—this will be our main point of contact."],
+                FOR: "email",
+            },
+            EVENT_DETAILS: {
+                LABEL: "Event Details",
+                PLACEHOLDER: "Enter the details of the event",
+                DESCRIPTION: "What’s the occasion? Time and date? Any special requests?"
+            },
+            BUTTON: "Submit"
+        }
     }
 }

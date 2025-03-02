@@ -4,4 +4,5 @@ export type ButtonPropTypes = Readonly<{
         button?: string[];
     };
     onClick?: any
+    type?: "button" | "reset" | "submit";
 }>

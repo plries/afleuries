@@ -27,7 +27,7 @@ export const HowItWorks = () => {
         <div
             id="HowItWorks"
             className="
-            my-16 order-4
+            mt-16 order-4
             col-start-1 col-span-4 md:col-start-2 md:col-span-6 lg:col-start-2 lg:col-span-10
         ">
         <div className="mb-3 flex flex-row items-center justify-between">
@@ -96,7 +96,7 @@ export const HowItWorks = () => {
                                 alt={step.ICON.ALT}
                                 className="aspect-square"
                             />
-                            <h4 className="font-instrument font-normal text-nowrap text-[32px] lg:text-3xl">
+                            <h4 className="font-instrument font-normal text-[32px] lg:text-4xl">
                                 {step.HEADING}
                             </h4>
                         </div>

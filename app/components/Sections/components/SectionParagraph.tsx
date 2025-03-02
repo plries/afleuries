@@ -7,7 +7,7 @@ export const SectionParagraph = ({ children }: { children: string[] }) => {
                 index % 2 === 0 ? (
                     <React.Fragment key={index}>{child}</React.Fragment>
                 ) : (
-                    <span key={index} className="font-bold">{child}</span>
+                    <span key={index} className="font-medium">{child}</span>
                 )
                 ))}
         </p>

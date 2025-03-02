@@ -38,7 +38,7 @@ export const Hero = () => {
                 <div className="flex flex-row flex-wrap gap-3">
                 <Button
                     children={AFLEURIES_ILLUSTRATED.HERO.CONTACT}
-                    additionalClasses={{ button: ['bg-tan-100', 'border-tan-100'] }}
+                    additionalClasses={{ button: ['bg-tan-100', 'border-tan-90', 'text-tan-20'] }}
                 />
                 <ButtonLink
                     children={AFLEURIES_ILLUSTRATED.HERO.HOW_IT_WORKS}
