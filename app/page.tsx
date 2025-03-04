@@ -9,7 +9,7 @@ export default function Home() {
         width={0}
         height={0}
         alt="Texture"
-        className="w-screen h-screen object-cover fixed top-0 left-0 z-50 pointer-events-none mix-blend-multiply opacity-50"
+        className="select-none w-screen h-screen object-cover fixed top-0 left-0 z-50 pointer-events-none mix-blend-multiply opacity-50"
       />
       <div className="
         grid place-items-center scroll-smooth

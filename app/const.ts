@@ -61,24 +61,21 @@ export const AFLEURIES_ILLUSTRATED = {
         FORM: {
             FIRST_NAME: {
                 LABEL: "First Name",
-                PLACEHOLDER: "Enter your first name",
                 FOR: "fname",
             },
             LAST_NAME: {
                 LABEL: "Last Name",
-                PLACEHOLDER: "Enter your last name",
                 FOR: "lname",
             },
             EMAIL: {
                 LABEL: "Email",
-                PLACEHOLDER: "Enter your email",
-                DESCRIPTION: ["Please ", "double check ", "your email—this will be our main point of contact."],
+                DESCRIPTION: ["Please ", "double check ", "your email—this will be our main point of contact!"],
                 FOR: "email",
             },
             EVENT_DETAILS: {
                 LABEL: "Event Details",
-                PLACEHOLDER: "Enter the details of the event",
-                DESCRIPTION: "What’s the occasion? Time and date? Any special requests?"
+                DESCRIPTION: ["Please provide a ", "brief summary ", "of the event! Also include the event's date, time, and location."],
+                FOR: "event-details",
             },
             BUTTON: "Submit"
         }

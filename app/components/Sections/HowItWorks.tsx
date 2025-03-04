@@ -25,7 +25,7 @@ export const HowItWorks = () => {
     return (
     <section className="contents">
         <div
-            id="HowItWorks"
+            id="how-it-works"
             className="
             mt-16 order-4
             col-start-1 col-span-4 md:col-start-2 md:col-span-6 lg:col-start-2 lg:col-span-10

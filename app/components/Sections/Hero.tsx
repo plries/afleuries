@@ -36,14 +36,15 @@ export const Hero = () => {
                 <h2 className="font-geologica text-2xl md:-mt-2">{AFLEURIES_ILLUSTRATED.HERO.SUBHEADING}</h2>
                 </hgroup>
                 <div className="flex flex-row flex-wrap gap-3">
-                <Button
+                <ButtonLink
                     children={AFLEURIES_ILLUSTRATED.HERO.CONTACT}
                     additionalClasses={{ button: ['bg-tan-100', 'border-tan-90', 'text-tan-20'] }}
+                    onClick={"#contact"}
                 />
                 <ButtonLink
                     children={AFLEURIES_ILLUSTRATED.HERO.HOW_IT_WORKS}
                     additionalClasses={{ button: ['bg-transparent', 'border-tan-100', 'text-tan-100'] }}
-                    onClick={"#HowItWorks"}
+                    onClick={"#how-it-works"}
                 />
                 </div>
             </div>  

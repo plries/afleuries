@@ -23,9 +23,10 @@ export const NavBar = () => {
                 className="w-24 md:w-28 lg:w-32 hover:-rotate-1 hover:scale-95 transition-all"
             />
         </ButtonLink>
-        <Button
+        <ButtonLink
             children={AFLEURIES_ILLUSTRATED.HEADER.BUTTON}
             additionalClasses={{ button: ['bg-blue-100', 'border-blue-10'] }}
+            onClick={"#contact"}
         />
         </header>
     )
