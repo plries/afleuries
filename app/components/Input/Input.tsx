@@ -1,63 +1,67 @@
 "use client";
-import { InputPropTypes } from "./types"
+import { InputPropTypes } from "./types";
+import { useRef } from "react";
 
-export const Input = ({
-    label,
-    description,
-    htmlFor,
-}: InputPropTypes) => {
+export const Input = ({ label, description, htmlFor }: InputPropTypes) => {
+    const inputRef = useRef<HTMLInputElement>(null);
+    const labelRef = useRef<HTMLLabelElement>(null);
+    const labelBgRef = useRef<HTMLDivElement>(null);
 
-    const moveLabel = () => {
-        const label = document.querySelector(`#${htmlFor}`) as HTMLLabelElement;
-        const input = document.querySelector(`#${htmlFor + "-input"}`) as HTMLInputElement;
-        const classes = ['!translate-y-0', 'bg-tan-40', '!border-[#27272780]']
+    const moveLabel = (forceMove = false) => {
+        if (!inputRef.current || !labelRef.current || !labelBgRef.current) return;
+        const labelClasses = ["!translate-y-0", "scale-100"];
+        const labelBgClasses = ["!bg-tan-30"];
 
-        if (label && label.style && input.value !== "") {
-            label.classList.add(...classes);
-        } 
-        if (label && label.style && input.value === "") {
-            label.classList.remove(...classes);
+        if (forceMove || inputRef.current.value !== "") {
+            labelRef.current.classList.add(...labelClasses);
+            labelBgRef.current.classList.add(...labelBgClasses);
+        } else {
+            labelRef.current.classList.remove(...labelClasses);
+            labelBgRef.current.classList.remove(...labelBgClasses);
         }
-    }
+    };
 
     return (
         <div className="w-full flex flex-col gap-2">
             <div className="relative">
-                <label
-                    id={htmlFor}
-                    htmlFor={htmlFor}
+                <div 
+                    ref={labelBgRef}
                     className="
-                    absolute mx-2 z-10 transition-all duration-200 text-[#272727be] border-2 border-tan-30 pointer-events-none
-                    translate-y-6 md:translate-y-7
+                    absolute mx-2 z-10 px-2 rounded-full h-8 w-fit
                     -top-2.5 md:-top-3.5
-                    bg-tan-30 px-2 rounded-full
-                    text-base md:text-lg
+                    bg-transparent transition-all duration-300 ease-in-out
                 ">
-                    {label}
-                </label>
+                    <label
+                        ref={labelRef}
+                        htmlFor={htmlFor}
+                        className="
+                        my-0.5 z-10 transition-all duration-300 ease-in-out text-[#272727be] pointer-events-none
+                        translate-y-6 md:translate-y-7
+                        text-base md:text-lg inline-block
+                        origin-left scale-90
+                    ">
+                        {label}
+                    </label>
+                </div>
                 <input
-                    id={htmlFor + "-input"}
+                    ref={inputRef}
                     type="text"
                     required
                     className="
                     px-4 pb-3 pt-4 w-full h-fit rounded-lg border-2 border-[#27272780] bg-transparent focus:outline-blue-10
                     text-base md:text-lg font-light
                     "
-                    onChange={() => {moveLabel()}}
-                    onFocus={() => {moveLabel()}}
-                    onBlur={() => {moveLabel()}}
-                >
-                </input>
+                    onFocus={() => moveLabel(true)}
+                    onBlur={() => moveLabel()}
+                />
             </div>
             {description && (
                 <p className="text-sm md:text-base">
                     {description[0]}
-                    <span className="font-medium">
-                        {description[1]}
-                    </span>
+                    <span className="font-medium">{description[1]}</span>
                     {description[2]}
                 </p>
             )}
         </div>
-    )
-}
+    );
+};
