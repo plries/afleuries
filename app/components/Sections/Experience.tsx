@@ -1,5 +1,7 @@
+"use client";
 import { SectionHeading, SectionParagraph } from "./components/";
-import { AFLEURIES_ILLUSTRATED } from "../../const";
+import { AFLEURIES_ILLUSTRATED, MOTION_CONFIG } from "../../const";
+import { motion } from "framer-motion";
 
 export const Experience = () => {
     return (
@@ -10,14 +12,18 @@ export const Experience = () => {
             grid grid-cols-4 md:grid-cols-8 lg:grid-cols-12
             gap-3 md:gap-4
         ">
-            <div className="
+            <motion.div
+                initial={MOTION_CONFIG.INITIAL}
+                whileInView={MOTION_CONFIG.WHILE_IN_VIEW}
+                transition={MOTION_CONFIG.TRANSITION}
+                className="
                 aspect-video bg-tan-20 rounded-3xl
-                col-start-1 col-span-4 md:col-start-2 md:col-span-6 lg:col-start-2 lg:col-span-10
+                col-span-full
             ">
-            </div>
+            </motion.div>
             <div className="
                 flex flex-col gap-4
-                col-start-1 col-span-4 md:col-start-2 md:col-span-6 lg:col-start-2 lg:col-span-10
+                col-span-full
             ">
                 <SectionHeading 
                     children={AFLEURIES_ILLUSTRATED.EXPERIENCE.HEADING}

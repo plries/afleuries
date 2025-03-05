@@ -1,3 +1,7 @@
+import { stagger } from "motion"
+import { easeInOut } from "motion/react"
+import { filter, feGaussianBlur } from "motion/react-client"
+
 export const AFLEURIES_ILLUSTRATED = {
     HEADER: {
         BUTTON: "Book now"
@@ -80,4 +84,10 @@ export const AFLEURIES_ILLUSTRATED = {
             BUTTON: "Submit"
         }
     }
+}
+
+export const MOTION_CONFIG = {
+    INITIAL: { filter: "blur(10px)", transform: "translateY(24px)", opacity: 0 },
+    WHILE_IN_VIEW: { filter: "blur(0)", transform: "translateY(0)", opacity: 1 },
+    TRANSITION: { duration: 0.6, easeInOut, stagger: 0.6 },
 }

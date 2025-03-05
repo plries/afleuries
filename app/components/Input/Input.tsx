@@ -1,6 +1,8 @@
 "use client";
 import { InputPropTypes } from "./types";
 import { useRef } from "react";
+import { motion } from "framer-motion";
+import { MOTION_CONFIG } from "../../const";
 
 export const Input = ({ label, description, htmlFor }: InputPropTypes) => {
     const inputRef = useRef<HTMLInputElement>(null);
@@ -9,7 +11,7 @@ export const Input = ({ label, description, htmlFor }: InputPropTypes) => {
 
     const moveLabel = (forceMove = false) => {
         if (!inputRef.current || !labelRef.current || !labelBgRef.current) return;
-        const labelClasses = ["!translate-y-0", "scale-100"];
+        const labelClasses = ["!translate-y-0", "!scale-100"];
         const labelBgClasses = ["!bg-tan-30"];
 
         if (forceMove || inputRef.current.value !== "") {
@@ -22,7 +24,12 @@ export const Input = ({ label, description, htmlFor }: InputPropTypes) => {
     };
 
     return (
-        <div className="w-full flex flex-col gap-2">
+        <motion.div 
+            initial={MOTION_CONFIG.INITIAL}
+            whileInView={MOTION_CONFIG.WHILE_IN_VIEW}
+            transition={MOTION_CONFIG.TRANSITION}
+            className="w-full flex flex-col gap-2"
+        >
             <div className="relative">
                 <div 
                     ref={labelBgRef}
@@ -45,12 +52,14 @@ export const Input = ({ label, description, htmlFor }: InputPropTypes) => {
                 </div>
                 <input
                     ref={inputRef}
+                    id={htmlFor}
                     type="text"
                     required
                     className="
                     px-4 pb-3 pt-4 w-full h-fit rounded-lg border-2 border-[#27272780] bg-transparent focus:outline-blue-10
                     text-base md:text-lg font-light
                     "
+                    autoComplete="on"
                     onFocus={() => moveLabel(true)}
                     onBlur={() => moveLabel()}
                 />
@@ -62,6 +71,6 @@ export const Input = ({ label, description, htmlFor }: InputPropTypes) => {
                     {description[2]}
                 </p>
             )}
-        </div>
+        </motion.div>
     );
 };

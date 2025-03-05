@@ -1,25 +1,34 @@
+"use client"; 
 import Image from "next/image";
-import { Button } from "..";
-import { AFLEURIES_ILLUSTRATED } from "../../const";
+import { AFLEURIES_ILLUSTRATED, MOTION_CONFIG } from "../../const";
 import { ButtonLink } from "../Button/ButtonLink";
+import { motion } from "framer-motion";
 
 export const Hero = () => {
     return (
         <section className="contents">
-            <div className="
+            <motion.div
+                initial={MOTION_CONFIG.INITIAL}
+                whileInView={MOTION_CONFIG.WHILE_IN_VIEW}
+                transition={MOTION_CONFIG.TRANSITION}
+                className="
                 aspect-square bg-tan-30 rounded-3xl 
-                col-start-1 col-span-4 md:col-start-2 md:col-span-6 lg:col-start-7 lg:col-span-5 lg:order-2
+                col-start-1 col-span-4 md:col-span-8 lg:col-span-6
             ">
-            </div>
+            </motion.div>
             <div className="
                 flex flex-col justify-center
                 gap-6 
-                col-start-1 col-span-4 md:col-start-2 md:col-span-6 lg:col-start-2 lg:col-span-5 lg:order-1
+                col-start-1 col-span-4 md:col-span-8 lg:col-span-6
                 ">
                 <hgroup>
-                    <h1 className="
-                    font-instrument flex flex-wrap flex-row gap-3
-                    text-7xl md:text-8xl
+                    <motion.h1
+                        initial={MOTION_CONFIG.INITIAL}
+                        whileInView={MOTION_CONFIG.WHILE_IN_VIEW}
+                        transition={MOTION_CONFIG.TRANSITION}
+                        className="
+                        font-instrument flex flex-wrap flex-row gap-3
+                        text-7xl md:text-9xl lg:text-[9rem]
                     ">
                     <Image 
                         src="/LiveWord.svg"
@@ -27,15 +36,27 @@ export const Hero = () => {
                         height={0}
                         alt=""
                         aria-hidden="true"
+                        className="md:w-36 lg:w-40"
                     />
                     <span className="sr-only">
                         {AFLEURIES_ILLUSTRATED.HERO.LIVE_PORTRAITS[0]}
                     </span>
                     {AFLEURIES_ILLUSTRATED.HERO.LIVE_PORTRAITS[1]}
-                    </h1>
-                <h2 className="font-geologica text-2xl md:-mt-2">{AFLEURIES_ILLUSTRATED.HERO.SUBHEADING}</h2>
+                    </motion.h1>
+                <motion.h2
+                    initial={MOTION_CONFIG.INITIAL}
+                    whileInView={MOTION_CONFIG.WHILE_IN_VIEW}
+                    transition={MOTION_CONFIG.TRANSITION}
+                    className="font-geologica text-2xl md:-mt-2"
+                >
+                    {AFLEURIES_ILLUSTRATED.HERO.SUBHEADING}
+                </motion.h2>
                 </hgroup>
-                <div className="flex flex-row flex-wrap gap-3">
+                <motion.div 
+                initial={MOTION_CONFIG.INITIAL}
+                whileInView={MOTION_CONFIG.WHILE_IN_VIEW}
+                transition={MOTION_CONFIG.TRANSITION}
+                className="flex flex-row flex-wrap gap-3">
                 <ButtonLink
                     children={AFLEURIES_ILLUSTRATED.HERO.CONTACT}
                     additionalClasses={{ button: ['bg-tan-100', 'border-tan-90', 'text-tan-20'] }}
@@ -46,7 +67,7 @@ export const Hero = () => {
                     additionalClasses={{ button: ['bg-transparent', 'border-tan-100', 'text-tan-100'] }}
                     onClick={"#how-it-works"}
                 />
-                </div>
+                </motion.div>
             </div>  
         </section>
     )

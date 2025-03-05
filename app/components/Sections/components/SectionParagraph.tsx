@@ -1,8 +1,14 @@
 import React from "react"
+import { motion } from "framer-motion"
+import { MOTION_CONFIG } from "../../../const"
 
 export const SectionParagraph = ({ children }: { children: string[] }) => {
     return (
-        <p>
+        <motion.p
+            initial={MOTION_CONFIG.INITIAL}
+            whileInView={MOTION_CONFIG.WHILE_IN_VIEW}
+            transition={MOTION_CONFIG.TRANSITION}
+        >
             {children.map((child, index) => (
                 index % 2 === 0 ? (
                     <React.Fragment key={index}>{child}</React.Fragment>
@@ -10,6 +16,6 @@ export const SectionParagraph = ({ children }: { children: string[] }) => {
                     <span key={index} className="font-medium">{child}</span>
                 )
                 ))}
-        </p>
+        </motion.p>
     )
 }

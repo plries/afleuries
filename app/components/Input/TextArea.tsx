@@ -1,6 +1,8 @@
 "use client";
 import { InputPropTypes } from "./types"
 import { useRef } from "react";
+import { motion } from "framer-motion";
+import { MOTION_CONFIG } from "../../const";
 
 export const TextArea = ({
     label,
@@ -14,7 +16,7 @@ export const TextArea = ({
 
     const moveLabel = (forceMove = false) => {
         if (!textAreaRef.current || !labelRef.current || !labelBgRef.current) return;
-        const labelClasses = ["!translate-y-0", "scale-100"];
+        const labelClasses = ["!translate-y-0", "!scale-100"];
         const labelBgClasses = ["!bg-tan-30"];
 
         if (forceMove || textAreaRef.current.value !== "") {
@@ -27,7 +29,12 @@ export const TextArea = ({
     };
 
     return (
-        <div className="flex flex-col gap-1">
+        <motion.div 
+            initial={MOTION_CONFIG.INITIAL}
+            whileInView={MOTION_CONFIG.WHILE_IN_VIEW}
+            transition={MOTION_CONFIG.TRANSITION}
+            className="flex flex-col gap-1"
+        >
             <div className="relative">
             <div 
                     ref={labelBgRef}
@@ -50,6 +57,7 @@ export const TextArea = ({
                 </div>
                 <textarea
                     ref={textAreaRef}
+                    id={htmlFor}
                     className="
                     px-4 pb-3 pt-4 rounded-lg border-2 border-[#27272780] bg-transparent focus:outline-blue-10 w-full h-48
                     text-base md:text-lg font-light resize-none
@@ -68,6 +76,6 @@ export const TextArea = ({
                     {description[2]}
                 </p>
             )}
-        </div>
+        </motion.div>
     )
 }
