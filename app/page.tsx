@@ -1,9 +1,11 @@
+"use client";
 import { NavBar } from "./components";
 import { Hero, Experience, HowItWorks, Contact } from "./components/Sections/";
+import { ReactLenis } from 'lenis/react'
 
 export default function Home() {
   return (
-    <>
+    <ReactLenis root>
       <img
         src="/Texture.png"
         width={0}
@@ -31,6 +33,6 @@ export default function Home() {
           <Contact />
         </div>
       </div>
-    </>
+    </ReactLenis>
   );
 }
