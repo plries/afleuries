@@ -2,6 +2,7 @@
 import { SectionHeading, SectionParagraph } from "./components/";
 import { AFLEURIES_ILLUSTRATED, MOTION_CONFIG } from "../../const";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 export const Experience = () => {
     return (
@@ -11,19 +12,10 @@ export const Experience = () => {
             col-start-1 col-span-full
             grid grid-cols-4 md:grid-cols-8 lg:grid-cols-12
             gap-3 md:gap-4
-        ">
-            <motion.div
-                initial={MOTION_CONFIG.INITIAL}
-                whileInView={MOTION_CONFIG.WHILE_IN_VIEW}
-                transition={MOTION_CONFIG.TRANSITION}
-                className="
-                aspect-video bg-tan-20 rounded-3xl
-                col-span-full
             ">
-            </motion.div>
             <div className="
                 flex flex-col gap-4
-                col-span-full
+                col-start-1 col-span-4 md:col-span-8 lg:col-span-6
             ">
                 <SectionHeading 
                     children={AFLEURIES_ILLUSTRATED.EXPERIENCE.HEADING}
@@ -37,6 +29,22 @@ export const Experience = () => {
                     />
                 </div>
             </div>
+            <motion.div
+                initial={MOTION_CONFIG.INITIAL}
+                whileInView={MOTION_CONFIG.WHILE_IN_VIEW}
+                transition={MOTION_CONFIG.TRANSITION}
+                className="
+                aspect-square rounded-3xl overflow-hidden
+                col-start-1 col-span-4 md:col-span-8 lg:col-span-6
+            ">
+                <Image
+                    src="/images/Experience.png"
+                    width={1920}
+                    height={1080}
+                    alt="Experience"
+                    className="w-full h-full object-cover"
+                />
+            </motion.div>
         </section>
     )
 }

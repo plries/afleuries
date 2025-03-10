@@ -1,23 +1,20 @@
-import { stagger } from "motion"
 import { easeInOut } from "motion/react"
-import { filter, feGaussianBlur } from "motion/react-client"
 
 export const AFLEURIES_ILLUSTRATED = {
     HEADER: {
         BUTTON: "Book now"
     },
     HERO: {
-        LIVE_PORTRAITS: ["Live ", "Portraits"],
-        SUBHEADING: "by @afleuries",
-        CONTACT: "Contact",
-        HOW_IT_WORKS: "How it works"
+        HEADING: "Afleuries Illustration Station",
+        ALT: "Illustration of Abby"
     },
     EXPERIENCE: {
         HEADING: ["An ", "Interactive Experience"],
         PARAGRAPHS: {
             ONE: ["Abby, the artist, sketches ", "custom portraits ", "of guests while they mingle, with a ", "live projection ", "of the digital canvas so everyone can watch the artwork come to life."],
             TWO: ["It’s a fun, interactive experience that gives your guests both entertainment and a ", "personalized keepsake ", "to remember the day!"]
-        } 
+        },
+        ALT: "Guests looking at custom portraits."
     },
     HOW_IT_WORKS: {
         HEADING: ["How ", "it Works"],
