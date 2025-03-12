@@ -11,7 +11,7 @@ export const Services = () => {
     const brideGroomButtonRef = useRef<HTMLButtonElement>(null);
     const [isGuestPortrait, setIsGuestPortrait] = useState(true);
 
-    const toggleServices = (guestPortrait = false): {} => {
+    const toggleServices = (guestPortrait = false): unknown => {
         setIsGuestPortrait(guestPortrait);
         
         const activeButtonClass = ['bg-tan-30', 'border-b-blue-100', 'text-blue-100'];

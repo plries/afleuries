@@ -3,7 +3,7 @@ export type ButtonPropTypes = Readonly<{
     additionalClasses?: {
         button?: string[];
     };
-    onClick?: () => {};
+    onClick?: () => void;
     type?: "button" | "reset" | "submit";
     ref?: React.RefObject<HTMLButtonElement>;
 }>
