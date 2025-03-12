@@ -30,7 +30,6 @@ export default function Home() {
           <Hero />
           <Experience />
           <Services />
-          <HowItWorks />
           <Contact />
         </div>
       </div>

@@ -11,7 +11,7 @@ export const Input = ({ label, description, htmlFor }: InputPropTypes) => {
 
     const moveLabel = (forceMove = false) => {
         if (!inputRef.current || !labelRef.current || !labelBgRef.current) return;
-        const labelClasses = ["!translate-y-0", "!scale-100", "!text-blue-10", "opacity-100"];
+        const labelClasses = ["!translate-y-0", "!scale-100", "!text-blue-10", "!opacity-100"];
         const labelBgClasses = ["!bg-tan-30"];
 
         if (forceMove || inputRef.current.value !== "") {

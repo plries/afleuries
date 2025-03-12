@@ -2,8 +2,9 @@ import { useRef, useState } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { SectionHeading } from "./components";
-import { Button } from "../Button";
+import { ButtonTab } from "../Button";
 import { AFLEURIES_ILLUSTRATED, MOTION_CONFIG } from "../../const";
+import { HowItWorks } from "./HowItWorks";
 
 export const Services = () => {
     const guestButtonRef = useRef<HTMLButtonElement>(null);
@@ -13,7 +14,7 @@ export const Services = () => {
     const toggleServices = (guestPortrait = false) => {
         setIsGuestPortrait(guestPortrait);
         
-        const activeButtonClass = ["bg-tan-40"];
+        const activeButtonClass = ['bg-tan-30', 'border-b-blue-100', 'text-blue-100'];
 
         if (guestPortrait) {
             guestButtonRef.current?.classList.add(...activeButtonClass);
@@ -33,20 +34,39 @@ export const Services = () => {
                 initial={MOTION_CONFIG.INITIAL}
                 whileInView={MOTION_CONFIG.WHILE_IN_VIEW}
                 transition={MOTION_CONFIG.TRANSITION}
-                className="flex flex-row gap-4 overflow-x-scroll no-scrollbar -mx-6"
+                className="flex flex-row gap-2 overflow-x-scroll no-scrollbar -mx-6"
             >
-                <Button
+                <ButtonTab
                     ref={guestButtonRef as React.RefObject<HTMLButtonElement>}
                     children={AFLEURIES_ILLUSTRATED.SERVICES.BUTTONS.GUEST_PORTRAIT}
-                    additionalClasses={{ button: ['bg-tan-40', 'text-tan-100', 'border-none', '!px-4', 'shadow-none', 'hover:shadow-none', 'hover:!scale-100', 'hover:!rotate-0', 'hover:bg-tan-40', 'ml-6'] }}
+                    additionalClasses={{ button: ['bg-tan-30', 'border-b-blue-100', 'text-blue-100', 'ml-6'] }}
                     onClick={() => toggleServices(true)}
                 />
-                <Button
+                <ButtonTab
                     ref={brideGroomButtonRef as React.RefObject<HTMLButtonElement>}
                     children={AFLEURIES_ILLUSTRATED.SERVICES.BUTTONS.BRIDE_GROOM}
-                    additionalClasses={{ button: ['text-tan-100', 'border-none', '!px-4', 'shadow-none', 'hover:shadow-none', 'hover:!scale-100', 'hover:!rotate-0', 'hover:bg-tan-40', 'mr-6'] }}
+                    additionalClasses={{ button: ['mr-6'] }}
                     onClick={() => toggleServices(false)}
                 /> 
+            </motion.div>
+            <motion.div
+                initial={MOTION_CONFIG.INITIAL}
+                whileInView={MOTION_CONFIG.WHILE_IN_VIEW}
+                transition={MOTION_CONFIG.TRANSITION}
+            >
+                <AnimatePresence mode="wait">
+                    <motion.p
+                        key={isGuestPortrait ? "guest-portrait" : "bride-groom"}
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        transition={{ duration: 0.3, ease: "easeInOut" }}
+                    >
+                        {isGuestPortrait
+                            ? AFLEURIES_ILLUSTRATED.SERVICES.PARAGRAPH.GUEST_PORTRAIT
+                            : AFLEURIES_ILLUSTRATED.SERVICES.PARAGRAPH.BRIDE_GROOM}
+                    </motion.p>
+                </AnimatePresence>
             </motion.div>
             <motion.div
                 initial={MOTION_CONFIG.INITIAL}
@@ -57,9 +77,9 @@ export const Services = () => {
                 <AnimatePresence mode="wait">
                     <motion.div
                         key={isGuestPortrait ? "guest-portrait" : "bride-groom"}
-                        initial={{ opacity: 0, scale: 0.97 }}
-                        animate={{ opacity: 1, scale: 1 }}
-                        exit={{ opacity: 0, scale: 0.97 }}
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
                         transition={{ duration: 0.3, ease: "easeInOut" }}
                         className="w-full h-full aspect-video"
                     >
@@ -81,6 +101,20 @@ export const Services = () => {
                     </motion.div>
                 </AnimatePresence>
             </motion.div>
+            <AnimatePresence mode="wait">
+                <motion.div
+                    key={isGuestPortrait ? "guest-portrait" : "bride-groom"}
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 0.3, ease: "easeInOut" }}
+                    className="order-5 col-span-full mt-4 flex flex-col gap-4"
+                >
+                    <HowItWorks 
+                        stepsKey={isGuestPortrait ? "GUEST_PORTRAIT" : "BRIDE_GROOM"}
+                    />
+                </motion.div>
+            </AnimatePresence>
         </section>
     );
 };
