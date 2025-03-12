@@ -1,6 +1,6 @@
 "use client";
 import { SectionHeading } from "./components";
-import { IconButton } from "..";
+import { IconButton } from "../";
 import { AFLEURIES_ILLUSTRATED, MOTION_CONFIG } from "../../const";
 import { useRef } from "react";
 import { motion } from "framer-motion";
@@ -30,17 +30,19 @@ export const HowItWorks = ({ stepsKey }: HowItWorksProps) => {
     return (
         <>
             <div className="flex flex-row items-center justify-between">
-                <SectionHeading children={AFLEURIES_ILLUSTRATED.SERVICES.HOW_IT_WORKS.HEADING} />
+                <SectionHeading>
+                    {AFLEURIES_ILLUSTRATED.SERVICES.HOW_IT_WORKS.HEADING}
+                </SectionHeading>
                 <motion.div
                     initial={MOTION_CONFIG.INITIAL}
                     whileInView={MOTION_CONFIG.WHILE_IN_VIEW}
                     transition={MOTION_CONFIG.TRANSITION}
                     className="flex flex-row gap-2 lg:hidden"
                 >
-                    <IconButton onClick={scrollPrev}>
+                    <IconButton onClick={() =>scrollPrev}>
                         <ChevronLeft />
                     </IconButton>
-                    <IconButton onClick={scrollNext}>
+                    <IconButton onClick={() => scrollNext}>
                         <ChevronRight />
                     </IconButton>
                 </motion.div>

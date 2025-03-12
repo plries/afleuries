@@ -1,10 +1,10 @@
-import type { ButtonPropTypes } from "./types";
+import type { ButtonLinkPropTypes } from "./types";
 
 export const ButtonLink = ({
     children,
     additionalClasses,
     onClick,
-}: ButtonPropTypes) => {
+}: ButtonLinkPropTypes) => {
     return (
         <a
             className={`

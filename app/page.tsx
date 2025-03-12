@@ -1,6 +1,6 @@
 "use client";
 import { NavBar } from "./components";
-import { Hero, Experience, Services, HowItWorks, Contact } from "./components/Sections/";
+import { Hero, Experience, Services, Contact } from "./components/Sections/";
 import { ReactLenis } from 'lenis/react'
 
 export default function Home() {

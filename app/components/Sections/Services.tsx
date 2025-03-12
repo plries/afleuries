@@ -2,7 +2,7 @@ import { useRef, useState } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { SectionHeading } from "./components";
-import { ButtonTab } from "../Button";
+import { ButtonTab } from "../";
 import { AFLEURIES_ILLUSTRATED, MOTION_CONFIG } from "../../const";
 import { HowItWorks } from "./HowItWorks";
 
@@ -11,7 +11,7 @@ export const Services = () => {
     const brideGroomButtonRef = useRef<HTMLButtonElement>(null);
     const [isGuestPortrait, setIsGuestPortrait] = useState(true);
 
-    const toggleServices = (guestPortrait = false) => {
+    const toggleServices = (guestPortrait = false): {} => {
         setIsGuestPortrait(guestPortrait);
         
         const activeButtonClass = ['bg-tan-30', 'border-b-blue-100', 'text-blue-100'];
@@ -23,13 +23,14 @@ export const Services = () => {
             guestButtonRef.current?.classList.remove(...activeButtonClass);
             brideGroomButtonRef.current?.classList.add(...activeButtonClass);
         }
+        return {};
     };
 
     return (
         <section className="order-4 col-span-full mt-16 flex flex-col gap-4">
-            <SectionHeading 
-                children={AFLEURIES_ILLUSTRATED.SERVICES.HEADING}
-            />
+            <SectionHeading>
+                {AFLEURIES_ILLUSTRATED.SERVICES.HEADING}
+            </SectionHeading>
             <motion.div
                 initial={MOTION_CONFIG.INITIAL}
                 whileInView={MOTION_CONFIG.WHILE_IN_VIEW}
@@ -38,16 +39,18 @@ export const Services = () => {
             >
                 <ButtonTab
                     ref={guestButtonRef as React.RefObject<HTMLButtonElement>}
-                    children={AFLEURIES_ILLUSTRATED.SERVICES.BUTTONS.GUEST_PORTRAIT}
                     additionalClasses={{ button: ['bg-tan-30', 'border-b-blue-100', 'text-blue-100', 'ml-6'] }}
                     onClick={() => toggleServices(true)}
-                />
+                >
+                    {AFLEURIES_ILLUSTRATED.SERVICES.BUTTONS.GUEST_PORTRAIT}
+                </ButtonTab>
                 <ButtonTab
                     ref={brideGroomButtonRef as React.RefObject<HTMLButtonElement>}
-                    children={AFLEURIES_ILLUSTRATED.SERVICES.BUTTONS.BRIDE_GROOM}
                     additionalClasses={{ button: ['mr-6'] }}
                     onClick={() => toggleServices(false)}
-                /> 
+                > 
+                    {AFLEURIES_ILLUSTRATED.SERVICES.BUTTONS.BRIDE_GROOM}
+                </ButtonTab>
             </motion.div>
             <motion.div
                 initial={MOTION_CONFIG.INITIAL}

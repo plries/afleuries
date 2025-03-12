@@ -1,9 +1,9 @@
-export type ButtonPropTypes = Readonly<{
+export type ButtonLinkPropTypes = Readonly<{
     children: React.ReactNode;
     additionalClasses?: {
         button?: string[];
     };
-    onClick?: () => {};
+    onClick?: string;
     type?: "button" | "reset" | "submit";
     ref?: React.RefObject<HTMLButtonElement>;
 }>

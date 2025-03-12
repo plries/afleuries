@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { Button, ButtonLink } from "./Button";
+import { ButtonLink } from "./ButtonLink";
 import { AFLEURIES_ILLUSTRATED } from "../const";
 
 export const NavBar = () => {
@@ -25,10 +25,11 @@ export const NavBar = () => {
             />
         </ButtonLink>
         <ButtonLink
-            children={AFLEURIES_ILLUSTRATED.HEADER.BUTTON}
             additionalClasses={{ button: ['bg-blue-100', 'border-blue-10'] }}
             onClick="#contact"
-        />
+        >
+            {AFLEURIES_ILLUSTRATED.HEADER.BUTTON}
+        </ButtonLink>
         </header>
     )
 }

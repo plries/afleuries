@@ -17,9 +17,9 @@ export const Contact = () => {
             md:rounded-b-xl
         ">
             <div className="col-span-full">
-                <SectionHeading 
-                    children={AFLEURIES_ILLUSTRATED.CONTACT.HEADING}
-                />
+                <SectionHeading>
+                    {AFLEURIES_ILLUSTRATED.CONTACT.HEADING}
+                </SectionHeading>
             </div>
             <motion.div
                 initial={MOTION_CONFIG.INITIAL}
@@ -66,9 +66,10 @@ export const Contact = () => {
                     className="flex justify-end">
                     <Button 
                         type="submit"
-                        children={AFLEURIES_ILLUSTRATED.CONTACT.FORM.BUTTON}
                         additionalClasses={{ button: ['bg-blue-100', 'border-blue-10'] }}
-                    />
+                    >
+                        {AFLEURIES_ILLUSTRATED.CONTACT.FORM.BUTTON}
+                    </Button>
                 </motion.div>
             </form>
         </section>

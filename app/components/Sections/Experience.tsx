@@ -17,16 +17,16 @@ export const Experience = () => {
                 flex flex-col gap-4
                 col-start-1 col-span-4 md:col-span-8 lg:col-span-6
             ">
-                <SectionHeading 
-                    children={AFLEURIES_ILLUSTRATED.EXPERIENCE.HEADING}
-                />
+                <SectionHeading>
+                    {AFLEURIES_ILLUSTRATED.EXPERIENCE.HEADING}
+                </SectionHeading>
                 <div className="flex flex-col gap-3">
-                    <SectionParagraph
-                        children={AFLEURIES_ILLUSTRATED.EXPERIENCE.PARAGRAPHS.ONE}
-                    />
-                    <SectionParagraph
-                        children={AFLEURIES_ILLUSTRATED.EXPERIENCE.PARAGRAPHS.TWO}
-                    />
+                    <SectionParagraph>
+                        {AFLEURIES_ILLUSTRATED.EXPERIENCE.PARAGRAPHS.ONE}
+                    </SectionParagraph>
+                    <SectionParagraph>
+                        {AFLEURIES_ILLUSTRATED.EXPERIENCE.PARAGRAPHS.TWO}
+                    </SectionParagraph>
                 </div>
             </div>
             <motion.div
