@@ -39,10 +39,10 @@ export const HowItWorks = ({ stepsKey }: HowItWorksProps) => {
                     transition={MOTION_CONFIG.TRANSITION}
                     className="flex flex-row gap-2 lg:hidden"
                 >
-                    <IconButton onClick={() =>scrollPrev}>
+                    <IconButton onClick={() => scrollPrev()}>
                         <ChevronLeft />
                     </IconButton>
-                    <IconButton onClick={() => scrollNext}>
+                    <IconButton onClick={() => scrollNext()}>
                         <ChevronRight />
                     </IconButton>
                 </motion.div>
