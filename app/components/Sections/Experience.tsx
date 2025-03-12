@@ -38,7 +38,7 @@ export const Experience = () => {
                 col-start-1 col-span-4 md:col-span-8 lg:col-span-6
             ">
                 <Image
-                    src="/images/Experience.png"
+                    src="/images/Experience.jpg"
                     width={1920}
                     height={1080}
                     alt="Experience"

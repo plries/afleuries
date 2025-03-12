@@ -1,10 +1,10 @@
 "use client";
 import { SectionHeading } from "./components";
 import { IconButton } from "..";
-import Image from "next/image";
 import { AFLEURIES_ILLUSTRATED, MOTION_CONFIG } from "../../const";
 import { useRef } from "react";
 import { motion } from "framer-motion";
+import { ChevronRight, ChevronLeft } from "@/public";
 
 export const HowItWorks = () => {
     const scrollRef = useRef<HTMLDivElement>(null);
@@ -26,12 +26,11 @@ export const HowItWorks = () => {
     return (
     <section className="contents">
         <div
-            id="how-it-works"
             className="
-            mt-16 order-4 scroll-mt-32
-            col-span-full
+            order-5 col-span-full mt-4
+            flex flex-col gap-4
         ">
-        <div className="mb-3 flex flex-row items-center justify-between">
+        <div className="flex flex-row items-center justify-between">
             <SectionHeading
                 children={AFLEURIES_ILLUSTRATED.HOW_IT_WORKS.HEADING}
             />
@@ -45,22 +44,12 @@ export const HowItWorks = () => {
                 <IconButton
                     onClick={() => {scrollPrev()}}
                 >
-                    <Image
-                        src={AFLEURIES_ILLUSTRATED.HOW_IT_WORKS.ICON_LEFT.SRC}
-                        width={8}
-                        height={13}
-                        alt={AFLEURIES_ILLUSTRATED.HOW_IT_WORKS.ICON_LEFT.ALT}
-                    />
+                    <ChevronLeft />
                 </IconButton>
                 <IconButton
                     onClick={() => {scrollNext()}}
                 >
-                    <Image
-                        src={AFLEURIES_ILLUSTRATED.HOW_IT_WORKS.ICON_RIGHT.SRC}
-                        width={8}
-                        height={13}
-                        alt={AFLEURIES_ILLUSTRATED.HOW_IT_WORKS.ICON_RIGHT.ALT}
-                    />
+                    <ChevronRight />
                 </IconButton>
             </motion.div>
         </div>
@@ -94,19 +83,17 @@ export const HowItWorks = () => {
                     min-w-[calc(100%/1)] md:min-w-[calc(100%/1.5)] lg:min-w-0 lg:w-full
                     md:last:mr-80 lg:last:mr-0
                 ">
-                    <div className="aspect-square w-full bg-tan-30 rounded-3xl"></div>
-                        <div className="flex flex-row items-center gap-3">
-                            <Image
-                                src={step.ICON.SRC}
-                                width={48}
-                                height={0}
-                                alt={step.ICON.ALT}
-                                className="aspect-square"
-                            />
-                            <h4 className="font-instrument font-normal text-[32px] lg:text-4xl">
-                                {step.HEADING}
-                            </h4>
+                    <div className="flex flex-row items-center gap-3">
+                        <div
+                            className={`aspect-square h-12
+                            ${step.ICON.COLOUR}
+                        `}>
+                            <step.ICON.SRC />
                         </div>
+                        <h4 className="font-instrument font-normal text-[32px] lg:text-4xl">
+                            {step.HEADING}
+                        </h4>
+                    </div>
                     <p>{step.PARAGRAPH}</p>
                 </div>
             ))}

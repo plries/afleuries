@@ -1,4 +1,5 @@
 import { easeInOut } from "motion/react"
+import { CameraIcon, EnjoyIcon, PickUpIcon } from "@/public"
 
 export const AFLEURIES_ILLUSTRATED = {
     HEADER: {
@@ -16,37 +17,46 @@ export const AFLEURIES_ILLUSTRATED = {
         },
         ALT: "Guests looking at custom portraits."
     },
+    SERVICES: {
+        HEADING: ["My ", "Services"],
+        BUTTONS: {
+            GUEST_PORTRAIT: "Guest Portraits",
+            BRIDE_GROOM: "Bride & Groom Portraits",
+        },
+        IMAGES: {
+            GUEST_PORTRAIT: {
+                SRC: "/images/GuestPortraits.jpg",
+                ALT: "Guest Portraits"
+            },
+            BRIDE_GROOM: {
+                SRC: "/images/BrideGroom.jpg",
+                ALT: "Bride & Groom Portraits"
+            }
+        }
+    },
     HOW_IT_WORKS: {
         HEADING: ["How ", "it Works"],
-        ICON_LEFT: {
-            SRC: "/icons/ChevronLeft.svg",
-            ALT: "Chevron Icon"
-        },
-        ICON_RIGHT: {
-            SRC: "/icons/ChevronRight.svg",
-            ALT: "Chevron Icon"
-        },
         STEPS: [
             {
                 ICON: {
-                    SRC: "/icons/CameraIcon.svg",
-                    ALT: "Camera Icon",
+                    SRC: CameraIcon,
+                    COLOUR: "text-[#6F8196]"
                 },
                 HEADING: "Snap a photo",
                 PARAGRAPH: "Guests come and line up just like they would for a photo booth. Abby will take a quick photo of each person."
             },
             {
                 ICON: {
-                    SRC: "/icons/EnjoyIcon.svg",
-                    ALT: "Scribble Icon",
+                    SRC: EnjoyIcon,
+                    COLOUR: "text-[#AD915C]"
                 },
                 HEADING: "Enjoy the Event",
                 PARAGRAPH: "Guests can go back to partying! Abby can take it from here—creating the portrait in the background."
             },
             {
                 ICON: {
-                    SRC: "/icons/PickUpIcon.svg",
-                    ALT: "Art Prints Icon"
+                    SRC: PickUpIcon,
+                    COLOUR: "text-[#C9827B]"
                 },
                 HEADING: "Pick Up Your Art",
                 PARAGRAPH: "Before heading out, swing by to grab your personalized drawing. It’s the perfect keepsake to take home!"

@@ -11,7 +11,7 @@ export const Input = ({ label, description, htmlFor }: InputPropTypes) => {
 
     const moveLabel = (forceMove = false) => {
         if (!inputRef.current || !labelRef.current || !labelBgRef.current) return;
-        const labelClasses = ["!translate-y-0", "!scale-100"];
+        const labelClasses = ["!translate-y-0", "!scale-100", "!text-blue-10", "opacity-100"];
         const labelBgClasses = ["!bg-tan-30"];
 
         if (forceMove || inputRef.current.value !== "") {
@@ -42,7 +42,7 @@ export const Input = ({ label, description, htmlFor }: InputPropTypes) => {
                         ref={labelRef}
                         htmlFor={htmlFor}
                         className="
-                        my-0.5 z-10 transition-all duration-300 ease-in-out text-[#272727be] pointer-events-none
+                        my-0.5 z-10 transition-all duration-300 ease-in-out opacity-60 pointer-events-none
                         translate-y-6 md:translate-y-7
                         text-base md:text-lg inline-block
                         origin-left scale-90
@@ -56,7 +56,7 @@ export const Input = ({ label, description, htmlFor }: InputPropTypes) => {
                     type="text"
                     required
                     className="
-                    px-4 pb-3 pt-4 w-full h-fit rounded-lg border-2 border-[#27272780] bg-transparent focus:outline-blue-10
+                    px-4 pb-3 pt-4 w-full h-fit rounded-lg border-2 border-[#27272740] bg-tan-20 focus:outline-blue-10
                     text-base md:text-lg font-light
                     "
                     autoComplete="on"

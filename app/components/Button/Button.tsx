@@ -5,9 +5,11 @@ export const Button = ({
     additionalClasses,
     onClick,
     type,
+    ref,
 }: ButtonPropTypes) => {
     return (
         <button
+            ref={ref}
             type={type}
             className={`
                 h-fit w-fit rounded-xl text-tan-10 shadow-md

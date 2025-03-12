@@ -10,6 +10,7 @@ export const NavBar = () => {
             flex flex-row items-top justify-between
             bg-gradient-to-b from-tan-20 from-25% to-transparent
             md:rounded-xl
+            backdrop-blur-sm [mask-image:linear-gradient(to_bottom,black_75%,transparent)] 
         ">
         <ButtonLink
             onClick="#"
@@ -26,7 +27,7 @@ export const NavBar = () => {
         <ButtonLink
             children={AFLEURIES_ILLUSTRATED.HEADER.BUTTON}
             additionalClasses={{ button: ['bg-blue-100', 'border-blue-10'] }}
-            onClick={"#contact"}
+            onClick="#contact"
         />
         </header>
     )

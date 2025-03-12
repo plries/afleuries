@@ -5,4 +5,5 @@ export type ButtonPropTypes = Readonly<{
     };
     onClick?: any
     type?: "button" | "reset" | "submit";
+    ref?: React.RefObject<HTMLButtonElement>;
 }>

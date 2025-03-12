@@ -1,0 +1,86 @@
+import { useRef, useState } from "react";
+import Image from "next/image";
+import { motion, AnimatePresence } from "framer-motion";
+import { SectionHeading } from "./components";
+import { Button } from "../Button";
+import { AFLEURIES_ILLUSTRATED, MOTION_CONFIG } from "../../const";
+
+export const Services = () => {
+    const guestButtonRef = useRef<HTMLButtonElement>(null);
+    const brideGroomButtonRef = useRef<HTMLButtonElement>(null);
+    const [isGuestPortrait, setIsGuestPortrait] = useState(true);
+
+    const toggleServices = (guestPortrait = false) => {
+        setIsGuestPortrait(guestPortrait);
+        
+        const activeButtonClass = ["bg-tan-40"];
+
+        if (guestPortrait) {
+            guestButtonRef.current?.classList.add(...activeButtonClass);
+            brideGroomButtonRef.current?.classList.remove(...activeButtonClass);
+        } else {
+            guestButtonRef.current?.classList.remove(...activeButtonClass);
+            brideGroomButtonRef.current?.classList.add(...activeButtonClass);
+        }
+    };
+
+    return (
+        <section className="order-4 col-span-full mt-16 flex flex-col gap-4">
+            <SectionHeading 
+                children={AFLEURIES_ILLUSTRATED.SERVICES.HEADING}
+            />
+            <motion.div
+                initial={MOTION_CONFIG.INITIAL}
+                whileInView={MOTION_CONFIG.WHILE_IN_VIEW}
+                transition={MOTION_CONFIG.TRANSITION}
+                className="flex flex-row gap-4 overflow-x-scroll no-scrollbar -mx-6"
+            >
+                <Button
+                    ref={guestButtonRef as React.RefObject<HTMLButtonElement>}
+                    children={AFLEURIES_ILLUSTRATED.SERVICES.BUTTONS.GUEST_PORTRAIT}
+                    additionalClasses={{ button: ['bg-tan-40', 'text-tan-100', 'border-none', '!px-4', 'shadow-none', 'hover:shadow-none', 'hover:!scale-100', 'hover:!rotate-0', 'hover:bg-tan-40', 'ml-6'] }}
+                    onClick={() => toggleServices(true)}
+                />
+                <Button
+                    ref={brideGroomButtonRef as React.RefObject<HTMLButtonElement>}
+                    children={AFLEURIES_ILLUSTRATED.SERVICES.BUTTONS.BRIDE_GROOM}
+                    additionalClasses={{ button: ['text-tan-100', 'border-none', '!px-4', 'shadow-none', 'hover:shadow-none', 'hover:!scale-100', 'hover:!rotate-0', 'hover:bg-tan-40', 'mr-6'] }}
+                    onClick={() => toggleServices(false)}
+                /> 
+            </motion.div>
+            <motion.div
+                initial={MOTION_CONFIG.INITIAL}
+                whileInView={MOTION_CONFIG.WHILE_IN_VIEW}
+                transition={MOTION_CONFIG.TRANSITION}
+                className="w-full aspect-video"
+            >
+                <AnimatePresence mode="wait">
+                    <motion.div
+                        key={isGuestPortrait ? "guest-portrait" : "bride-groom"}
+                        initial={{ opacity: 0, scale: 0.97 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        exit={{ opacity: 0, scale: 0.97 }}
+                        transition={{ duration: 0.3, ease: "easeInOut" }}
+                        className="w-full h-full aspect-video"
+                    >
+                        <Image
+                            src={
+                                isGuestPortrait 
+                                    ? AFLEURIES_ILLUSTRATED.SERVICES.IMAGES.GUEST_PORTRAIT.SRC
+                                    : AFLEURIES_ILLUSTRATED.SERVICES.IMAGES.BRIDE_GROOM.SRC
+                            }
+                            width={1920}
+                            height={1080}
+                            alt={
+                                isGuestPortrait
+                                    ? AFLEURIES_ILLUSTRATED.SERVICES.IMAGES.GUEST_PORTRAIT.ALT
+                                    : AFLEURIES_ILLUSTRATED.SERVICES.IMAGES.BRIDE_GROOM.ALT
+                            }
+                            className="w-full h-full object-cover rounded-2xl"
+                        />
+                    </motion.div>
+                </AnimatePresence>
+            </motion.div>
+        </section>
+    );
+};
