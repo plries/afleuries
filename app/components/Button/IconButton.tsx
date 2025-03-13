@@ -8,9 +8,9 @@ export const IconButton = ({
     return (
         <button
             className={`
-                h-11 w-11 aspect-square rounded-full text-tan-100 shadow-md
-                px-4 border-2 border-tan-100
-                ease-in-out transition-all hover:scale-95 hover:shadow-lg
+                h-11 w-11 aspect-square rounded-lg bg-tan-30 text-tan-100
+                px-4 border-2 border-[#27272740] shadow-md
+                ease-in-out transition-all duration-300 hover:scale-95 hover:shadow-lg
                 ${additionalClasses?.button?.join(' ') ?? ''}
             `}
             onClick={onClick}

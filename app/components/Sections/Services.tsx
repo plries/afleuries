@@ -35,7 +35,7 @@ export const Services = () => {
                 initial={MOTION_CONFIG.INITIAL}
                 whileInView={MOTION_CONFIG.WHILE_IN_VIEW}
                 transition={MOTION_CONFIG.TRANSITION}
-                className="flex flex-row gap-2 w-[calc(100%+3rem)] overflow-scroll no-scrollbar -mx-6"
+                className="flex flex-row w-[calc(100%+3rem)] overflow-scroll no-scrollbar -mx-6"
             >
                 <ButtonTab
                     ref={guestButtonRef as React.RefObject<HTMLButtonElement>}

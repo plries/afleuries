@@ -49,7 +49,7 @@ export const TextArea = ({
                         className="
                         my-0.5 z-10 transition-all duration-300 ease-in-out opacity-60 pointer-events-none
                         translate-y-6 md:translate-y-7
-                        text-base md:text-lg inline-block
+                        text-[#272727bf] text-base md:text-lg inline-block
                         origin-left scale-90
                     ">
                         {label}
