@@ -73,10 +73,16 @@ p, button, a {
 input[type=datetime-local]:required:invalid::-webkit-datetime-edit {
     color: transparent;
     transition: all 0.3s ease-in-out;
+    -webkit-appearance: textfield;
+    -moz-appearance: textfield;
+    min-height: 3.5rem;
 }
 input[type=datetime-local]:focus::-webkit-datetime-edit {
     color: black !important;
     transition: all 0.3s ease-in-out;
+    -webkit-appearance: textfield;
+    -moz-appearance: textfield;
+    min-height: 3.5rem;
 }
 
 @media screen and (min-width: 768px) {
