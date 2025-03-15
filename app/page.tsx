@@ -6,13 +6,6 @@ import { ReactLenis } from 'lenis/react'
 export default function Home() {
   return (
     <ReactLenis root>
-      <img
-        src="/Texture.png"
-        width={0}
-        height={0}
-        alt="Texture"
-        className="select-none w-screen h-screen object-cover fixed top-0 left-0 z-50 pointer-events-none mix-blend-multiply opacity-50"
-      />
       <div className="
         grid place-items-center scroll-smooth
         w-screen bg-gradient-to-b from-tan-40 to-tan-50 

@@ -36,7 +36,7 @@ export const Services = () => {
                 whileInView={MOTION_CONFIG.WHILE_IN_VIEW}
                 transition={MOTION_CONFIG.TRANSITION}
                 style={{touchAction: "pan-x" }}
-                className="flex flex-row min-w-full overflow-x-auto no-scrollbar -mx-6 whitespace-nowrap"
+                className="flex flex-row min-w-full overflow-x-auto -mx-6 whitespace-nowrap"
             >
                 <ButtonTab
                     ref={guestButtonRef as React.RefObject<HTMLButtonElement>}
