@@ -41,7 +41,7 @@ export const Hero = () => {
                         aria-hidden="true"
                         className="
                         mt-12 lg:mt-0
-                        w-64
+                        w-60 md:w-80
                     "/>
                     <span className="sr-only">
                         {AFLEURIES_ILLUSTRATED.HERO.HEADING}

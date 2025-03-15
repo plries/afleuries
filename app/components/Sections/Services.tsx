@@ -14,7 +14,7 @@ export const Services = () => {
     const toggleServices = (guestPortrait = false): unknown => {
         setIsGuestPortrait(guestPortrait);
         
-        const activeButtonClass = ['bg-tan-30', 'border-b-blue-100', 'text-blue-100'];
+        const activeButtonClass = ['bg-tan-30', 'border-b-blue-100', '!text-blue-100'];
 
         if (guestPortrait) {
             guestButtonRef.current?.classList.add(...activeButtonClass);
@@ -35,11 +35,12 @@ export const Services = () => {
                 initial={MOTION_CONFIG.INITIAL}
                 whileInView={MOTION_CONFIG.WHILE_IN_VIEW}
                 transition={MOTION_CONFIG.TRANSITION}
-                className="flex flex-row w-[calc(100%+3rem)] overflow-scroll no-scrollbar -mx-6"
+                className="flex flex-row w-[calc(100%+3rem)] overflow-x-auto no-scrollbar -mx-6 whitespace-nowrap"
+                style={{touchAction: "pan-x" }}
             >
                 <ButtonTab
                     ref={guestButtonRef as React.RefObject<HTMLButtonElement>}
-                    additionalClasses={{ button: ['bg-tan-30', 'border-b-blue-100', 'text-blue-100', 'ml-6'] }}
+                    additionalClasses={{ button: ['bg-tan-30', 'border-b-blue-100', '!text-blue-100', 'ml-6'] }}
                     onClick={() => toggleServices(true)}
                 >
                     {AFLEURIES_ILLUSTRATED.SERVICES.BUTTONS.GUEST_PORTRAIT}

@@ -54,13 +54,21 @@ export const HowItWorks = ({ stepsKey }: HowItWorksProps) => {
                 ">
                     <IconButton
                         onClick={scrollPrev}
-                        additionalClasses={{ button: [`${isFirstInView ? "text-[#27272740] scale-90 pointer-events-none hover:scale-100 hover:shadow-md" : ""}`] }}
+                        additionalClasses={{ 
+                            button: isFirstInView 
+                                ? ["!text-[#27272740]", "scale-90", "pointer-events-none", "hover:scale-100", "hover:shadow-md"] 
+                                : [] 
+                        }}
                     >
                         <ChevronLeft />
                     </IconButton>
                     <IconButton
                         onClick={scrollNext}
-                        additionalClasses={{ button: [`${isLastInView ? "text-[#27272740] scale-90 pointer-events-none hover:scale-100 hover:shadow-md" : ""}`] }}
+                        additionalClasses={{ 
+                            button: isLastInView 
+                                ? ["!text-[#27272740]", "scale-90", "pointer-events-none", "hover:scale-100", "hover:shadow-md"] 
+                                : [] 
+                        }}
                     >
                         <ChevronRight />
                     </IconButton>

@@ -34,7 +34,7 @@ export const Input = ({ label, description, htmlFor }: InputPropTypes) => {
                 <div 
                     ref={labelBgRef}
                     className="
-                    absolute mx-2 z-10 px-2 rounded-full h-8 w-fit
+                    absolute mx-2 z-10 px-2 rounded-full h-fit w-fit
                     -top-2.5 md:-top-3.5
                     bg-transparent transition-all duration-300 ease-in-out
                 ">
