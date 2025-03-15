@@ -28,6 +28,8 @@
   --font-geologica: "Geologica", sans-serif;
 }
 
+/* Scrollbar */
+
 * {
   scroll-behavior: smooth;
 }
@@ -59,6 +61,13 @@ body {
     }
 }
 
+.overflow-x-auto {
+  -webkit-overflow-scrolling: touch;
+  overflow-scrolling: touch;
+}
+
+/* Typography */
+
 H1, H2, H3, H4, H5, H6 {
   color: var(--color-tan-100);
 }
@@ -68,15 +77,6 @@ p, button, a {
   line-height: 1.5rem;
   font-weight: 300;
   color: var(--color-tan-100);
-}
-
-input[type=datetime-local]:required:invalid::-webkit-datetime-edit {
-    color: transparent;
-    transition: all 0.3s ease-in-out;
-}
-input[type=datetime-local]:focus::-webkit-datetime-edit {
-    color: black !important;
-    transition: all 0.3s ease-in-out;
 }
 
 @media screen and (min-width: 768px) {
@@ -95,4 +95,15 @@ input[type=datetime-local]:focus::-webkit-datetime-edit {
     line-height: 1.75rem;
   }
 
+}
+
+/* Inputs */
+
+input[type=datetime-local]:required:invalid::-webkit-datetime-edit {
+  color: transparent;
+  transition: all 0.3s ease-in-out;
+}
+input[type=datetime-local]:focus::-webkit-datetime-edit {
+  color: black !important;
+  transition: all 0.3s ease-in-out;
 }
