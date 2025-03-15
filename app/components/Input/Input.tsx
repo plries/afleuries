@@ -57,7 +57,7 @@ export const Input = ({ label, description, htmlFor }: InputPropTypes) => {
                     required
                     className="
                     px-4 pb-3 pt-4 w-full h-fit rounded-lg border-2 border-[#27272740] bg-tan-20 focus:outline-blue-10
-                    text-base md:text-lg font-light
+                    text-base md:text-lg font-light appearance-none
                     "
                     autoComplete="on"
                     onFocus={() => moveLabel(true)}
