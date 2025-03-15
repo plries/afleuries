@@ -48,7 +48,7 @@ export const Contact = () => {
                     after:w-full after:h-0.5 after:bg-tan-50">
                     {AFLEURIES_ILLUSTRATED.CONTACT.FORM.CONTACT}
                 </motion.p>
-                <div className="flex flex-col gap-6 lg:gap-4 lg:flex-row">
+                <div className="grid gap-4 grid-cols-1 md:grid-cols-2">
                     <Input
                         label={AFLEURIES_ILLUSTRATED.CONTACT.FORM.FIRST_NAME.LABEL}
                         htmlFor={AFLEURIES_ILLUSTRATED.CONTACT.FORM.FIRST_NAME.FOR}
@@ -72,7 +72,7 @@ export const Contact = () => {
                     after:w-full after:h-0.5 after:bg-tan-50">
                     {AFLEURIES_ILLUSTRATED.CONTACT.FORM.EVENT}
                 </motion.p>
-                <div className="flex flex-col gap-6 lg:gap-4 lg:flex-row">
+                <div className="grid gap-4 grid-cols-1 md:grid-cols-2">
                     <Input
                         label={AFLEURIES_ILLUSTRATED.CONTACT.FORM.EVENT_DATE.LABEL}
                         htmlFor={AFLEURIES_ILLUSTRATED.CONTACT.FORM.EVENT_DATE.FOR}
