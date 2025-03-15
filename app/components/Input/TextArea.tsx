@@ -16,7 +16,7 @@ export const TextArea = ({
 
     const moveLabel = (forceMove = false) => {
         if (!textAreaRef.current || !labelRef.current || !labelBgRef.current) return;
-        const labelClasses = ["!translate-y-0", "!scale-100", "!text-blue-10", "!opacity-100"];
+        const labelClasses = ["!translate-y-0", "!scale-100", "!text-tan-100", "!opacity-100"];
         const labelBgClasses = ["!bg-tan-30"];
 
         if (forceMove || textAreaRef.current.value !== "") {

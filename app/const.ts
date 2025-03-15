@@ -102,6 +102,7 @@ export const AFLEURIES_ILLUSTRATED = {
             TWO: "Fill out the form and let's bring your event to life with unique digital portraits!",
         },
         FORM: {
+            CONTACT: "Contact Details",
             FIRST_NAME: {
                 LABEL: "First Name",
                 FOR: "fname",
@@ -115,10 +116,18 @@ export const AFLEURIES_ILLUSTRATED = {
                 DESCRIPTION: ["Please ", "double check ", "your email—this will be our main point of contact!"],
                 FOR: "email",
             },
+            EVENT: "Event Details",
+            EVENT_DATE: {
+                LABEL: "Date",
+                FOR: "datetime-local",
+            },
+            EVENT_LOCATION: {
+                LABEL: "Location",
+                FOR: "location",
+            },
             EVENT_DETAILS: {
-                LABEL: "Event Details",
-                DESCRIPTION: ["Please provide a ", "brief summary ", "of the event! Also include the event's date, time, and location."],
-                FOR: "event-details",
+                LABEL: "Description",
+                DESCRIPTION: ["Please provide a ", "brief summary ", "of the event!"],
             },
             BUTTON: "Submit"
         }

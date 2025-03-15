@@ -11,7 +11,7 @@ export const Input = ({ label, description, htmlFor }: InputPropTypes) => {
 
     const moveLabel = (forceMove = false) => {
         if (!inputRef.current || !labelRef.current || !labelBgRef.current) return;
-        const labelClasses = ["!translate-y-0", "!scale-100", "!text-blue-10", "!opacity-100"];
+        const labelClasses = ["!translate-y-0", "!scale-100", "!text-tan-100", "!opacity-100"];
         const labelBgClasses = ["!bg-tan-30"];
 
         if (forceMove || inputRef.current.value !== "") {
@@ -53,7 +53,7 @@ export const Input = ({ label, description, htmlFor }: InputPropTypes) => {
                 <input
                     ref={inputRef}
                     id={htmlFor}
-                    type="text"
+                    type={htmlFor === "email" ? "email" : htmlFor === "datetime-local" ? "datetime-local" : "text"}
                     required
                     className="
                     px-4 pb-3 pt-4 w-full h-fit rounded-lg border-2 border-[#27272740] bg-tan-20 focus:outline-blue-10
