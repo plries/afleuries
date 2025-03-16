@@ -116,8 +116,8 @@ export const ContactForm = () => {
                     <div className="left-0 fixed flex items-end justify-center bottom-0 w-screen h-screen">
                         <p className="
                             w-fit h-fit bg-tan-100 text-tan-10 py-2 px-4 mb-4 rounded-2xl shadow-xl
-                            text-sm md:text-base
-                            animate-fadeOut
+                            text-sm md:text-base pointer-events-none
+                            animate-fadeOut delay-1000
                         ">
                             {AFLEURIES_ILLUSTRATED.CONTACT.FORM.SUCCESS}
                         </p>

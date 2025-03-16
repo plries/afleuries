@@ -100,38 +100,38 @@ export const AFLEURIES_ILLUSTRATED = {
             FIRST_NAME: {
                 LABEL: "First Name",
                 FOR: "fname",
-                NAME: "fname",
+                NAME: "First Name",
             },
             LAST_NAME: {
                 LABEL: "Last Name",
                 FOR: "lname",
-                NAME: "lname",
+                NAME: "Last Name",
             },
             EMAIL: {
                 LABEL: "Email",
                 DESCRIPTION: ["Please ", "double check ", "your email—this will be our main point of contact!"],
                 FOR: "email",
-                NAME: "email",
+                NAME: "Email",
             },
             EVENT: "Event Details",
             EVENT_DATE: {
                 LABEL: "Date",
                 FOR: "datetime-local",
-                NAME: "datetime-local",
+                NAME: "Event Date / Time",
             },
             EVENT_LOCATION: {
                 LABEL: "Location",
                 FOR: "location",
-                NAME: "location",
+                NAME: "Event Location",
             },
             EVENT_DETAILS: {
                 LABEL: "Description",
                 DESCRIPTION: ["Please provide a ", "brief summary ", "of the event!"],
                 FOR: "details",
-                NAME: "details",
+                NAME: "Event Details",
             },
             BUTTON: "Submit",
-            SUCCESS: "Message sent! I'll be in touch shortly.",
+            SUCCESS: "Form submitted — I'll be in touch shortly!",
         }
     }
 }
