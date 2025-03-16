@@ -6,6 +6,7 @@ import { MOTION_CONFIG } from "../../const";
 
 export const TextArea = ({
     label,
+    name,
     description,
     htmlFor,
 }: InputPropTypes) => {
@@ -58,6 +59,7 @@ export const TextArea = ({
                 <textarea
                     ref={textAreaRef}
                     id={htmlFor}
+                    name={name}
                     className="
                     px-4 pb-3 pt-4 rounded-lg border-[1px] border-[#27272740] bg-tan-20 focus:outline-blue-10 w-full h-48
                     text-base md:text-lg font-light resize-none

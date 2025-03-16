@@ -54,6 +54,7 @@ export const Input = ({ label, name, description, htmlFor }: InputPropTypes) => 
                     ref={inputRef}
                     id={htmlFor}
                     type={htmlFor === "email" ? "email" : htmlFor === "datetime-local" ? "datetime-local" : "text"}
+                    name={name}
                     required
                     className="
                     px-4 pb-3 pt-4 w-full h-14 md:h-[60px] rounded-lg border-[1px] border-[#27272740] bg-tan-20 focus:outline-blue-10
