@@ -10,12 +10,26 @@ export const ContactForm = () => {
     const [state, handleSubmit] = useForm("mjkykrzj");
     const { executeRecaptcha } = useGoogleReCaptcha();
     const [showSuccess, setShowSuccess] = useState(false);
+    const [animateFadeOut, setAnimateFadeOut] = useState(false);
 
     useEffect(() => {
         if (state.succeeded) {
             setShowSuccess(true);
-            const timer = setTimeout(() => setShowSuccess(false), 3000);
-            return () => clearTimeout(timer);
+            setAnimateFadeOut(false);
+
+            const fadeOutTimer = setTimeout(() => {
+                setAnimateFadeOut(true);
+            }, 5000);
+
+            const hideTimer = setTimeout(() => {
+                setShowSuccess(false);
+                setAnimateFadeOut(false);
+            }, 5300);
+
+            return () => {
+                clearTimeout(fadeOutTimer);
+                clearTimeout(hideTimer);
+            };
         }
     }, [state.succeeded]);
 
@@ -126,11 +140,11 @@ export const ContactForm = () => {
             <ValidationError errors={state.errors} />
                 {showSuccess &&
                     <div className="left-0 fixed flex items-end justify-center bottom-0 w-screen h-screen">
-                        <p className="
+                        <p className={`
                             w-fit h-fit bg-tan-100 text-tan-10 py-2 px-4 mb-8 rounded-2xl shadow-xl
                             text-sm md:text-base pointer-events-none
-                            animate-fadeOut
-                        ">
+                            ${animateFadeOut ? "animate-fadeOut" : ""}
+                        `}>
                             {AFLEURIES_ILLUSTRATED.CONTACT.FORM.SUCCESS}
                         </p>
                     </div>
