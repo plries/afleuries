@@ -1,11 +1,32 @@
 import { Input, TextArea, Button } from "../../index";
 import { motion } from "framer-motion";
-import { AFLEURIES_ILLUSTRATED,MOTION_CONFIG } from "../../../const";
+import { AFLEURIES_ILLUSTRATED, MOTION_CONFIG } from "../../../const";
 import { useForm, ValidationError } from "@formspree/react";
+import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
 
 export const ContactForm = () => {
-
     const [state, handleSubmit] = useForm("mldjdbbn");
+    const { executeRecaptcha } = useGoogleReCaptcha();
+
+    // Function to handle form submission
+    const onSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+        event.preventDefault();
+
+        if (!executeRecaptcha) {
+            console.error("reCAPTCHA not yet available.");
+            return;
+        }
+
+        try {
+            const token = await executeRecaptcha("submit");
+            const formData = new FormData(event.currentTarget);
+            formData.append("g-recaptcha-response", token);
+
+            handleSubmit(formData);
+        } catch (error) {
+            console.error("reCAPTCHA error:", error);
+        }
+    };
 
     if (state.succeeded) {
         return <p>Thanks for your submission!</p>;
@@ -13,18 +34,20 @@ export const ContactForm = () => {
 
     return (
         <form
-            onSubmit={handleSubmit}
+            onSubmit={onSubmit}
             className="
-            flex flex-col gap-4 mt-4 lg:mt-0
-            col-span-full md:col-start-1 md:col-start-1 md:col-span-8 lg:col-start-7 lg:col-span-6
-        ">
+                flex flex-col gap-4 mt-4 lg:mt-0
+                col-span-full md:col-start-1 md:col-span-8 lg:col-start-7 lg:col-span-6
+            "
+        >
             <motion.p
                 initial={MOTION_CONFIG.INITIAL}
                 whileInView={MOTION_CONFIG.WHILE_IN_VIEW}
                 transition={MOTION_CONFIG.TRANSITION}
                 className="text-sm md:text-base text-nowrap
                 flex flex-row gap-2 items-center
-                after:w-full after:h-[1px] after:bg-tan-50">
+                after:w-full after:h-[1px] after:bg-tan-50"
+            >
                 {AFLEURIES_ILLUSTRATED.CONTACT.FORM.CONTACT}
             </motion.p>
             <div className="grid gap-4 grid-cols-1 md:grid-cols-2">
@@ -45,13 +68,14 @@ export const ContactForm = () => {
                 htmlFor={AFLEURIES_ILLUSTRATED.CONTACT.FORM.EMAIL.FOR}
                 name={AFLEURIES_ILLUSTRATED.CONTACT.FORM.EMAIL.NAME}
             />
-            <motion.p 
+            <motion.p
                 initial={MOTION_CONFIG.INITIAL}
                 whileInView={MOTION_CONFIG.WHILE_IN_VIEW}
                 transition={MOTION_CONFIG.TRANSITION}
                 className="text-sm md:text-base text-nowrap
                 flex flex-row gap-2 items-center mt-4
-                after:w-full after:h-[1px] after:bg-tan-50">
+                after:w-full after:h-[1px] after:bg-tan-50"
+            >
                 {AFLEURIES_ILLUSTRATED.CONTACT.FORM.EVENT}
             </motion.p>
             <div className="grid gap-4 grid-cols-1 md:grid-cols-2">
@@ -66,7 +90,7 @@ export const ContactForm = () => {
                     name={AFLEURIES_ILLUSTRATED.CONTACT.FORM.EVENT_LOCATION.NAME}
                 />
             </div>
-            <TextArea 
+            <TextArea
                 label={AFLEURIES_ILLUSTRATED.CONTACT.FORM.EVENT_DETAILS.LABEL}
                 description={AFLEURIES_ILLUSTRATED.CONTACT.FORM.EVENT_DETAILS.DESCRIPTION}
                 htmlFor={AFLEURIES_ILLUSTRATED.CONTACT.FORM.EVENT_DETAILS.FOR}
@@ -76,10 +100,11 @@ export const ContactForm = () => {
                 initial={MOTION_CONFIG.INITIAL}
                 whileInView={MOTION_CONFIG.WHILE_IN_VIEW}
                 transition={MOTION_CONFIG.TRANSITION}
-                className="flex justify-end">
-                <Button 
+                className="flex flex-col gap-4 items-end"
+            >
+                <Button
                     type="submit"
-                    additionalClasses={{ button: ['bg-green-100', 'border-green-10'] }}
+                    additionalClasses={{ button: ["bg-green-100", "border-green-10"] }}
                     disabled={state.submitting}
                 >
                     {AFLEURIES_ILLUSTRATED.CONTACT.FORM.BUTTON}
@@ -87,5 +112,5 @@ export const ContactForm = () => {
             </motion.div>
             <ValidationError errors={state.errors} />
         </form>
-    )
-}
+    );
+};

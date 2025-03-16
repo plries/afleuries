@@ -1,6 +1,9 @@
-import type { Metadata } from "next";
+"use client";
 import { Instrument_Serif, Geologica } from "next/font/google";
 import "./globals.css";
+import { GoogleReCaptchaProvider } from "react-google-recaptcha-v3";
+import { metadata } from "./metadata";
+import Head from "next/head";
 
 const instrumentSerif = Instrument_Serif({
   variable: "--font-instrument-serif",
@@ -13,23 +16,28 @@ const geologica = Geologica({
   subsets: ["latin"],
 });
 
-export const metadata: Metadata = {
-  title: "Afleuries Illustrated: Live Portrait Art",
-  description: "Live digital portraits, drawn on the spot and projected in real time for everyone to see. It’s live art in action—plus a keepsake to take home!",
-};
-
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body
-        className={`${instrumentSerif.variable} ${geologica.variable} antialiased`}
-      >
-        {children}
-      </body>
-    </html>
+    <GoogleReCaptchaProvider reCaptchaKey="6LctE_YqAAAAAI1bAbf4fh5fPOvff91AEN8pk_Wa">
+      <html lang="en">
+        <head>
+        <meta name="description" content={metadata.description ?? ""} />
+        <meta name="author" content={(Array.isArray(metadata.authors) ? metadata.authors.join(", ") : metadata.authors?.name) ?? ""} />
+        <meta name="keywords" content={(Array.isArray(metadata.keywords) ? metadata.keywords.join(", ") : metadata.keywords) ?? ""} />
+        <meta name="description" content={metadata.description?.toString() ?? ""} />
+        <meta property="og:description" content={metadata.description ?? ""} />
+        <title>{metadata.title?.toString()}</title>
+        </head>
+        <body
+          className={`${instrumentSerif.variable} ${geologica.variable} antialiased`}
+        >
+          {children}
+        </body>
+      </html>
+    </GoogleReCaptchaProvider>
   );
 }
