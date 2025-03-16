@@ -2,7 +2,7 @@
 import { IconButton } from "../";
 import { AFLEURIES_ILLUSTRATED } from "../../const";
 import { useRef, useEffect, useState } from "react";
-import { useInView, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import { ChevronRight, ChevronLeft } from "@/public";
 import { AnimatePresence } from "framer-motion";
 
@@ -24,7 +24,7 @@ export const HowItWorks = ({ stepsKey }: HowItWorksProps) => {
         if (AFLEURIES_ILLUSTRATED.SERVICES.HOW_IT_WORKS.STEPS[stepsKey].length <= 1) {
             setIsLastVisible(true);
         }
-    }, []);
+    }, [stepsKey]);
 
     const scrollNext = () => {
         if (scrollRef.current) {
