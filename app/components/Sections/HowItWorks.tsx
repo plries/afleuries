@@ -1,7 +1,6 @@
 "use client";
-import { SectionHeading } from "./components";
 import { IconButton } from "../";
-import { AFLEURIES_ILLUSTRATED, MOTION_CONFIG } from "../../const";
+import { AFLEURIES_ILLUSTRATED } from "../../const";
 import { useRef } from "react";
 import { useInView, motion } from "framer-motion";
 import { ChevronRight, ChevronLeft } from "@/public";
