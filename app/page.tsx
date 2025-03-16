@@ -2,6 +2,7 @@
 import { NavBar } from "./components";
 import { Hero, Experience, Services, Contact } from "./components/Sections/";
 import { ReactLenis } from 'lenis/react'
+import { AFLEURIES_ILLUSTRATED } from "./const";
 
 export default function Home() {
   return (
@@ -34,6 +35,26 @@ export default function Home() {
           <Services />
           <Contact />
         </div>
+        <p
+          className="w-full bg-tan-30 text-center text-sm text-tan-50 p-4 pt-0
+          md:bg-transparent md:text-tan-100 md:pt-4
+        ">
+          {AFLEURIES_ILLUSTRATED.CONTACT.RECAPTCHA.PARAGRAPH[0]}
+          <a
+            href={AFLEURIES_ILLUSTRATED.CONTACT.RECAPTCHA.PRIVACY_POLICY.LINK}
+            className="text-sm font-medium hover:underline text-tan-50 md:text-tan-100 
+          ">
+            {AFLEURIES_ILLUSTRATED.CONTACT.RECAPTCHA.PRIVACY_POLICY.TEXT}
+          </a>
+          {AFLEURIES_ILLUSTRATED.CONTACT.RECAPTCHA.PARAGRAPH[1]}
+          <a
+            href={AFLEURIES_ILLUSTRATED.CONTACT.RECAPTCHA.TERMS_OF_SERVICE.LINK}
+            className="text-sm font-medium hover:underline text-tan-50 md:text-tan-100
+          ">
+            {AFLEURIES_ILLUSTRATED.CONTACT.RECAPTCHA.TERMS_OF_SERVICE.TEXT}
+          </a>
+          {AFLEURIES_ILLUSTRATED.CONTACT.RECAPTCHA.PARAGRAPH[2]}
+        </p>
       </div>
     </ReactLenis>
   );

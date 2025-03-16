@@ -133,6 +133,17 @@ export const AFLEURIES_ILLUSTRATED = {
             },
             BUTTON: "Submit",
             SUCCESS: "Form submitted — I'll be in touch shortly!",
+        },
+        RECAPTCHA: {
+            PARAGRAPH: ["This site is protected by reCAPTCHA and the Google ", "and ",  "apply."],
+            PRIVACY_POLICY: {
+                LINK: "https://policies.google.com/privacy",
+                TEXT: "Privacy Policy "
+            },
+            TERMS_OF_SERVICE: {
+                LINK: "https://policies.google.com/terms",
+                TEXT: "Terms of Service "
+            }
         }
     }
 }
