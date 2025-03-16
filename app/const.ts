@@ -130,7 +130,8 @@ export const AFLEURIES_ILLUSTRATED = {
                 FOR: "details",
                 NAME: "details",
             },
-            BUTTON: "Submit"
+            BUTTON: "Submit",
+            SUCCESS: "Message sent! I'll be in touch shortly.",
         }
     }
 }

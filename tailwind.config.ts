@@ -1,3 +1,5 @@
+import { animate } from "motion";
+import { animations } from "motion/react";
 import type { Config } from "tailwindcss";
 
 export default {
@@ -8,6 +10,15 @@ export default {
   ],
   theme: {
     extend: {
+      keyframes: {
+        fadeOut: {
+            "0%": { opacity: "1", filter: "blur(0)" },
+            "100%": { opacity: "0", filter: "blur(10px)" },
+        },
+      },
+      animation: {
+        fadeOut: "fadeOut 0.3s ease-in-out 5s forwards",
+      },
       colors: {
         red: {
           100: "var(--color-red-100)",

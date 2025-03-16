@@ -112,6 +112,17 @@ export const ContactForm = () => {
                 </Button>
             </motion.div>
             <ValidationError errors={state.errors} />
+                {state.succeeded &&
+                    <div className="left-0 fixed flex items-end justify-center bottom-0 w-screen h-screen">
+                        <p className="
+                            w-fit h-fit bg-tan-100 text-tan-10 py-2 px-4 mb-4 rounded-2xl shadow-xl
+                            text-sm md:text-base
+                            animate-fadeOut
+                        ">
+                            {AFLEURIES_ILLUSTRATED.CONTACT.FORM.SUCCESS}
+                        </p>
+                    </div>
+                }
         </form>
     );
 };
