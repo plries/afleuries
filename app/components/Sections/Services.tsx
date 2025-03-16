@@ -35,19 +35,17 @@ export const Services = () => {
                 initial={MOTION_CONFIG.INITIAL}
                 whileInView={MOTION_CONFIG.WHILE_IN_VIEW}
                 transition={MOTION_CONFIG.TRANSITION}
-                style={{touchAction: "pan-x" }}
-                className="flex flex-row min-w-full overflow-x-auto -mx-6 whitespace-nowrap"
+                className="flex flex-row"
             >
                 <ButtonTab
                     ref={guestButtonRef as React.RefObject<HTMLButtonElement>}
-                    additionalClasses={{ button: ['bg-tan-30', 'border-b-blue-100', '!text-blue-100', 'ml-6'] }}
+                    additionalClasses={{ button: ['bg-tan-30', 'border-b-blue-100', '!text-blue-100'] }}
                     onClick={() => toggleServices(true)}
                 >
                     {AFLEURIES_ILLUSTRATED.SERVICES.BUTTONS.GUEST_PORTRAIT}
                 </ButtonTab>
                 <ButtonTab
                     ref={brideGroomButtonRef as React.RefObject<HTMLButtonElement>}
-                    additionalClasses={{ button: ['mr-6'] }}
                     onClick={() => toggleServices(false)}
                 > 
                     {AFLEURIES_ILLUSTRATED.SERVICES.BUTTONS.BRIDE_GROOM}
@@ -105,20 +103,16 @@ export const Services = () => {
                     </motion.div>
                 </AnimatePresence>
             </motion.div>
-            <AnimatePresence mode="wait">
-                <motion.div
-                    key={isGuestPortrait ? "guest-portrait" : "bride-groom"}
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    exit={{ opacity: 0 }}
-                    transition={{ duration: 0.3, ease: "easeInOut" }}
-                    className="order-5 col-span-full mt-4 flex flex-col gap-4"
-                >
-                    <HowItWorks 
-                        stepsKey={isGuestPortrait ? "GUEST_PORTRAIT" : "BRIDE_GROOM"}
-                    />
-                </motion.div>
-            </AnimatePresence>
+            <motion.div
+                initial={MOTION_CONFIG.INITIAL}
+                whileInView={MOTION_CONFIG.WHILE_IN_VIEW}
+                transition={MOTION_CONFIG.TRANSITION}
+                className="order-5 col-span-full mt-4 flex flex-col gap-4"
+            >
+                <HowItWorks 
+                    stepsKey={isGuestPortrait ? "GUEST_PORTRAIT" : "BRIDE_GROOM"}
+                />
+            </motion.div>
         </section>
     );
 };

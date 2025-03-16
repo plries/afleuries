@@ -18,10 +18,10 @@ export const AFLEURIES_ILLUSTRATED = {
         ALT: "Guests looking at custom portraits."
     },
     SERVICES: {
-        HEADING: ["My ", "Services"],
+        HEADING: ["Types ", "of Portraits"],
         BUTTONS: {
-            GUEST_PORTRAIT: "Guest Portraits",
-            BRIDE_GROOM: "Bride & Groom Portraits",
+            GUEST_PORTRAIT: "Guests",
+            BRIDE_GROOM: "Bride & Groom",
         },
         PARAGRAPH: {
             GUEST_PORTRAIT: "I’ll capture custom digital portraits of your guests, starting with a quick photo, followed by a live creation process in the background. Each guest leaves with a personalized keepsake—a unique piece of art to remember the event by.",

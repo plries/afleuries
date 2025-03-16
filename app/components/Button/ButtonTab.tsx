@@ -16,7 +16,6 @@ export const ButtonTab = ({
                 border-b-2 border-transparent
                 px-4 py-2 text-nowrap
                 ease-in-out transition-all duration-300
-                hover:bg-tan-20
                 ${additionalClasses?.button?.join(' ') ?? ''}
             `}
             onClick={onClick}
