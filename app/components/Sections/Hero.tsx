@@ -34,7 +34,7 @@ export const Hero = () => {
                         text-7xl md:text-9xl lg:text-[9rem]
                     ">
                     <Image 
-                        src="/AfleuriesIllustrationStation.svg"
+                        src="/AfleuriesLogoColour.svg"
                         width={0}
                         height={0}
                         alt=""

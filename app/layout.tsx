@@ -14,7 +14,7 @@ const geologica = Geologica({
 });
 
 export const metadata: Metadata = {
-  title: "Afleuries Illustration Station",
+  title: "Afleuries Illustrated: Live Portrait Art",
   description: "Live digital portraits, drawn on the spot and projected in real time for everyone to see. It’s live art in action—plus a keepsake to take home!",
 };
 

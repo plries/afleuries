@@ -17,7 +17,7 @@ export const NavBar = () => {
             additionalClasses={{ button: ['border-none', 'shadow-none', 'hover:shadow-none', 'hover:scale-100', 'hover:rotate-0', '!p-0'] }}
         >
             <Image
-                src="/AfleuriesLogo.svg"
+                src="/AfleuriesLogoBlack.svg"
                 width={0}
                 height={0}
                 alt="Afleuries Logo"
@@ -25,7 +25,7 @@ export const NavBar = () => {
             />
         </ButtonLink>
         <ButtonLink
-            additionalClasses={{ button: ['bg-blue-100', 'border-blue-10'] }}
+            additionalClasses={{ button: ['bg-green-100', 'border-green-10'] }}
             onClick="#contact"
         >
             {AFLEURIES_ILLUSTRATED.HEADER.BUTTON}

@@ -27,15 +27,17 @@ export const Services = () => {
     };
 
     return (
-        <section className="order-4 col-span-full mt-16 flex flex-col gap-4">
-            <SectionHeading>
-                {AFLEURIES_ILLUSTRATED.SERVICES.HEADING}
-            </SectionHeading>
+        <section className="contents">
+            <div className="col-span-full">
+                <SectionHeading>
+                    {AFLEURIES_ILLUSTRATED.SERVICES.HEADING}
+                </SectionHeading>
+            </div>
             <motion.div
                 initial={MOTION_CONFIG.INITIAL}
                 whileInView={MOTION_CONFIG.WHILE_IN_VIEW}
                 transition={MOTION_CONFIG.TRANSITION}
-                className="flex flex-row"
+                className="flex flex-row col-span-full md:gap-2"
             >
                 <ButtonTab
                     ref={guestButtonRef as React.RefObject<HTMLButtonElement>}
@@ -55,6 +57,7 @@ export const Services = () => {
                 initial={MOTION_CONFIG.INITIAL}
                 whileInView={MOTION_CONFIG.WHILE_IN_VIEW}
                 transition={MOTION_CONFIG.TRANSITION}
+                className="col-span-full"
             >
                 <AnimatePresence mode="wait">
                     <motion.p
@@ -74,7 +77,7 @@ export const Services = () => {
                 initial={MOTION_CONFIG.INITIAL}
                 whileInView={MOTION_CONFIG.WHILE_IN_VIEW}
                 transition={MOTION_CONFIG.TRANSITION}
-                className="w-full aspect-video"
+                className="col-span-full lg:col-start-3 lg:col-span-8 grid place-items-center my-4"
             >
                 <AnimatePresence mode="wait">
                     <motion.div
@@ -83,7 +86,7 @@ export const Services = () => {
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
                         transition={{ duration: 0.3, ease: "easeInOut" }}
-                        className="w-full h-full aspect-video"
+                        className="aspect-video max-w-lg md:max-w-xl lg:max-w-2xl"
                     >
                         <Image
                             src={
@@ -98,7 +101,7 @@ export const Services = () => {
                                     ? AFLEURIES_ILLUSTRATED.SERVICES.IMAGES.GUEST_PORTRAIT.ALT
                                     : AFLEURIES_ILLUSTRATED.SERVICES.IMAGES.BRIDE_GROOM.ALT
                             }
-                            className="w-full h-full object-cover rounded-2xl"
+                            className="w-full h-full shadow-lg rounded-2xl object-cover"
                         />
                     </motion.div>
                 </AnimatePresence>
@@ -107,7 +110,7 @@ export const Services = () => {
                 initial={MOTION_CONFIG.INITIAL}
                 whileInView={MOTION_CONFIG.WHILE_IN_VIEW}
                 transition={MOTION_CONFIG.TRANSITION}
-                className="order-5 col-span-full mt-4 flex flex-col gap-4"
+                className="contents"
             >
                 <HowItWorks 
                     stepsKey={isGuestPortrait ? "GUEST_PORTRAIT" : "BRIDE_GROOM"}

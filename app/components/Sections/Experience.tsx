@@ -8,7 +8,7 @@ export const Experience = () => {
     return (
         <section className="
             w-[calc(100% + 24px)] -mx-6 mt-16 bg-tan-30
-            px-6 py-16 order-3
+            px-6 py-16
             col-start-1 col-span-full
             grid grid-cols-4 md:grid-cols-8 lg:grid-cols-12
             gap-3 md:gap-4
@@ -34,7 +34,6 @@ export const Experience = () => {
                 whileInView={MOTION_CONFIG.WHILE_IN_VIEW}
                 transition={MOTION_CONFIG.TRANSITION}
                 className="
-                aspect-square rounded-3xl overflow-hidden
                 col-start-1 col-span-4 md:col-span-8 lg:col-span-6
             ">
                 <Image
@@ -42,7 +41,7 @@ export const Experience = () => {
                     width={1920}
                     height={1080}
                     alt="Experience"
-                    className="w-full h-full object-cover"
+                    className="aspect-square w-full h-full object-cover shadow-lg rounded-3xl"
                 />
             </motion.div>
         </section>

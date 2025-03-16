@@ -10,7 +10,7 @@ export const Contact = () => {
             id="contact"
             className="
             w-[calc(100% + 24px)] -mx-6 mt-16 bg-tan-30
-            px-6 py-16 order-6
+            px-6 py-16
             col-start-1 col-span-full
             grid grid-cols-4 md:grid-cols-8 lg:grid-cols-12
             gap-3 md:gap-4
@@ -45,7 +45,7 @@ export const Contact = () => {
                     transition={MOTION_CONFIG.TRANSITION}
                     className="text-sm md:text-base text-nowrap
                     flex flex-row gap-2 items-center
-                    after:w-full after:h-0.5 after:bg-tan-50">
+                    after:w-full after:h-[1px] after:bg-tan-50">
                     {AFLEURIES_ILLUSTRATED.CONTACT.FORM.CONTACT}
                 </motion.p>
                 <div className="grid gap-4 grid-cols-1 md:grid-cols-2">
@@ -69,7 +69,7 @@ export const Contact = () => {
                     transition={MOTION_CONFIG.TRANSITION}
                     className="text-sm md:text-base text-nowrap
                     flex flex-row gap-2 items-center mt-4
-                    after:w-full after:h-0.5 after:bg-tan-50">
+                    after:w-full after:h-[1px] after:bg-tan-50">
                     {AFLEURIES_ILLUSTRATED.CONTACT.FORM.EVENT}
                 </motion.p>
                 <div className="grid gap-4 grid-cols-1 md:grid-cols-2">
@@ -93,7 +93,7 @@ export const Contact = () => {
                     className="flex justify-end">
                     <Button 
                         type="submit"
-                        additionalClasses={{ button: ['bg-blue-100', 'border-blue-10'] }}
+                        additionalClasses={{ button: ['bg-green-100', 'border-green-10'] }}
                     >
                         {AFLEURIES_ILLUSTRATED.CONTACT.FORM.BUTTON}
                     </Button>

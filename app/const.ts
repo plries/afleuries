@@ -1,5 +1,5 @@
 import { easeInOut } from "motion/react"
-import { CameraIcon, EnjoyIcon, PickUpIcon } from "@/public"
+import { CameraIcon, CanvasIcon, PhotosIcon, RingsIcon, GlassesIcon, PortraitsIcon } from "@/public"
 
 export const AFLEURIES_ILLUSTRATED = {
     HEADER: {
@@ -10,7 +10,7 @@ export const AFLEURIES_ILLUSTRATED = {
         ALT: "Illustration of Abby"
     },
     EXPERIENCE: {
-        HEADING: ["An ", "Interactive Experience"],
+        HEADING: "An Interactive Experience",
         PARAGRAPHS: {
             ONE: ["Hi, I'm Abby! I will be sketching ", "custom portraits ", "of guests while they mingle, with a ", "live projection ", "of the digital canvas so everyone can watch the artwork come to life."],
             TWO: ["It’s a fun, interactive experience that gives your guests both entertainment and a ", "personalized keepsake ", "to remember the day!"]
@@ -18,7 +18,7 @@ export const AFLEURIES_ILLUSTRATED = {
         ALT: "Guests looking at custom portraits."
     },
     SERVICES: {
-        HEADING: ["Types ", "of Portraits"],
+        HEADING: "Types of Portraits",
         BUTTONS: {
             GUEST_PORTRAIT: "Guests",
             BRIDE_GROOM: "Bride & Groom",
@@ -38,29 +38,26 @@ export const AFLEURIES_ILLUSTRATED = {
             }
         },
         HOW_IT_WORKS: {
-            HEADING: ["How ", "it Works"],
+            HEADING: "How it Works",
             STEPS: {
                 GUEST_PORTRAIT: [
                     {
                         ICON: {
                             SRC: CameraIcon,
-                            COLOUR: "text-[#6F8196]"
                         },
                         HEADING: "Snap a Photo",
                         PARAGRAPH: "Guests come and line up just like they would for a photo booth. Abby will take a quick photo of each person."
                     },
                     {
                         ICON: {
-                            SRC: EnjoyIcon,
-                            COLOUR: "text-[#AD915C]"
+                            SRC: CanvasIcon,
                         },
                         HEADING: "Enjoy the Event",
                         PARAGRAPH: "Guests can go back to partying! Abby can take it from here—creating the portrait in the background."
                     },
                     {
                         ICON: {
-                            SRC: PickUpIcon,
-                            COLOUR: "text-[#C9827B]"
+                            SRC: PhotosIcon,
                         },
                         HEADING: "Pick Up Your Art",
                         PARAGRAPH: "Before heading out, swing by to grab your personalized drawing. It’s the perfect keepsake to take home!"
@@ -69,24 +66,21 @@ export const AFLEURIES_ILLUSTRATED = {
                 BRIDE_GROOM: [
                     {
                         ICON: {
-                            SRC: CameraIcon,
-                            COLOUR: "text-[#6F8196]"
+                            SRC: RingsIcon,
                         },
                         HEADING: "Moments Coming to Life",
                         PARAGRAPH: " Throughout the night, I create 2-3 unique portraits of the bride & groom, turning special moments from the day into art as the celebration unfolds."
                     },
                     {
                         ICON: {
-                            SRC: EnjoyIcon,
-                            COLOUR: "text-[#AD915C]"
+                            SRC: GlassesIcon,
                         },
                         HEADING: "Enjoy the Process",
                         PARAGRAPH: "As I work, guests can watch the portraits take shape on the big screen, adding to the excitement of the celebration."
                     },
                     {
                         ICON: {
-                            SRC: PickUpIcon,
-                            COLOUR: "text-[#C9827B]"
+                            SRC: PortraitsIcon,
                         },
                         HEADING: "Grab Your Keepsake",
                         PARAGRAPH: "Before the night’s over, guests can grab their very own custom portrait of the Bride & Groom—an unforgettable, one-of-a-kind memento to take home!"
@@ -96,7 +90,7 @@ export const AFLEURIES_ILLUSTRATED = {
         },
     },
     CONTACT: {
-        HEADING: ["Get ", "in Touch"],
+        HEADING: "Get in Touch",
         PARAGRAPHS: {
             ONE: "Have questions? Ready to book?",
             TWO: "Fill out the form and let's bring your event to life with unique digital portraits!",

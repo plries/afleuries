@@ -13,9 +13,10 @@ export const ButtonTab = ({
             type={type}
             className={`
                 h-fit w-full rounded-t-xl text-tan-100
-                border-b-2 border-transparent
+                border-b-[1px] border-transparent
                 px-4 py-2 text-nowrap
                 ease-in-out transition-all duration-300
+                hover:border-tan-50
                 ${additionalClasses?.button?.join(' ') ?? ''}
             `}
             onClick={onClick}
