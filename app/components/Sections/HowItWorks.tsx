@@ -1,7 +1,7 @@
 "use client";
 import { IconButton } from "../";
 import { AFLEURIES_ILLUSTRATED } from "../../const";
-import { useRef } from "react";
+import { useRef, useEffect, useState } from "react";
 import { useInView, motion } from "framer-motion";
 import { ChevronRight, ChevronLeft } from "@/public";
 import { AnimatePresence } from "framer-motion";
@@ -15,9 +15,16 @@ export const HowItWorks = ({ stepsKey }: HowItWorksProps) => {
     const scrollContainerRef = useRef<HTMLDivElement>(null);
     const firstItemRef = useRef<HTMLDivElement>(null);
     const lastItemRef = useRef<HTMLDivElement>(null);
-
-    const isFirstInView = useInView(firstItemRef, { amount: 0.1 });
-    const isLastInView = useInView(lastItemRef, { amount: 0.1 });
+    
+    const [isFirstVisible, setIsFirstVisible] = useState(true);
+    const [isLastVisible, setIsLastVisible] = useState(false);
+    
+    useEffect(() => {
+        setIsFirstVisible(true);
+        if (AFLEURIES_ILLUSTRATED.SERVICES.HOW_IT_WORKS.STEPS[stepsKey].length <= 1) {
+            setIsLastVisible(true);
+        }
+    }, []);
 
     const scrollNext = () => {
         if (scrollRef.current) {
@@ -42,6 +49,14 @@ export const HowItWorks = ({ stepsKey }: HowItWorksProps) => {
                 exit={{ opacity: 0 }}
                 transition={{ duration: 0.3, ease: "easeInOut" }}
                 className="flex flex-col gap-4"
+                onAnimationComplete={() => {
+                    if (scrollRef.current) {
+                        setIsFirstVisible(scrollRef.current.scrollLeft <= 10);
+                        const isAtEnd = scrollRef.current.scrollLeft + scrollRef.current.clientWidth >= 
+                            scrollRef.current.scrollWidth - 10;
+                        setIsLastVisible(isAtEnd);
+                    }
+                }}
             >
                 <div className="flex flex-row items-center justify-between">
                 <h3 
@@ -64,7 +79,7 @@ export const HowItWorks = ({ stepsKey }: HowItWorksProps) => {
                         <IconButton
                             onClick={scrollPrev}
                             additionalClasses={{ 
-                                button: isFirstInView 
+                                button: isFirstVisible 
                                     ? ["!text-[#27272740]", "scale-90", "pointer-events-none", "hover:scale-100", "hover:shadow-md"] 
                                     : [] 
                             }}
@@ -74,7 +89,7 @@ export const HowItWorks = ({ stepsKey }: HowItWorksProps) => {
                         <IconButton
                             onClick={scrollNext}
                             additionalClasses={{ 
-                                button: isLastInView 
+                                button: isLastVisible 
                                     ? ["!text-[#27272740]", "scale-90", "pointer-events-none", "hover:scale-100", "hover:shadow-md"] 
                                     : [] 
                             }}
@@ -85,6 +100,14 @@ export const HowItWorks = ({ stepsKey }: HowItWorksProps) => {
                     <div
                         ref={scrollRef}
                         className="relative flex flex-row overflow-x-scroll scroll-smooth no-scrollbar lg:overflow-x-auto snap-x snap-mandatory"
+                        onScroll={() => {
+                            if (scrollRef.current) {
+                                setIsFirstVisible(scrollRef.current.scrollLeft <= 10);
+                                const isAtEnd = scrollRef.current.scrollLeft + scrollRef.current.clientWidth >= 
+                                    scrollRef.current.scrollWidth - 10;
+                                setIsLastVisible(isAtEnd);
+                            }
+                        }}
                     >
                         {AFLEURIES_ILLUSTRATED.SERVICES.HOW_IT_WORKS.STEPS[stepsKey].map((step, index, array) => (
                             <div
