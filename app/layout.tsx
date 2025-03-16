@@ -24,14 +24,14 @@ export default function RootLayout({
   return (
     <GoogleReCaptchaProvider reCaptchaKey="6LctE_YqAAAAAI1bAbf4fh5fPOvff91AEN8pk_Wa">
       <html lang="en">
-        <head>
-        <meta name="description" content={metadata.description ?? ""} />
-        <meta name="author" content={(Array.isArray(metadata.authors) ? metadata.authors.join(", ") : metadata.authors?.name) ?? ""} />
-        <meta name="keywords" content={(Array.isArray(metadata.keywords) ? metadata.keywords.join(", ") : metadata.keywords) ?? ""} />
-        <meta name="description" content={metadata.description?.toString() ?? ""} />
-        <meta property="og:description" content={metadata.description ?? ""} />
-        <title>{metadata.title?.toString()}</title>
-        </head>
+        <Head>
+          <meta name="description" content={metadata.description ?? ""} />
+          <meta name="author" content={(Array.isArray(metadata.authors) ? metadata.authors.join(", ") : metadata.authors?.name) ?? ""} />
+          <meta name="keywords" content={(Array.isArray(metadata.keywords) ? metadata.keywords.join(", ") : metadata.keywords) ?? ""} />
+          <meta name="description" content={metadata.description?.toString() ?? ""} />
+          <meta property="og:description" content={metadata.description ?? ""} />
+          <title>{metadata.title?.toString()}</title>
+        </Head>
         <body
           className={`${instrumentSerif.variable} ${geologica.variable} antialiased`}
         >
