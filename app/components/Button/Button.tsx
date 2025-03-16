@@ -6,6 +6,7 @@ export const Button = ({
     onClick,
     type,
     ref,
+    disabled,
 }: ButtonPropTypes) => {
     return (
         <button
@@ -16,9 +17,11 @@ export const Button = ({
                 px-4 py-2 pr-12 md:pr-16 lg:pr-20
                 border-[1px] text-nowrap font-normal
                 ease-in-out transition-all duration-300 hover:scale-95 hover:even:rotate-1 hover:odd:-rotate-1 hover:shadow-lg
+                disabled:opacity-50 disabled:scale-95
                 ${additionalClasses?.button?.join(' ') ?? ''}
             `}
             onClick={onClick}
+            disabled={disabled}
         >
             {children}
         </button>
