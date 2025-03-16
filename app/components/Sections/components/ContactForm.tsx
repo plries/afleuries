@@ -8,7 +8,6 @@ export const ContactForm = () => {
     const [state, handleSubmit] = useForm("mldjdbbn");
     const { executeRecaptcha } = useGoogleReCaptcha();
 
-    // Function to handle form submission
     const onSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
 
@@ -17,19 +16,21 @@ export const ContactForm = () => {
             return;
         }
 
+        const form = event.currentTarget;
+        if (!(form instanceof HTMLFormElement)) {
+            console.error("Invalid form element.");
+            return;
+        }
+
         try {
             const token = await executeRecaptcha("submit");
-            const formData = new FormData(event.currentTarget);
+            const formData = new FormData(form);
             formData.append("g-recaptcha-response", token);
 
             handleSubmit(formData);
         } catch (error) {
             console.error("reCAPTCHA error:", error);
         }
-    };
-
-    if (state.succeeded) {
-        return <p>Thanks for your submission!</p>;
     }
 
     return (
