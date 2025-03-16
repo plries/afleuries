@@ -4,7 +4,7 @@ import { useRef } from "react";
 import { motion } from "framer-motion";
 import { MOTION_CONFIG } from "../../const";
 
-export const Input = ({ label, description, htmlFor }: InputPropTypes) => {
+export const Input = ({ label, name, description, htmlFor }: InputPropTypes) => {
     const inputRef = useRef<HTMLInputElement>(null);
     const labelRef = useRef<HTMLLabelElement>(null);
     const labelBgRef = useRef<HTMLDivElement>(null);

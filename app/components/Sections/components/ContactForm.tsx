@@ -31,16 +31,19 @@ export const ContactForm = () => {
                 <Input
                     label={AFLEURIES_ILLUSTRATED.CONTACT.FORM.FIRST_NAME.LABEL}
                     htmlFor={AFLEURIES_ILLUSTRATED.CONTACT.FORM.FIRST_NAME.FOR}
+                    name={AFLEURIES_ILLUSTRATED.CONTACT.FORM.FIRST_NAME.NAME}
                 />
                 <Input
                     label={AFLEURIES_ILLUSTRATED.CONTACT.FORM.LAST_NAME.LABEL}
                     htmlFor={AFLEURIES_ILLUSTRATED.CONTACT.FORM.LAST_NAME.FOR}
+                    name={AFLEURIES_ILLUSTRATED.CONTACT.FORM.LAST_NAME.NAME}
                 />
             </div>
             <Input
                 label={AFLEURIES_ILLUSTRATED.CONTACT.FORM.EMAIL.LABEL}
                 description={AFLEURIES_ILLUSTRATED.CONTACT.FORM.EMAIL.DESCRIPTION}
                 htmlFor={AFLEURIES_ILLUSTRATED.CONTACT.FORM.EMAIL.FOR}
+                name={AFLEURIES_ILLUSTRATED.CONTACT.FORM.EMAIL.NAME}
             />
             <motion.p 
                 initial={MOTION_CONFIG.INITIAL}
@@ -55,15 +58,19 @@ export const ContactForm = () => {
                 <Input
                     label={AFLEURIES_ILLUSTRATED.CONTACT.FORM.EVENT_DATE.LABEL}
                     htmlFor={AFLEURIES_ILLUSTRATED.CONTACT.FORM.EVENT_DATE.FOR}
+                    name={AFLEURIES_ILLUSTRATED.CONTACT.FORM.EVENT_DATE.NAME}
                 />
                 <Input
                     label={AFLEURIES_ILLUSTRATED.CONTACT.FORM.EVENT_LOCATION.LABEL}
                     htmlFor={AFLEURIES_ILLUSTRATED.CONTACT.FORM.EVENT_LOCATION.FOR}
+                    name={AFLEURIES_ILLUSTRATED.CONTACT.FORM.EVENT_LOCATION.NAME}
                 />
             </div>
             <TextArea 
                 label={AFLEURIES_ILLUSTRATED.CONTACT.FORM.EVENT_DETAILS.LABEL}
                 description={AFLEURIES_ILLUSTRATED.CONTACT.FORM.EVENT_DETAILS.DESCRIPTION}
+                htmlFor={AFLEURIES_ILLUSTRATED.CONTACT.FORM.EVENT_DETAILS.FOR}
+                name={AFLEURIES_ILLUSTRATED.CONTACT.FORM.EVENT_DETAILS.NAME}
             />
             <motion.div
                 initial={MOTION_CONFIG.INITIAL}
