@@ -31,8 +31,8 @@ export const Hero = () => {
                         transition={MOTION_CONFIG.TRANSITION}
                         className="
                         flex flex-col gap-2 md:gap-4
-                        text-blue-100 uppercase tracking-widest
-                        text-center text-xl md:text-3xl lg:text-3xl
+                        font-instrument text-blue-100
+                        text-center text-4xl md:text-5xl
                     ">
                     <Image 
                         src="/AfleuriesLogoTitle.svg"
