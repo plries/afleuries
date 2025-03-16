@@ -22,6 +22,7 @@ export default {
       colors: {
         red: {
           100: "var(--color-red-100)",
+          10: "var(--color-red-10)",
         },
         blue: {
           100: "var(--color-blue-100)",
@@ -30,6 +31,10 @@ export default {
         green: {
           100: "var(--color-green-100)",
           10: "var(--color-green-10)",
+        },
+        orange: {
+          100: "var(--color-orange-100)",
+          10: "var(--color-orange-10)",
         },
         tan: {
           100: "var(--color-tan-100)",

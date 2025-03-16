@@ -28,7 +28,7 @@ export const Services = () => {
 
     return (
         <section className="contents">
-            <div className="col-span-full">
+            <div className="col-span-full mt-16">
                 <SectionHeading>
                     {AFLEURIES_ILLUSTRATED.SERVICES.HEADING}
                 </SectionHeading>
@@ -101,7 +101,7 @@ export const Services = () => {
                                     ? AFLEURIES_ILLUSTRATED.SERVICES.IMAGES.GUEST_PORTRAIT.ALT
                                     : AFLEURIES_ILLUSTRATED.SERVICES.IMAGES.BRIDE_GROOM.ALT
                             }
-                            className="w-full h-full shadow-lg rounded-2xl object-cover"
+                            className="w-full h-full shadow-lg rounded-2xl object-cover border-[1px] border-tan-50"
                         />
                     </motion.div>
                 </AnimatePresence>

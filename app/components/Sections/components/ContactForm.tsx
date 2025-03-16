@@ -3,10 +3,21 @@ import { motion } from "framer-motion";
 import { AFLEURIES_ILLUSTRATED, MOTION_CONFIG } from "../../../const";
 import { useForm, ValidationError } from "@formspree/react";
 import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
+import { SubmitIcon } from "@/public";
+import { useState, useEffect } from "react";
 
 export const ContactForm = () => {
-    const [state, handleSubmit] = useForm("mldjdbbn");
+    const [state, handleSubmit] = useForm("mjkykrzj");
     const { executeRecaptcha } = useGoogleReCaptcha();
+    const [showSuccess, setShowSuccess] = useState(false);
+
+    useEffect(() => {
+        if (state.succeeded) {
+            setShowSuccess(true);
+            const timer = setTimeout(() => setShowSuccess(false), 3000);
+            return () => clearTimeout(timer);
+        }
+    }, [state.succeeded]);
 
     const onSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
@@ -105,19 +116,20 @@ export const ContactForm = () => {
             >
                 <Button
                     type="submit"
-                    additionalClasses={{ button: ["bg-green-100", "border-green-10"] }}
+                    additionalClasses={{ button: ["bg-blue-100", "border-blue-10"] }}
                     disabled={state.submitting}
+                    icon={<SubmitIcon />}
                 >
                     {AFLEURIES_ILLUSTRATED.CONTACT.FORM.BUTTON}
                 </Button>
             </motion.div>
             <ValidationError errors={state.errors} />
-                {state.succeeded &&
+                {showSuccess &&
                     <div className="left-0 fixed flex items-end justify-center bottom-0 w-screen h-screen">
                         <p className="
-                            w-fit h-fit bg-tan-100 text-tan-10 py-2 px-4 mb-4 rounded-2xl shadow-xl
+                            w-fit h-fit bg-tan-100 text-tan-10 py-2 px-4 mb-8 rounded-2xl shadow-xl
                             text-sm md:text-base pointer-events-none
-                            animate-fadeOut delay-1000
+                            animate-fadeOut
                         ">
                             {AFLEURIES_ILLUSTRATED.CONTACT.FORM.SUCCESS}
                         </p>

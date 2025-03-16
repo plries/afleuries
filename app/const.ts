@@ -6,13 +6,14 @@ export const AFLEURIES_ILLUSTRATED = {
         BUTTON: "Book now"
     },
     HERO: {
-        HEADING: "Afleuries Illustration Station",
+        SR_ONLY: "Afleuries Illustrated",
+        HEADING: "Live Event Art",
         ALT: "Illustration of Abby"
     },
     EXPERIENCE: {
         HEADING: "An Interactive Experience",
         PARAGRAPHS: {
-            ONE: ["Hi, I'm Abby! I will be sketching ", "custom portraits ", "of guests while they mingle, with a ", "live projection ", "of the digital canvas so everyone can watch the artwork come to life."],
+            ONE: ["Hi, I'm Abby! I'll be sketching ", "custom portraits ", "of guests while they mingle, with a ", "live projection ", "of the digital canvas so everyone can watch the artwork come to life."],
             TWO: ["It’s a fun, interactive experience that gives your guests both entertainment and a ", "personalized keepsake ", "to remember the day!"]
         },
         ALT: "Guests looking at custom portraits."
@@ -25,7 +26,7 @@ export const AFLEURIES_ILLUSTRATED = {
         },
         PARAGRAPH: {
             GUEST_PORTRAIT: "I’ll capture custom digital portraits of your guests, starting with a quick photo, followed by a live creation process in the background. Each guest leaves with a personalized keepsake—a unique piece of art to remember the event by.",
-            BRIDE_GROOM: "Throughout the evening, I create 2-3 live portraits of the bride & groom, capturing different moments from the big day while displaying them for your guests to enjoy. Guests can collect each one as it’s finished, leaving with a fun & memorable keepsake of your special day!",
+            BRIDE_GROOM: "Throughout the evening, I’ll create 2-3 live portraits of the bride & groom, capturing different moments from the big day while displaying them for your guests to enjoy. Guests can collect each one as it’s finished, leaving with a fun & memorable keepsake of your special day!",
         },
         IMAGES: {
             GUEST_PORTRAIT: {
@@ -69,7 +70,7 @@ export const AFLEURIES_ILLUSTRATED = {
                             SRC: RingsIcon,
                         },
                         HEADING: "Moments Coming to Life",
-                        PARAGRAPH: " Throughout the night, I create 2-3 unique portraits of the bride & groom, turning special moments from the day into art as the celebration unfolds."
+                        PARAGRAPH: "Throughout the night, I create 2-3 unique portraits of the bride & groom, turning special moments from the day into art as the celebration unfolds."
                     },
                     {
                         ICON: {

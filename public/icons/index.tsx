@@ -6,3 +6,5 @@
     export * from "./GlassesIcon";
     export * from "./CameraIcon";
     export * from "./CanvasIcon";
+    export * from "./SubmitIcon";
+    export * from "./BookNowIcon";

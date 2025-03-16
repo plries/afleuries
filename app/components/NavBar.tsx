@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { ButtonLink } from "./ButtonLink";
 import { AFLEURIES_ILLUSTRATED } from "../const";
+import { BookNowIcon } from "@/public";
 
 export const NavBar = () => {
     return (
@@ -25,8 +26,9 @@ export const NavBar = () => {
             />
         </ButtonLink>
         <ButtonLink
-            additionalClasses={{ button: ['bg-green-100', 'border-green-10'] }}
+            additionalClasses={{ button: ['bg-blue-100', 'border-blue-10'] }}
             onClick="#contact"
+            icon={<BookNowIcon />}
         >
             {AFLEURIES_ILLUSTRATED.HEADER.BUTTON}
         </ButtonLink>

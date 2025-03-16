@@ -41,7 +41,7 @@ export const Experience = () => {
                     width={1920}
                     height={1080}
                     alt="Experience"
-                    className="aspect-square w-full h-full object-cover shadow-lg rounded-3xl"
+                    className="aspect-square w-full h-full object-cover shadow-lg rounded-3xl border-[1px] border-tan-50"
                 />
             </motion.div>
         </section>

@@ -27,10 +27,13 @@
 
 :root {
   --color-red-100: #C9827B;
+  --color-red-10: #EBAEA8;
   --color-blue-100: #3A4659;
   --color-blue-10: #728093;
   --color-green-100: #AD915C;
   --color-green-10: #BEAB86;
+  --color-orange-100: #DB8F5A;
+  --color-orange-10: #F0AF81;
   --color-tan-100: #272727;
   --color-tan-90: #413f3f;
   --color-tan-50: #A49B92;
@@ -111,8 +114,10 @@ p, button, a {
 input[type=datetime-local]:required:invalid::-webkit-datetime-edit {
   color: transparent;
   transition: all 0.3s ease-in-out;
+  text-align: left;
 }
 input[type=datetime-local]:focus::-webkit-datetime-edit {
   color: black !important;
   transition: all 0.3s ease-in-out;
+  text-align: left;
 }

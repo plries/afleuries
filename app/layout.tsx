@@ -21,7 +21,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <GoogleReCaptchaProvider reCaptchaKey="6LctE_YqAAAAAI1bAbf4fh5fPOvff91AEN8pk_Wa">
+    <GoogleReCaptchaProvider reCaptchaKey="6LfYafYqAAAAAK1HewEyOuicqfv65TE1ufQpRIJ_">
       <html lang="en">
         <head>
           <meta name="description" content={metadata.description ?? ""} />

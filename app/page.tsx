@@ -16,7 +16,8 @@ export default function Home() {
       />
       <div className="
         grid place-items-center scroll-smooth
-        w-screen bg-gradient-to-b from-tan-40 to-tan-50 
+        w-screen
+        bg-gradient-to-b from-green-10 to-green-100
         md:p-12 lg:p-14
       ">
         <div className="

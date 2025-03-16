@@ -7,4 +7,5 @@ export type ButtonPropTypes = Readonly<{
     type?: "button" | "reset" | "submit";
     ref?: React.RefObject<HTMLButtonElement>;
     disabled?: boolean;
+    icon?: React.ReactNode;
 }>

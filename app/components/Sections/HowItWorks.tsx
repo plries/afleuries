@@ -113,8 +113,8 @@ export const HowItWorks = ({ stepsKey }: HowItWorksProps) => {
                                     bg-tan-30 border-[1px] border-tan-40 rounded-2xl shadow-lg p-4
                                     flex flex-col gap-4
                                 ">
-                                    <div className="flex flex-row items-center gap-2">
-                                        <div className="aspect-square h-10">
+                                    <div className="flex flex-row items-center gap-3">
+                                        <div className="aspect-square h-11">
                                             <step.ICON.SRC />
                                         </div>
                                         <h4 className="font-instrument font-normal text-3xl lg:text-4xl">

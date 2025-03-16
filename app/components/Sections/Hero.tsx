@@ -22,7 +22,7 @@ export const Hero = () => {
                 />
             </motion.div>
             <div className="
-                flex justify-center
+                flex justify-center items-center
                 col-start-1 col-span-4 md:col-span-8 lg:col-span-6
                 ">
                     <motion.h1
@@ -30,22 +30,24 @@ export const Hero = () => {
                         whileInView={MOTION_CONFIG.WHILE_IN_VIEW}
                         transition={MOTION_CONFIG.TRANSITION}
                         className="
-                        font-instrument flex flex-wrap flex-row gap-3
-                        text-7xl md:text-9xl lg:text-[9rem]
+                        flex flex-col gap-2 md:gap-4
+                        text-blue-100 uppercase tracking-widest
+                        text-center text-xl md:text-3xl lg:text-3xl
                     ">
                     <Image 
-                        src="/AfleuriesLogoColour.svg"
+                        src="/AfleuriesLogoTitle.svg"
                         width={0}
                         height={0}
                         alt=""
                         aria-hidden="true"
                         className="
                         mt-12 lg:mt-0
-                        w-60 md:w-80
+                        w-60 md:w-96
                     "/>
                     <span className="sr-only">
-                        {AFLEURIES_ILLUSTRATED.HERO.HEADING}
+                        {AFLEURIES_ILLUSTRATED.HERO.SR_ONLY}
                     </span>
+                        {AFLEURIES_ILLUSTRATED.HERO.HEADING}
                     </motion.h1>
             </div>  
         </section>
