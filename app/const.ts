@@ -1,5 +1,5 @@
 import { easeInOut } from "motion/react"
-import { CameraIcon, CanvasIcon, PhotosIcon, RingsIcon, GlassesIcon, PortraitsIcon } from "@/public"
+import { CameraIcon, CanvasIcon, PhotosIcon, RingsIcon, GlassesIcon, PortraitsIcon, SparklesIcon, HeartsIcon, SquiggleIcon } from "@/public"
 
 export const AFLEURIES_ILLUSTRATED = {
     HEADER: {
@@ -7,7 +7,7 @@ export const AFLEURIES_ILLUSTRATED = {
     },
     HERO: {
         SR_ONLY: "Afleuries Illustrated",
-        HEADING: "Live Event Art",
+        HEADING: "Live Portait Artist",
         ALT: "Illustration of Abby"
     },
     EXPERIENCE: {
@@ -21,7 +21,7 @@ export const AFLEURIES_ILLUSTRATED = {
             ALT: "Guests looking at custom portraits."
         }
     },
-    SERVICES: {
+    PORTRAITS: {
         HEADING: "Types of Portraits",
         BUTTONS: {
             GUEST_PORTRAIT: "Guests",
@@ -148,6 +148,11 @@ export const AFLEURIES_ILLUSTRATED = {
                 TEXT: "Terms of Service "
             }
         }
+    },
+    DOODLES: {
+        SQUIGGLES: SquiggleIcon,
+        HEARTS: HeartsIcon,
+        SPARKLES: SparklesIcon,
     }
 }
 

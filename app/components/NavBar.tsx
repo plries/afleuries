@@ -9,7 +9,7 @@ export const NavBar = () => {
                 relative max-w-screen-xl w-[calc(100%-3rem)] h-fit sticky z-40 top-6 left-0 p-6 gap-4 md:mb-6
                 lg:max-w-[calc(1280px-3rem)]
                 flex flex-row items-center justify-between border-[1px] border-tan-40 shadow-lg
-                bg-gradient-to-b from-[#f9f9f9bf] from-25% to-transparent
+                bg-gradient-to-b from-[#f9f9f9bf] from-25% to-[#f9f9f940]
                 rounded-3xl
                 backdrop-blur-sm [mask-image:linear-gradient(to_bottom,black_75%,ffffff_75%)] 
             ">

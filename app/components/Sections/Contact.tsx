@@ -1,23 +1,33 @@
 "use client";
-import { SectionHeading } from "./components";
+import { SectionHeading, ContactForm } from "./components";
 import { AFLEURIES_ILLUSTRATED, MOTION_CONFIG } from "../../const";
-import { motion } from "framer-motion";
-import { ContactForm } from "./components/";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { Doodle } from "../";
 
 export const Contact = () => {
+
+    const { scrollYProgress } = useScroll();
+    const y = useTransform(scrollYProgress, [0, 1], [0, 225]);
+    const rotate = useTransform(scrollYProgress, [0, 1], [0, -15]);
+
     return (
         <section 
             id="contact"
             className="
             w-[calc(100% + 24px)] -mx-6 mt-16 bg-tan-30
-            px-6 py-16
+            px-6 py-16 relative
             col-start-1 col-span-full
             grid grid-cols-4 md:grid-cols-8 lg:grid-cols-12
             gap-3 md:gap-4
             md:rounded-b-xl
             scroll-mt-24
         ">
-            <div className="col-span-full lg:col-start-2">
+            <Doodle
+                scrollPosition={{ y, rotate }}
+            >
+                {AFLEURIES_ILLUSTRATED.DOODLES.SPARKLES()}
+            </Doodle>
+            <div className="col-span-full lg:col-start-2 lg:col-span-10">
                 <SectionHeading>
                     {AFLEURIES_ILLUSTRATED.CONTACT.HEADING}
                 </SectionHeading>

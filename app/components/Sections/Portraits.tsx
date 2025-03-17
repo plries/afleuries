@@ -1,17 +1,22 @@
 import { useRef, useState } from "react";
 import Image from "next/image";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, useScroll, useTransform } from "framer-motion";
 import { SectionHeading } from "./components";
-import { ButtonTab } from "../";
+import { ButtonTab } from "..";
 import { AFLEURIES_ILLUSTRATED, MOTION_CONFIG } from "../../const";
 import { HowItWorks } from "./HowItWorks";
+import { Doodle } from "../";
 
-export const Services = () => {
+export const Portraits = () => {
     const guestButtonRef = useRef<HTMLButtonElement>(null);
     const brideGroomButtonRef = useRef<HTMLButtonElement>(null);
     const [isGuestPortrait, setIsGuestPortrait] = useState(true);
 
-    const toggleServices = (guestPortrait = false): unknown => {
+    const { scrollYProgress } = useScroll();
+    const y = useTransform(scrollYProgress, [0, 1], [0, -500]);
+    const rotate = useTransform(scrollYProgress, [0, 1], [0, 20]);
+
+    const togglePortraits = (guestPortrait = false): unknown => {
         setIsGuestPortrait(guestPortrait);
         
         const activeButtonClass = ['bg-tan-30', 'border-b-blue-100', '!text-blue-100'];
@@ -27,10 +32,17 @@ export const Services = () => {
     };
 
     return (
-        <section className="contents">
-            <div className="col-span-full lg:col-start-2 mt-16">
+        <section className="col-span-full grid grid-cols-4 md:grid-cols-8 lg:grid-cols-12 relative">
+            <Doodle
+                scrollPosition={{ y, rotate}}
+                rightPosition
+                bottomPosition
+            >
+                {AFLEURIES_ILLUSTRATED.DOODLES.HEARTS()}
+            </Doodle>
+            <div className="col-span-full lg:col-start-2 lg:col-span-10 mt-16">
                 <SectionHeading>
-                    {AFLEURIES_ILLUSTRATED.SERVICES.HEADING}
+                    {AFLEURIES_ILLUSTRATED.PORTRAITS.HEADING}
                 </SectionHeading>
             </div>
             <motion.div
@@ -42,15 +54,15 @@ export const Services = () => {
                 <ButtonTab
                     ref={guestButtonRef as React.RefObject<HTMLButtonElement>}
                     additionalClasses={{ button: ['bg-tan-30', 'border-b-blue-100', '!text-blue-100'] }}
-                    onClick={() => toggleServices(true)}
+                    onClick={() => togglePortraits(true)}
                 >
-                    {AFLEURIES_ILLUSTRATED.SERVICES.BUTTONS.GUEST_PORTRAIT}
+                    {AFLEURIES_ILLUSTRATED.PORTRAITS.BUTTONS.GUEST_PORTRAIT}
                 </ButtonTab>
                 <ButtonTab
                     ref={brideGroomButtonRef as React.RefObject<HTMLButtonElement>}
-                    onClick={() => toggleServices(false)}
+                    onClick={() => togglePortraits(false)}
                 > 
-                    {AFLEURIES_ILLUSTRATED.SERVICES.BUTTONS.BRIDE_GROOM}
+                    {AFLEURIES_ILLUSTRATED.PORTRAITS.BUTTONS.BRIDE_GROOM}
                 </ButtonTab>
             </motion.div>
             <motion.div
@@ -68,8 +80,8 @@ export const Services = () => {
                         transition={{ duration: 0.3, ease: "easeInOut" }}
                     >
                         {isGuestPortrait
-                            ? AFLEURIES_ILLUSTRATED.SERVICES.PARAGRAPH.GUEST_PORTRAIT
-                            : AFLEURIES_ILLUSTRATED.SERVICES.PARAGRAPH.BRIDE_GROOM}
+                            ? AFLEURIES_ILLUSTRATED.PORTRAITS.PARAGRAPH.GUEST_PORTRAIT
+                            : AFLEURIES_ILLUSTRATED.PORTRAITS.PARAGRAPH.BRIDE_GROOM}
                     </motion.p>
                 </AnimatePresence>
             </motion.div>
@@ -91,15 +103,15 @@ export const Services = () => {
                         <Image
                             src={
                                 isGuestPortrait 
-                                    ? AFLEURIES_ILLUSTRATED.SERVICES.IMAGES.GUEST_PORTRAIT.SRC
-                                    : AFLEURIES_ILLUSTRATED.SERVICES.IMAGES.BRIDE_GROOM.SRC
+                                    ? AFLEURIES_ILLUSTRATED.PORTRAITS.IMAGES.GUEST_PORTRAIT.SRC
+                                    : AFLEURIES_ILLUSTRATED.PORTRAITS.IMAGES.BRIDE_GROOM.SRC
                             }
                             width={1920}
                             height={1080}
                             alt={
                                 isGuestPortrait
-                                    ? AFLEURIES_ILLUSTRATED.SERVICES.IMAGES.GUEST_PORTRAIT.ALT
-                                    : AFLEURIES_ILLUSTRATED.SERVICES.IMAGES.BRIDE_GROOM.ALT
+                                    ? AFLEURIES_ILLUSTRATED.PORTRAITS.IMAGES.GUEST_PORTRAIT.ALT
+                                    : AFLEURIES_ILLUSTRATED.PORTRAITS.IMAGES.BRIDE_GROOM.ALT
                             }
                             className="w-full h-full shadow-lg rounded-2xl object-cover border-[1px] border-tan-50"
                         />

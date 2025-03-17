@@ -1,18 +1,33 @@
 "use client";
 import { SectionHeading, SectionParagraph } from "./components/";
 import { AFLEURIES_ILLUSTRATED, MOTION_CONFIG } from "../../const";
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import Image from "next/image";
+import { Doodle } from "../";
 
 export const Experience = () => {
+
+    const { scrollYProgress } = useScroll();
+    const y = useTransform(scrollYProgress, [0, 1], [0, 500]);
+    const rotate = useTransform(scrollYProgress, [0, 1], [0, -60]);
+
+    
     return (
-        <section className="
-            w-[calc(100% + 24px)] -mx-6 mt-16 bg-tan-30
+        <section 
+            className="
+            relative w-[calc(100% + 24px)] -mx-6 mt-16 bg-tan-30
             px-6 py-16
             col-start-1 col-span-full
             grid grid-cols-4 md:grid-cols-8 lg:grid-cols-12
-            gap-3 md:gap-4
+            gap-3 md:gap-4 shadow-sm
             ">
+            <Doodle
+                scrollPosition={{ y, rotate }}
+            >
+                <span>
+                    {AFLEURIES_ILLUSTRATED.DOODLES.SQUIGGLES()}
+                </span>
+            </Doodle>
             <motion.div
                 initial={MOTION_CONFIG.INITIAL}
                 whileInView={MOTION_CONFIG.WHILE_IN_VIEW}

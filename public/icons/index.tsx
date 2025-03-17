@@ -8,3 +8,6 @@
     export * from "./CanvasIcon";
     export * from "./SubmitIcon";
     export * from "./BookNowIcon";
+    export * from "./SquiggleIcon";
+    export * from "./SparklesIcon";
+    export * from "./HeartsIcon";

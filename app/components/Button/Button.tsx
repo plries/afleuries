@@ -18,7 +18,7 @@ export const Button = ({
                 flex flex-row gap-2 items-center
                 border-[1px] text-nowrap
                 ease-in-out transition-all duration-300 hover:scale-95 hover:even:rotate-1 hover:odd:-rotate-1 hover:shadow-lg
-                disabled:opacity-50 disabled:scale-95
+                disabled:animate-pulse disabled:scale-95
                 ${additionalClasses?.button?.join(' ') ?? ''}
             `}
             onClick={onClick}

@@ -1,6 +1,6 @@
 "use client";
 import { NavBar } from "./components";
-import { Hero, Experience, Services, Contact } from "./components/Sections/";
+import { Hero, Experience, Portraits, Contact } from "./components/Sections/";
 import { ReactLenis } from 'lenis/react'
 import { AFLEURIES_ILLUSTRATED } from "./const";
 
@@ -33,7 +33,7 @@ export default function Home() {
         ">
           <Hero />
           <Experience />
-          <Services />
+          <Portraits />
           <Contact />
         </main>
         <footer className="max-w-screen-xl w-full bg-tan-30 p-4 pt-0 md:bg-transparent md:pt-4">

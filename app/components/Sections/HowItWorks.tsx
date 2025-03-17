@@ -21,7 +21,7 @@ export const HowItWorks = ({ stepsKey }: HowItWorksProps) => {
     
     useEffect(() => {
         setIsFirstVisible(true);
-        if (AFLEURIES_ILLUSTRATED.SERVICES.HOW_IT_WORKS.STEPS[stepsKey].length <= 1) {
+        if (AFLEURIES_ILLUSTRATED.PORTRAITS.HOW_IT_WORKS.STEPS[stepsKey].length <= 1) {
             setIsLastVisible(true);
         }
     }, [stepsKey]);
@@ -106,7 +106,7 @@ export const HowItWorks = ({ stepsKey }: HowItWorksProps) => {
                             }
                         }}
                     >
-                        {AFLEURIES_ILLUSTRATED.SERVICES.HOW_IT_WORKS.STEPS[stepsKey].map((step, index, array) => (
+                        {AFLEURIES_ILLUSTRATED.PORTRAITS.HOW_IT_WORKS.STEPS[stepsKey].map((step, index, array) => (
                             <div
                                 ref={index === 0 ? firstItemRef : index === array.length - 1 ? lastItemRef : null}
                                 key={index}
