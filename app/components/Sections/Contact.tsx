@@ -15,9 +15,9 @@ export const Contact = () => {
             grid grid-cols-4 md:grid-cols-8 lg:grid-cols-12
             gap-3 md:gap-4
             md:rounded-b-xl
-            scroll-mt-6
+            scroll-mt-24
         ">
-            <div className="col-span-full">
+            <div className="col-span-full lg:col-start-2">
                 <SectionHeading>
                     {AFLEURIES_ILLUSTRATED.CONTACT.HEADING}
                 </SectionHeading>
@@ -26,7 +26,8 @@ export const Contact = () => {
                 initial={MOTION_CONFIG.INITIAL}
                 whileInView={MOTION_CONFIG.WHILE_IN_VIEW}
                 transition={MOTION_CONFIG.TRANSITION}
-                className="col-span-full md:col-start-1 md:col-span-8 lg:col-start-1 lg:col-span-6"
+                className="col-span-full md:col-start-1 md:col-span-8 lg:col-start-2 lg:col-span-4
+                "
             >
                 <p className="font-medium">
                     {AFLEURIES_ILLUSTRATED.CONTACT.PARAGRAPHS.ONE}

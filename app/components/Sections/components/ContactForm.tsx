@@ -63,7 +63,7 @@ export const ContactForm = () => {
             onSubmit={onSubmit}
             className="
                 flex flex-col gap-4 mt-4 lg:mt-0
-                col-span-full md:col-start-1 md:col-span-8 lg:col-start-7 lg:col-span-6
+                col-span-full md:col-start-1 md:col-span-8 lg:col-start-7 lg:col-span-5
             "
         >
             <motion.p

@@ -13,9 +13,24 @@ export const Experience = () => {
             grid grid-cols-4 md:grid-cols-8 lg:grid-cols-12
             gap-3 md:gap-4
             ">
+            <motion.div
+                initial={MOTION_CONFIG.INITIAL}
+                whileInView={MOTION_CONFIG.WHILE_IN_VIEW}
+                transition={MOTION_CONFIG.TRANSITION}
+                className="
+                aspect-square col-start-1 col-span-4 md:col-span-8 lg:col-start-2 lg:col-span-5
+            ">
+                <Image
+                    src={AFLEURIES_ILLUSTRATED.EXPERIENCE.IMAGE.SRC}
+                    width={1920}
+                    height={1080}
+                    alt={AFLEURIES_ILLUSTRATED.EXPERIENCE.IMAGE.ALT}
+                    className="aspect-square w-full h-full object-cover shadow-lg rounded-3xl border-[1px] border-tan-50"
+                />
+            </motion.div>
             <div className="
                 flex flex-col gap-4
-                col-start-1 col-span-4 md:col-span-8 lg:col-span-6
+                col-start-1 col-span-4 md:col-span-8 lg:col-span-5
             ">
                 <SectionHeading>
                     {AFLEURIES_ILLUSTRATED.EXPERIENCE.HEADING}
@@ -29,21 +44,6 @@ export const Experience = () => {
                     </SectionParagraph>
                 </div>
             </div>
-            <motion.div
-                initial={MOTION_CONFIG.INITIAL}
-                whileInView={MOTION_CONFIG.WHILE_IN_VIEW}
-                transition={MOTION_CONFIG.TRANSITION}
-                className="
-                col-start-1 col-span-4 md:col-span-8 lg:col-span-6
-            ">
-                <Image
-                    src="/images/Experience.jpg"
-                    width={1920}
-                    height={1080}
-                    alt="Experience"
-                    className="aspect-square w-full h-full object-cover shadow-lg rounded-3xl border-[1px] border-tan-50"
-                />
-            </motion.div>
         </section>
     )
 }

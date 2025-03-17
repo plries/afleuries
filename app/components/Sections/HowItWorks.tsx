@@ -63,31 +63,36 @@ export const HowItWorks = ({ stepsKey }: HowItWorksProps) => {
                     <div className="absolute pointer-events-none inset-0 bg-gradient-to-r from-transparent from-95% to-tan-20 to-100% z-10 hidden md:block lg:hidden"></div>
                     <div
                         className="absolute z-10 w-full h-full
-                        left-0 -bottom-12 md:bottom-0
-                        flex flex-row justify-between px-6
-                        items-end md:items-center
-                        lg:p-0 lg:max-w-4xl left-1/2 -translate-x-1/2
+                        left-0 -bottom-12 lg:bottom-0
+                        flex flex-row justify-between items-end px-6
+                        left-1/2 -translate-x-1/2
+                        lg:p-0 lg:px-6 lg:max-w-[unset]
+                        grid col-span-full grid-cols-4 md:grid-cols-8 lg:grid-cols-12 gap-3 md:gap-4
                     ">
-                        <IconButton
-                            onClick={scrollPrev}
-                            additionalClasses={{ 
-                                button: isFirstVisible 
-                                    ? ["!text-tan-40", "scale-90", "pointer-events-none", "hover:scale-100", "hover:shadow-md"] 
-                                    : [] 
-                            }}
-                        >
-                            <ChevronLeft />
-                        </IconButton>
-                        <IconButton
-                            onClick={scrollNext}
-                            additionalClasses={{ 
-                                button: isLastVisible 
-                                    ? ["!text-tan-40", "scale-90", "pointer-events-none", "hover:scale-100", "hover:shadow-md"] 
-                                    : [] 
-                            }}
-                        >
-                            <ChevronRight />
-                        </IconButton>
+                        <div className="h-full w-full flex items-end lg:items-center justify-start col-start-1 lg:justify-end">
+                            <IconButton
+                                onClick={scrollPrev}
+                                additionalClasses={{
+                                    button: isFirstVisible 
+                                        ? ["!text-tan-40", "scale-90", "pointer-events-none", "hover:scale-100", "hover:shadow-md"] 
+                                        : []
+                                }}
+                            >
+                                <ChevronLeft />
+                            </IconButton>
+                        </div>
+                        <div className="h-full w-full flex items-end lg:items-center justify-end col-start-4 md:col-start-8 lg:col-start-12 lg:justify-start">
+                            <IconButton
+                                onClick={scrollNext}
+                                additionalClasses={{ 
+                                    button: isLastVisible 
+                                        ? ["!text-tan-40", "scale-90", "pointer-events-none", "hover:scale-100", "hover:shadow-md"] 
+                                        : [] 
+                                }}
+                            >
+                                <ChevronRight />
+                            </IconButton>
+                        </div>
                     </div>
                     <div
                         ref={scrollRef}
@@ -106,22 +111,25 @@ export const HowItWorks = ({ stepsKey }: HowItWorksProps) => {
                                 ref={index === 0 ? firstItemRef : index === array.length - 1 ? lastItemRef : null}
                                 key={index}
                                 className="flex flex-col items-center snap-start min-w-full
-                                px-6 md:px-24 lg:px-40 mb-4
+                                px-6 mb-4
                                 md:last:mr-80 lg:last:mr-0
                             ">
-                                <div className="min-h-full max-w-lg md:max-w-xl lg:max-w-2xl
-                                    bg-tan-30 border-[1px] border-tan-40 rounded-2xl shadow-lg p-4
-                                    flex flex-col gap-4
-                                ">
-                                    <div className="flex flex-row items-center gap-3">
-                                        <div className="aspect-square h-11">
-                                            <step.ICON.SRC />
+                                <div className="w-full min-h-full grid col-span-full grid-cols-4 lg:grid-cols-12 gap-3 md:gap-4">
+                                    <div className="min-h-full lg:max-w-5xl
+                                        bg-tan-30 border-[1px] border-tan-40 rounded-2xl shadow-lg p-4
+                                        flex flex-col gap-4
+                                        col-span-full lg:col-start-2 lg:col-span-10
+                                    ">
+                                        <div className="flex flex-row items-center gap-3">
+                                            <div className="aspect-square h-11">
+                                                <step.ICON.SRC />
+                                            </div>
+                                            <h4 className="font-instrument font-normal text-3xl lg:text-4xl">
+                                                {step.HEADING}
+                                            </h4>
                                         </div>
-                                        <h4 className="font-instrument font-normal text-3xl lg:text-4xl">
-                                            {step.HEADING}
-                                        </h4>
+                                        <p>{step.PARAGRAPH}</p>
                                     </div>
-                                    <p>{step.PARAGRAPH}</p>
                                 </div>
                             </div>
                         ))}

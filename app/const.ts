@@ -16,7 +16,10 @@ export const AFLEURIES_ILLUSTRATED = {
             ONE: ["Hi, I'm Abby! I'll be sketching ", "custom portraits ", "of guests while they mingle, with a ", "live projection ", "of the digital canvas so everyone can watch the artwork come to life."],
             TWO: ["It’s a fun, interactive experience that gives your guests both entertainment and a ", "personalized keepsake ", "to remember the day!"]
         },
-        ALT: "Guests looking at custom portraits."
+        IMAGE: {
+            SRC: "/images/Experience.jpg",
+            ALT: "Guests looking at custom portraits."
+        }
     },
     SERVICES: {
         HEADING: "Types of Portraits",
@@ -26,7 +29,7 @@ export const AFLEURIES_ILLUSTRATED = {
         },
         PARAGRAPH: {
             GUEST_PORTRAIT: "I’ll capture custom digital portraits of your guests, starting with a quick photo, followed by a live creation process in the background. Each guest leaves with a personalized keepsake—a unique piece of art to remember the event by.",
-            BRIDE_GROOM: "Throughout the evening, I’ll create 2-3 live portraits of the bride & groom, capturing different moments from the big day while displaying them for your guests to enjoy. Guests can collect each one as it’s finished, leaving with a fun & memorable keepsake of your special day!",
+            BRIDE_GROOM: "I’ll create 2-3 live portraits of the bride & groom, capturing different moments from the big day while displaying them for your guests to enjoy. Guests can collect each one as it’s finished, leaving with a fun & memorable keepsake of your special day!",
         },
         IMAGES: {
             GUEST_PORTRAIT: {

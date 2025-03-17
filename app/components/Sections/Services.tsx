@@ -28,7 +28,7 @@ export const Services = () => {
 
     return (
         <section className="contents">
-            <div className="col-span-full mt-16">
+            <div className="col-span-full lg:col-start-2 mt-16">
                 <SectionHeading>
                     {AFLEURIES_ILLUSTRATED.SERVICES.HEADING}
                 </SectionHeading>
@@ -37,7 +37,7 @@ export const Services = () => {
                 initial={MOTION_CONFIG.INITIAL}
                 whileInView={MOTION_CONFIG.WHILE_IN_VIEW}
                 transition={MOTION_CONFIG.TRANSITION}
-                className="flex flex-row col-span-full md:gap-2"
+                className="flex flex-row col-span-full lg:col-start-2 lg:col-span-10 md:gap-2"
             >
                 <ButtonTab
                     ref={guestButtonRef as React.RefObject<HTMLButtonElement>}
@@ -57,7 +57,7 @@ export const Services = () => {
                 initial={MOTION_CONFIG.INITIAL}
                 whileInView={MOTION_CONFIG.WHILE_IN_VIEW}
                 transition={MOTION_CONFIG.TRANSITION}
-                className="col-span-full"
+                className="col-span-full lg:col-start-2 lg:col-span-10"
             >
                 <AnimatePresence mode="wait">
                     <motion.p
@@ -77,7 +77,7 @@ export const Services = () => {
                 initial={MOTION_CONFIG.INITIAL}
                 whileInView={MOTION_CONFIG.WHILE_IN_VIEW}
                 transition={MOTION_CONFIG.TRANSITION}
-                className="col-span-full lg:col-start-3 lg:col-span-8 grid place-items-center my-4"
+                className="col-span-full lg:col-start-2 lg:col-span-10 grid place-items-center my-4"
             >
                 <AnimatePresence mode="wait">
                     <motion.div
@@ -86,7 +86,7 @@ export const Services = () => {
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
                         transition={{ duration: 0.3, ease: "easeInOut" }}
-                        className="aspect-video max-w-lg md:max-w-xl lg:max-w-2xl"
+                        className="aspect-video lg:max-w-5xl"
                     >
                         <Image
                             src={
