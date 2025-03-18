@@ -77,7 +77,7 @@ export const Portraits = () => {
                 initial={MOTION_CONFIG.INITIAL}
                 whileInView={MOTION_CONFIG.WHILE_IN_VIEW}
                 transition={MOTION_CONFIG.TRANSITION}
-                className="col-span-full lg:col-start-2 lg:col-span-10 grid place-items-center aspect-video"
+                className="col-span-full lg:col-start-2 lg:col-span-10 aspect-video"
             >
                 <AnimatePresence mode="wait">
                     <motion.div
