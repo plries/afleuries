@@ -62,14 +62,14 @@ export const HowItWorks = ({ stepsKey }: HowItWorksProps) => {
                     <div className="absolute pointer-events-none inset-0 bg-gradient-to-r from-tan-20 from-0% to-transparent to-5% z-10 hidden md:block lg:hidden"></div>
                     <div className="absolute pointer-events-none inset-0 bg-gradient-to-r from-transparent from-95% to-tan-20 to-100% z-10 hidden md:block lg:hidden"></div>
                     <div
-                        className="absolute z-10 w-full h-full
-                        left-0 -bottom-12 lg:bottom-0
+                        className="absolute z-10 w-full pointer-events-none
+                        left-0 -bottom-10 lg:bottom-1/2 lg:translate-y-1/2
                         flex flex-row justify-between items-end px-6
                         left-1/2 -translate-x-1/2
                         lg:p-0 lg:px-6 lg:max-w-[unset]
                         grid col-span-full grid-cols-4 md:grid-cols-8 lg:grid-cols-12 gap-3 md:gap-4
                     ">
-                        <div className="h-full w-full flex items-end lg:items-center justify-start col-start-1 lg:justify-end">
+                        <div className="h-full w-full flex items-end lg:items-center justify-start col-start-1 lg:justify-end pointer-events-auto">
                             <IconButton
                                 onClick={scrollPrev}
                                 additionalClasses={{
@@ -87,7 +87,7 @@ export const HowItWorks = ({ stepsKey }: HowItWorksProps) => {
                                 additionalClasses={{ 
                                     button: isLastVisible 
                                         ? ["!text-tan-40", "scale-90", "pointer-events-none", "hover:scale-100", "hover:shadow-md"] 
-                                        : [] 
+                                        : isFirstVisible ? ["animate-pulse-scale"] : []
                                 }}
                             >
                                 <ChevronRight />

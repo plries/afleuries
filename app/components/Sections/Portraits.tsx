@@ -32,7 +32,7 @@ export const Portraits = () => {
     };
 
     return (
-        <section className="col-span-full grid grid-cols-4 md:grid-cols-8 lg:grid-cols-12 relative">
+        <section className="col-span-full grid grid-cols-4 md:grid-cols-8 lg:grid-cols-12 relative gap-3 md:gap-4">
             <Doodle
                 scrollPosition={{ y, rotate}}
                 rightPosition
@@ -45,6 +45,14 @@ export const Portraits = () => {
                     {AFLEURIES_ILLUSTRATED.PORTRAITS.HEADING}
                 </SectionHeading>
             </div>
+            <motion.p
+                initial={MOTION_CONFIG.INITIAL}
+                whileInView={MOTION_CONFIG.WHILE_IN_VIEW}
+                transition={MOTION_CONFIG.TRANSITION}
+                className="col-span-full lg:col-start-2 lg:col-span-10"
+            >
+                {AFLEURIES_ILLUSTRATED.PORTRAITS.PARAGRAPH}
+            </motion.p>
             <motion.div
                 initial={MOTION_CONFIG.INITIAL}
                 whileInView={MOTION_CONFIG.WHILE_IN_VIEW}
@@ -69,27 +77,7 @@ export const Portraits = () => {
                 initial={MOTION_CONFIG.INITIAL}
                 whileInView={MOTION_CONFIG.WHILE_IN_VIEW}
                 transition={MOTION_CONFIG.TRANSITION}
-                className="col-span-full lg:col-start-2 lg:col-span-10"
-            >
-                <AnimatePresence mode="wait">
-                    <motion.p
-                        key={isGuestPortrait ? "guest-portrait" : "bride-groom"}
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        exit={{ opacity: 0 }}
-                        transition={{ duration: 0.3, ease: "easeInOut" }}
-                    >
-                        {isGuestPortrait
-                            ? AFLEURIES_ILLUSTRATED.PORTRAITS.PARAGRAPH.GUEST_PORTRAIT
-                            : AFLEURIES_ILLUSTRATED.PORTRAITS.PARAGRAPH.BRIDE_GROOM}
-                    </motion.p>
-                </AnimatePresence>
-            </motion.div>
-            <motion.div
-                initial={MOTION_CONFIG.INITIAL}
-                whileInView={MOTION_CONFIG.WHILE_IN_VIEW}
-                transition={MOTION_CONFIG.TRANSITION}
-                className="col-span-full lg:col-start-2 lg:col-span-10 grid place-items-center my-4"
+                className="col-span-full lg:col-start-2 lg:col-span-10 grid place-items-center aspect-video"
             >
                 <AnimatePresence mode="wait">
                     <motion.div

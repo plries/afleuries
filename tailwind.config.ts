@@ -11,13 +11,19 @@ export default {
   theme: {
     extend: {
       keyframes: {
-        fadeOut: {
+        "fade-out": {
             "0%": { opacity: "1", filter: "blur(0)" },
             "100%": { opacity: "0", filter: "blur(10px)" },
         },
+        "pulse-scale": {
+          "0%": { transform: "scale(1)" },
+          "50%": { transform: "scale(1.15)" },
+          "100%": { transform: "scale(1)" },
+        }
       },
       animation: {
-        fadeOut: "fadeOut 0.3s ease-in-out 5s forwards",
+        "fade-out": "fade-out 0.3s ease-in-out 5s forwards",
+        "pulse-scale": "pulse-scale 2s ease-in-out infinite",
       },
       colors: {
         red: {

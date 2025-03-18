@@ -141,9 +141,9 @@ export const ContactForm = () => {
                 {showSuccess &&
                     <div className="left-0 fixed flex items-end justify-center bottom-0 w-screen h-screen">
                         <p className={`
-                            w-fit h-fit bg-tan-100 text-tan-10 py-2 px-4 mb-8 rounded-2xl shadow-xl
+                            w-fit h-fit bg-tan-100 text-tan-10 py-2 px-4 mb-8 rounded-full shadow-xl
                             text-sm md:text-base pointer-events-none
-                            ${animateFadeOut ? "animate-fadeOut" : ""}
+                            ${animateFadeOut ? "animate-fade-out" : ""}
                         `}>
                             {AFLEURIES_ILLUSTRATED.CONTACT.FORM.SUCCESS}
                         </p>

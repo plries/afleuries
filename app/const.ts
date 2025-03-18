@@ -23,13 +23,11 @@ export const AFLEURIES_ILLUSTRATED = {
     },
     PORTRAITS: {
         HEADING: "Types of Portraits",
+        PARAGRAPH: 
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris lacinia, mi vitae maximus porta, risus diam tempus odio, ut ullamcorper risus sapien at neque. Duis quis purus magna. Sed ornare dui id lorem viverra, id tincidunt ex congue.",
         BUTTONS: {
             GUEST_PORTRAIT: "Guests",
             BRIDE_GROOM: "Bride & Groom",
-        },
-        PARAGRAPH: {
-            GUEST_PORTRAIT: "I’ll capture custom digital portraits of your guests, starting with a quick photo, followed by a live creation process in the background. Each guest leaves with a personalized keepsake—a unique piece of art to remember the event by.",
-            BRIDE_GROOM: "I’ll create 2-3 live portraits of the bride & groom, capturing different moments from the big day while displaying them for your guests to enjoy. Guests can collect each one as it’s finished, leaving with a fun & memorable keepsake of your special day!",
         },
         IMAGES: {
             GUEST_PORTRAIT: {
