@@ -4,4 +4,5 @@ export type ButtonTabPropTypes = Readonly<{
     button?: string[];
   };
   onClick?: () => void;
+  ref?: React.RefObject<HTMLButtonElement>;
 }>;
