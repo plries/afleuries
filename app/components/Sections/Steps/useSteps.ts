@@ -11,7 +11,7 @@ export const useSteps = ({ stepsKey }: StepsPropTypes) => {
   const [isFirstVisible, setIsFirstVisible] = useState(true);
   const [isLastVisible, setIsLastVisible] = useState(false);
 
-  const scrollDelay = 300;
+  const scrollDelay = 700;
   let isScrolling = false;
 
   useEffect(() => {
