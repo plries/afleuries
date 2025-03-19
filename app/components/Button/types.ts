@@ -3,7 +3,7 @@ export type ButtonPropTypes = Readonly<{
   additionalClasses?: {
     button?: string[];
   };
-  onClick: () => void;
+  onClick?: () => void;
   type: "button" | "reset" | "submit";
   disabled?: boolean;
   icon?: React.ReactNode;
