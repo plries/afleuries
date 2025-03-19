@@ -10,8 +10,8 @@ export const useHeader = () => {
       setIsSticky(scrollY.get() > 50);
     };
 
-    const unsubscribe = scrollY.on("change", updateSticky);
-    return () => unsubscribe();
+    const removeWidth = scrollY.on("change", updateSticky);
+    return () => removeWidth();
   }, [scrollY]);
 
   const maxWidth = isSticky

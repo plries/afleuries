@@ -105,7 +105,7 @@ export const Steps = ({ stepsKey }: StepsPropTypes) => {
                   <div className="col-span-full grid min-h-full w-full grid-cols-4 gap-3 md:gap-4 lg:grid-cols-12">
                     <div className="col-span-full flex min-h-full flex-col gap-4 rounded-2xl border-[1px] border-tan-40 bg-tan-30 p-4 shadow-lg lg:col-span-10 lg:col-start-2 lg:max-w-5xl">
                       <div className="flex flex-row items-center gap-3">
-                        <step.ICON.SRC />
+                        <step.ICON.SRC key={stepsKey} />
                         <h4 className="font-instrument text-3xl font-normal lg:text-4xl">
                           {step.HEADING}
                         </h4>
