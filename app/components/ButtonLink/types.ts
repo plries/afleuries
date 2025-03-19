@@ -3,6 +3,6 @@ export type ButtonLinkPropTypes = Readonly<{
   additionalClasses?: {
     button?: string[];
   };
-  onClick?: string;
+  onClick: string;
   icon?: React.ReactNode;
 }>;

@@ -29,6 +29,13 @@ export const useSteps = ({ stepsKey }: StepsPropTypes) => {
       const stepWidth =
         (scrollRef.current.children[0] as HTMLElement)?.offsetWidth || 0;
       scrollRef.current.scrollBy({ left: stepWidth, behavior: "smooth" });
+      const maxScrollLeft =
+        scrollRef.current.scrollWidth - scrollRef.current.clientWidth;
+      const currentScroll = scrollRef.current.scrollLeft;
+
+      if (currentScroll + stepWidth <= maxScrollLeft) {
+        scrollRef.current.scrollBy({ left: stepWidth, behavior: "smooth" });
+      }
 
       setTimeout(() => {
         isScrolling = false;
@@ -42,6 +49,10 @@ export const useSteps = ({ stepsKey }: StepsPropTypes) => {
       const stepWidth =
         (scrollRef.current.children[0] as HTMLElement)?.offsetWidth || 0;
       scrollRef.current.scrollBy({ left: -stepWidth, behavior: "smooth" });
+
+      if (scrollRef.current.scrollLeft - stepWidth >= 0) {
+        scrollRef.current.scrollBy({ left: -stepWidth, behavior: "smooth" });
+      }
 
       setTimeout(() => {
         isScrolling = false;

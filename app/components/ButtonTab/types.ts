@@ -3,6 +3,6 @@ export type ButtonTabPropTypes = Readonly<{
   additionalClasses?: {
     button?: string[];
   };
-  onClick?: () => void;
-  ref?: React.RefObject<HTMLButtonElement>;
+  onClick: () => void;
+  ref: React.RefObject<HTMLButtonElement>;
 }>;

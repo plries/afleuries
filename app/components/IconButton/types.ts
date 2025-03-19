@@ -3,6 +3,6 @@ export type IconButtonPropTypes = Readonly<{
   additionalClasses?: {
     button?: string[];
   };
-  onClick?: () => void;
-  ref?: React.RefObject<HTMLButtonElement>;
+  disabled: boolean;
+  onClick: () => void;
 }>;

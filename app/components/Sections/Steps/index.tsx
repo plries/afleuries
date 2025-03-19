@@ -39,17 +39,7 @@ export const Steps = ({ stepsKey }: StepsPropTypes) => {
             <div className="pointer-events-auto col-start-1 flex h-full w-full items-end justify-start lg:items-center lg:justify-end">
               <IconButton
                 onClick={hook.scrollPrev}
-                additionalClasses={{
-                  button: hook.isFirstVisible
-                    ? [
-                        "!text-tan-40",
-                        "scale-90",
-                        "pointer-events-none",
-                        "hover:scale-100",
-                        "hover:shadow-md",
-                      ]
-                    : [],
-                }}
+                disabled={hook.isFirstVisible}
               >
                 <ChevronLeft />
               </IconButton>
@@ -57,19 +47,7 @@ export const Steps = ({ stepsKey }: StepsPropTypes) => {
             <div className="col-start-4 flex h-full w-full items-end justify-end md:col-start-8 lg:col-start-12 lg:items-center lg:justify-start">
               <IconButton
                 onClick={hook.scrollNext}
-                additionalClasses={{
-                  button: hook.isLastVisible
-                    ? [
-                        "!text-tan-40",
-                        "scale-90",
-                        "pointer-events-none",
-                        "hover:scale-100",
-                        "hover:shadow-md",
-                      ]
-                    : hook.isFirstVisible
-                      ? ["animate-pulse-scale"]
-                      : [],
-                }}
+                disabled={hook.isLastVisible}
               >
                 <ChevronRight />
               </IconButton>
