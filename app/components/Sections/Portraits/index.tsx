@@ -1,49 +1,26 @@
-import { useRef, useState } from "react";
 import Image from "next/image";
-import { motion, AnimatePresence, useScroll, useTransform } from "framer-motion";
-import { SectionHeading } from "./components";
-import { ButtonTab } from "..";
-import { AFLEURIES_ILLUSTRATED, MOTION_CONFIG } from "../../const";
-import { HowItWorks } from "./HowItWorks";
-import { Doodle } from "../";
+import { motion, AnimatePresence } from "framer-motion";
+import { AFLEURIES_ILLUSTRATED, MOTION_CONFIG } from "../../../const";
+import { ButtonTab, Heading, Doodle } from "../../";
+import { Steps } from "../";
+import { usePortraits } from "./usePortraits";
 
 export const Portraits = () => {
-    const guestButtonRef = useRef<HTMLButtonElement>(null);
-    const brideGroomButtonRef = useRef<HTMLButtonElement>(null);
-    const [isGuestPortrait, setIsGuestPortrait] = useState(true);
-
-    const { scrollYProgress } = useScroll();
-    const y = useTransform(scrollYProgress, [0, 1], [0, -500]);
-    const rotate = useTransform(scrollYProgress, [0, 1], [0, 20]);
-
-    const togglePortraits = (guestPortrait = false): unknown => {
-        setIsGuestPortrait(guestPortrait);
-        
-        const activeButtonClass = ['bg-tan-30', 'border-b-blue-100', '!text-blue-100'];
-
-        if (guestPortrait) {
-            guestButtonRef.current?.classList.add(...activeButtonClass);
-            brideGroomButtonRef.current?.classList.remove(...activeButtonClass);
-        } else {
-            guestButtonRef.current?.classList.remove(...activeButtonClass);
-            brideGroomButtonRef.current?.classList.add(...activeButtonClass);
-        }
-        return {};
-    };
+    const hook = usePortraits();
 
     return (
         <section className="col-span-full grid grid-cols-4 md:grid-cols-8 lg:grid-cols-12 relative gap-3 md:gap-4">
             <Doodle
-                scrollPosition={{ y, rotate}}
+                scrollPosition={{ y: hook.y, rotate: hook.rotate}}
                 rightPosition
                 bottomPosition
             >
                 {AFLEURIES_ILLUSTRATED.DOODLES.HEARTS()}
             </Doodle>
             <div className="col-span-full lg:col-start-2 lg:col-span-10 mt-16">
-                <SectionHeading>
+                <Heading>
                     {AFLEURIES_ILLUSTRATED.PORTRAITS.HEADING}
-                </SectionHeading>
+                </Heading>
             </div>
             <motion.p
                 initial={MOTION_CONFIG.INITIAL}
@@ -60,15 +37,15 @@ export const Portraits = () => {
                 className="flex flex-row col-span-full lg:col-start-2 lg:col-span-10 md:gap-2"
             >
                 <ButtonTab
-                    ref={guestButtonRef as React.RefObject<HTMLButtonElement>}
+                    ref={hook.guestButtonRef as React.RefObject<HTMLButtonElement>}
                     additionalClasses={{ button: ['bg-tan-30', 'border-b-blue-100', '!text-blue-100'] }}
-                    onClick={() => togglePortraits(true)}
+                    onClick={() => hook.togglePortraits(true)}
                 >
                     {AFLEURIES_ILLUSTRATED.PORTRAITS.BUTTONS.GUEST_PORTRAIT}
                 </ButtonTab>
                 <ButtonTab
-                    ref={brideGroomButtonRef as React.RefObject<HTMLButtonElement>}
-                    onClick={() => togglePortraits(false)}
+                    ref={hook.brideGroomButtonRef as React.RefObject<HTMLButtonElement>}
+                    onClick={() => hook.togglePortraits(false)}
                 > 
                     {AFLEURIES_ILLUSTRATED.PORTRAITS.BUTTONS.BRIDE_GROOM}
                 </ButtonTab>
@@ -81,7 +58,7 @@ export const Portraits = () => {
             >
                 <AnimatePresence mode="wait">
                     <motion.div
-                        key={isGuestPortrait ? "guest-portrait" : "bride-groom"}
+                        key={hook.isGuestPortrait ? "guest-portrait" : "bride-groom"}
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
@@ -90,14 +67,14 @@ export const Portraits = () => {
                     >
                         <Image
                             src={
-                                isGuestPortrait 
+                                hook.isGuestPortrait 
                                     ? AFLEURIES_ILLUSTRATED.PORTRAITS.IMAGES.GUEST_PORTRAIT.SRC
                                     : AFLEURIES_ILLUSTRATED.PORTRAITS.IMAGES.BRIDE_GROOM.SRC
                             }
                             width={1920}
                             height={1080}
                             alt={
-                                isGuestPortrait
+                                hook.isGuestPortrait
                                     ? AFLEURIES_ILLUSTRATED.PORTRAITS.IMAGES.GUEST_PORTRAIT.ALT
                                     : AFLEURIES_ILLUSTRATED.PORTRAITS.IMAGES.BRIDE_GROOM.ALT
                             }
@@ -112,8 +89,8 @@ export const Portraits = () => {
                 transition={MOTION_CONFIG.TRANSITION}
                 className="contents"
             >
-                <HowItWorks 
-                    stepsKey={isGuestPortrait ? "GUEST_PORTRAIT" : "BRIDE_GROOM"}
+                <Steps 
+                    stepsKey={hook.isGuestPortrait ? "GUEST_PORTRAIT" : "BRIDE_GROOM"}
                 />
             </motion.div>
         </section>

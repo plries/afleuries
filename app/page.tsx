@@ -1,8 +1,8 @@
 "use client";
-import { NavBar } from "./components";
-import { Hero, Experience, Portraits, Contact } from "./components/Sections/";
 import { ReactLenis } from 'lenis/react'
 import { AFLEURIES_ILLUSTRATED } from "./const";
+import { Header } from "./components";
+import { Hero, Experience, Portraits, Contact } from "./components/Sections/";
 
 export default function Home() {
   return (
@@ -22,7 +22,7 @@ export default function Home() {
         md:bg-gradient-to-b md:from-green-10 md:to-green-100
         md:p-12 lg:p-14
         ">
-        <NavBar />
+        <Header />
         <main className="
         max-w-screen-xl w-full h-full pt-12 md:pt-6 lg:pt-[5.5rem]
         px-6 pb-0

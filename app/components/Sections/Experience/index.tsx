@@ -1,16 +1,12 @@
 "use client";
-import { SectionHeading, SectionParagraph } from "./components/";
-import { AFLEURIES_ILLUSTRATED, MOTION_CONFIG } from "../../const";
-import { motion, useScroll, useTransform } from "framer-motion";
 import Image from "next/image";
-import { Doodle } from "../";
+import { motion } from "framer-motion";
+import { AFLEURIES_ILLUSTRATED, MOTION_CONFIG } from "../../../const";
+import { Heading, Paragraph, Doodle } from "../../";
+import { useExperience } from "./useExperience";
 
 export const Experience = () => {
-
-    const { scrollYProgress } = useScroll();
-    const y = useTransform(scrollYProgress, [0, 1], [0, 500]);
-    const rotate = useTransform(scrollYProgress, [0, 1], [0, -60]);
-
+    const hook = useExperience();
     
     return (
         <section 
@@ -22,7 +18,7 @@ export const Experience = () => {
             gap-3 md:gap-4 shadow-sm
             ">
             <Doodle
-                scrollPosition={{ y, rotate }}
+                scrollPosition={{ y: hook.y, rotate: hook.rotate }}
             >
                 <span>
                     {AFLEURIES_ILLUSTRATED.DOODLES.SQUIGGLES()}
@@ -47,16 +43,16 @@ export const Experience = () => {
                 flex flex-col gap-4
                 col-start-1 col-span-4 md:col-span-8 lg:col-span-5
             ">
-                <SectionHeading>
+                <Heading>
                     {AFLEURIES_ILLUSTRATED.EXPERIENCE.HEADING}
-                </SectionHeading>
+                </Heading>
                 <div className="flex flex-col gap-3">
-                    <SectionParagraph>
+                    <Paragraph>
                         {AFLEURIES_ILLUSTRATED.EXPERIENCE.PARAGRAPHS.ONE}
-                    </SectionParagraph>
-                    <SectionParagraph>
+                    </Paragraph>
+                    <Paragraph>
                         {AFLEURIES_ILLUSTRATED.EXPERIENCE.PARAGRAPHS.TWO}
-                    </SectionParagraph>
+                    </Paragraph>
                 </div>
             </div>
         </section>

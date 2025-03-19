@@ -1,5 +1,5 @@
 "use client";
-import { InputPropTypes } from "./types"
+import { TextAreaPropTypes } from "./types"
 import { useRef } from "react";
 import { motion } from "framer-motion";
 import { MOTION_CONFIG } from "../../const";
@@ -9,7 +9,7 @@ export const TextArea = ({
     name,
     description,
     htmlFor,
-}: InputPropTypes) => {
+}: TextAreaPropTypes) => {
 
     const textAreaRef = useRef<HTMLTextAreaElement>(null);
     const labelRef = useRef<HTMLLabelElement>(null);

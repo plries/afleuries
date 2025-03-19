@@ -1,8 +1,8 @@
 import React from "react"
 import { motion } from "framer-motion"
-import { MOTION_CONFIG } from "../../../const"
+import { MOTION_CONFIG } from "../../const"
 
-export const SectionParagraph = ({ children }: { children: string[] }) => {
+export const Paragraph = ({ children }: { children: string[] }) => {
     return (
         <motion.p
             initial={MOTION_CONFIG.INITIAL}

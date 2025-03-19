@@ -1,30 +1,17 @@
 import Image from "next/image";
-import { ButtonLink } from "./ButtonLink";
-import { AFLEURIES_ILLUSTRATED } from "../const";
+import { motion } from "framer-motion";
+import { AFLEURIES_ILLUSTRATED } from "../../const";
+import { ButtonLink } from "../";
 import { BookNowIcon } from "@/public";
-import { motion, useScroll } from "framer-motion";
-import { useState, useEffect } from "react";
+import { useHeader } from "./useHeader";
 
-export const NavBar = () => {
-    const { scrollY } = useScroll();
-    const [isSticky, setIsSticky] = useState(false);
-
-    useEffect(() => {
-        const updateSticky = () => {
-            setIsSticky(scrollY.get() > 50);
-        };
-    
-        const unsubscribe = scrollY.on("change", updateSticky);
-        return () => unsubscribe();
-    }, [scrollY]);
-
-    const maxWidth = isSticky ? "max-w-[calc(1280px-3rem)]" : "md:max-w-screen-xl";
-    const width = isSticky ? "w-[calc(100%-3rem)]" : "w-[calc(100%-3rem)] md:w-full lg:";
+export const Header = () => {
+    const hook = useHeader();
 
     return (
         <motion.header
             className={`
-            ${width} ${maxWidth}
+            ${hook.width} ${hook.maxWidth}
             relative h-fit sticky z-40 top-6 left-0 p-6 gap-4 md:mb-6
             flex flex-row items-center justify-between border-[1px] border-tan-40 shadow-lg
             bg-gradient-to-b from-[#f9f9f9bf] from-25% to-[#f9f9f940]

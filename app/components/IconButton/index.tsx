@@ -1,10 +1,10 @@
-import type { ButtonPropTypes } from "./types";
+import type { IconButtonPropTypes } from "./types";
 
 export const IconButton = ({
     children,
     additionalClasses,
     onClick,
-}: ButtonPropTypes) => {
+}: IconButtonPropTypes) => {
     return (
         <button
             className={`

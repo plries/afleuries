@@ -1,4 +1,4 @@
-import type { ButtonPropTypes } from "./types";
+import type { ButtonTabPropTypes } from "./types";
 
 export const ButtonTab = ({
     children,
@@ -6,7 +6,7 @@ export const ButtonTab = ({
     onClick,
     type,
     ref,
-}: ButtonPropTypes) => {
+}: ButtonTabPropTypes) => {
     return (
         <button
             ref={ref}

@@ -1,8 +1,8 @@
 "use client";
 import { motion } from "framer-motion";
-import { MOTION_CONFIG } from "../../../const";
+import { MOTION_CONFIG } from "../../const";
 
-export const SectionHeading = ({ children }: { children: string }) => {
+export const Heading = ({ children }: { children: string }) => {
     return (
         <motion.h3 
             initial={MOTION_CONFIG.INITIAL}

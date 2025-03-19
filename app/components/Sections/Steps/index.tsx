@@ -1,44 +1,13 @@
 "use client";
-import { IconButton } from "../";
-import { AFLEURIES_ILLUSTRATED } from "../../const";
-import { useRef, useEffect, useState } from "react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
+import { AFLEURIES_ILLUSTRATED } from "../../../const";
+import { IconButton } from "../../";
 import { ChevronRight, ChevronLeft } from "@/public";
-import { AnimatePresence } from "framer-motion";
+import { StepsPropTypes } from "./types";
+import { useSteps } from "./useSteps";
 
-interface HowItWorksProps {
-    stepsKey: "GUEST_PORTRAIT" | "BRIDE_GROOM";
-}
-
-export const HowItWorks = ({ stepsKey }: HowItWorksProps) => {
-    const scrollRef = useRef<HTMLDivElement>(null);
-    const scrollContainerRef = useRef<HTMLDivElement>(null);
-    const firstItemRef = useRef<HTMLDivElement>(null);
-    const lastItemRef = useRef<HTMLDivElement>(null);
-    
-    const [isFirstVisible, setIsFirstVisible] = useState(true);
-    const [isLastVisible, setIsLastVisible] = useState(false);
-    
-    useEffect(() => {
-        setIsFirstVisible(true);
-        if (AFLEURIES_ILLUSTRATED.PORTRAITS.HOW_IT_WORKS.STEPS[stepsKey].length <= 1) {
-            setIsLastVisible(true);
-        }
-    }, [stepsKey]);
-
-    const scrollNext = () => {
-        if (scrollRef.current) {
-            const stepWidth = (scrollRef.current.children[0] as HTMLElement)?.offsetWidth || 0;
-            scrollRef.current.scrollBy({ left: stepWidth, behavior: "smooth" });
-        }
-    };
-    
-    const scrollPrev = () => {
-        if (scrollRef.current) {
-            const stepWidth = (scrollRef.current.children[0] as HTMLElement)?.offsetWidth || 0;
-            scrollRef.current.scrollBy({ left: -stepWidth, behavior: "smooth" });
-        }
-    };
+export const Steps = ({ stepsKey }: StepsPropTypes) => {
+    const hook = useSteps({ stepsKey });
 
     return (
         <AnimatePresence mode="wait">
@@ -50,15 +19,15 @@ export const HowItWorks = ({ stepsKey }: HowItWorksProps) => {
                 transition={{ duration: 0.3, ease: "easeInOut" }}
                     className="grid col-span-full auto-rows-min grid-cols-4 md:grid-cols-8 lg:grid-cols-12 gap-3 md:gap-4"
                 onAnimationComplete={() => {
-                    if (scrollRef.current) {
-                        setIsFirstVisible(scrollRef.current.scrollLeft <= 10);
-                        const isAtEnd = scrollRef.current.scrollLeft + scrollRef.current.clientWidth >= 
-                            scrollRef.current.scrollWidth - 10;
-                        setIsLastVisible(isAtEnd);
+                    if (hook.scrollRef.current) {
+                        hook.setIsFirstVisible(hook.scrollRef.current.scrollLeft <= 10);
+                        const isAtEnd = hook.scrollRef.current.scrollLeft + hook.scrollRef.current.clientWidth >= 
+                        hook.scrollRef.current.scrollWidth - 10;
+                        hook.setIsLastVisible(isAtEnd);
                     }
                 }}
             >
-                <div ref={scrollContainerRef} className="relative -mx-6 mb-14 md:mb-0 lg:mr-0] col-span-full">
+                <div ref={hook.scrollContainerRef} className="relative -mx-6 mb-14 md:mb-0 lg:mr-0] col-span-full">
                     <div className="absolute pointer-events-none inset-0 bg-gradient-to-r from-tan-20 from-0% to-transparent to-5% z-10 hidden md:block lg:hidden"></div>
                     <div className="absolute pointer-events-none inset-0 bg-gradient-to-r from-transparent from-95% to-tan-20 to-100% z-10 hidden md:block lg:hidden"></div>
                     <div
@@ -71,9 +40,9 @@ export const HowItWorks = ({ stepsKey }: HowItWorksProps) => {
                     ">
                         <div className="h-full w-full flex items-end lg:items-center justify-start col-start-1 lg:justify-end pointer-events-auto">
                             <IconButton
-                                onClick={scrollPrev}
+                                onClick={hook.scrollPrev}
                                 additionalClasses={{
-                                    button: isFirstVisible 
+                                    button: hook.isFirstVisible 
                                         ? ["!text-tan-40", "scale-90", "pointer-events-none", "hover:scale-100", "hover:shadow-md"] 
                                         : []
                                 }}
@@ -83,11 +52,11 @@ export const HowItWorks = ({ stepsKey }: HowItWorksProps) => {
                         </div>
                         <div className="h-full w-full flex items-end lg:items-center justify-end col-start-4 md:col-start-8 lg:col-start-12 lg:justify-start">
                             <IconButton
-                                onClick={scrollNext}
+                                onClick={hook.scrollNext}
                                 additionalClasses={{ 
-                                    button: isLastVisible 
+                                    button: hook.isLastVisible 
                                         ? ["!text-tan-40", "scale-90", "pointer-events-none", "hover:scale-100", "hover:shadow-md"] 
-                                        : isFirstVisible ? ["animate-pulse-scale"] : []
+                                        : hook.isFirstVisible ? ["animate-pulse-scale"] : []
                                 }}
                             >
                                 <ChevronRight />
@@ -95,20 +64,20 @@ export const HowItWorks = ({ stepsKey }: HowItWorksProps) => {
                         </div>
                     </div>
                     <div
-                        ref={scrollRef}
+                        ref={hook.scrollRef}
                         className="relative flex flex-row overflow-x-scroll scroll-smooth no-scrollbar lg:overflow-x-auto snap-x snap-mandatory"
                         onScroll={() => {
-                            if (scrollRef.current) {
-                                setIsFirstVisible(scrollRef.current.scrollLeft <= 10);
-                                const isAtEnd = scrollRef.current.scrollLeft + scrollRef.current.clientWidth >= 
-                                    scrollRef.current.scrollWidth - 10;
-                                setIsLastVisible(isAtEnd);
+                            if (hook.scrollRef.current) {
+                                hook.setIsFirstVisible(hook.scrollRef.current.scrollLeft <= 10);
+                                const isAtEnd = hook.scrollRef.current.scrollLeft + hook.scrollRef.current.clientWidth >= 
+                                hook.scrollRef.current.scrollWidth - 10;
+                                hook.setIsLastVisible(isAtEnd);
                             }
                         }}
                     >
                         {AFLEURIES_ILLUSTRATED.PORTRAITS.HOW_IT_WORKS.STEPS[stepsKey].map((step, index, array) => (
                             <div
-                                ref={index === 0 ? firstItemRef : index === array.length - 1 ? lastItemRef : null}
+                                ref={index === 0 ? hook.firstItemRef : index === array.length - 1 ? hook.lastItemRef : null}
                                 key={index}
                                 className="flex flex-col items-center snap-start min-w-full
                                 px-6 mb-4

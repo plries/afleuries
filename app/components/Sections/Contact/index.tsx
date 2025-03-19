@@ -1,14 +1,11 @@
 "use client";
-import { SectionHeading, ContactForm } from "./components";
-import { AFLEURIES_ILLUSTRATED, MOTION_CONFIG } from "../../const";
-import { motion, useScroll, useTransform } from "framer-motion";
-import { Doodle } from "../";
+import { motion } from "framer-motion";
+import { AFLEURIES_ILLUSTRATED, MOTION_CONFIG } from "../../../const";
+import { Heading, ContactForm, Doodle } from "../../";
+import { useContact } from "./useContact";
 
 export const Contact = () => {
-
-    const { scrollYProgress } = useScroll();
-    const y = useTransform(scrollYProgress, [0, 1], [0, 225]);
-    const rotate = useTransform(scrollYProgress, [0, 1], [0, -15]);
+    const hook = useContact();
 
     return (
         <section 
@@ -23,14 +20,14 @@ export const Contact = () => {
             scroll-mt-24
         ">
             <Doodle
-                scrollPosition={{ y, rotate }}
+                scrollPosition={{ y: hook.y, rotate: hook.rotate}}
             >
                 {AFLEURIES_ILLUSTRATED.DOODLES.SPARKLES()}
             </Doodle>
             <div className="col-span-full lg:col-start-2 lg:col-span-10">
-                <SectionHeading>
+                <Heading>
                     {AFLEURIES_ILLUSTRATED.CONTACT.HEADING}
-                </SectionHeading>
+                </Heading>
             </div>
             <motion.div
                 initial={MOTION_CONFIG.INITIAL}

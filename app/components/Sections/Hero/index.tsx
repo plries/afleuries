@@ -1,7 +1,7 @@
 "use client"; 
 import Image from "next/image";
-import { AFLEURIES_ILLUSTRATED, MOTION_CONFIG } from "../../const";
 import { motion } from "framer-motion";
+import { AFLEURIES_ILLUSTRATED, MOTION_CONFIG } from "../../../const";
 
 export const Hero = () => {
     return (

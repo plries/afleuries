@@ -1,66 +1,16 @@
-import { Input, TextArea, Button } from "../../index";
+import { ValidationError } from "@formspree/react";
 import { motion } from "framer-motion";
-import { AFLEURIES_ILLUSTRATED, MOTION_CONFIG } from "../../../const";
-import { useForm, ValidationError } from "@formspree/react";
-import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
+import { AFLEURIES_ILLUSTRATED, MOTION_CONFIG } from "../../const";
+import { Input, TextArea, Button } from "../";
 import { SubmitIcon } from "@/public";
-import { useState, useEffect } from "react";
+import { useContactForm } from "./useContactForm";
 
 export const ContactForm = () => {
-    const [state, handleSubmit] = useForm("mjkykrzj");
-    const { executeRecaptcha } = useGoogleReCaptcha();
-    const [showSuccess, setShowSuccess] = useState(false);
-    const [animateFadeOut, setAnimateFadeOut] = useState(false);
-
-    useEffect(() => {
-        if (state.succeeded) {
-            setShowSuccess(true);
-            setAnimateFadeOut(false);
-
-            const fadeOutTimer = setTimeout(() => {
-                setAnimateFadeOut(true);
-            }, 5000);
-
-            const hideTimer = setTimeout(() => {
-                setShowSuccess(false);
-                setAnimateFadeOut(false);
-            }, 5300);
-
-            return () => {
-                clearTimeout(fadeOutTimer);
-                clearTimeout(hideTimer);
-            };
-        }
-    }, [state.succeeded]);
-
-    const onSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
-        event.preventDefault();
-
-        if (!executeRecaptcha) {
-            console.error("reCAPTCHA not yet available.");
-            return;
-        }
-
-        const form = event.currentTarget;
-        if (!(form instanceof HTMLFormElement)) {
-            console.error("Invalid form element.");
-            return;
-        }
-
-        try {
-            const token = await executeRecaptcha("submit");
-            const formData = new FormData(form);
-            formData.append("g-recaptcha-response", token);
-
-            handleSubmit(formData);
-        } catch (error) {
-            console.error("reCAPTCHA error:", error);
-        }
-    }
+    const hook = useContactForm();
 
     return (
         <form
-            onSubmit={onSubmit}
+            onSubmit={hook.onSubmit}
             className="
                 flex flex-col gap-4 mt-4 lg:mt-0
                 col-span-full md:col-start-1 md:col-span-8 lg:col-start-7 lg:col-span-5
@@ -131,22 +81,33 @@ export const ContactForm = () => {
                 <Button
                     type="submit"
                     additionalClasses={{ button: ["bg-blue-100", "border-blue-10"] }}
-                    disabled={state.submitting}
+                    disabled={hook.state.submitting}
                     icon={<SubmitIcon />}
                 >
                     {AFLEURIES_ILLUSTRATED.CONTACT.FORM.BUTTON}
                 </Button>
             </motion.div>
-            <ValidationError errors={state.errors} />
-                {showSuccess &&
-                    <div className="left-0 fixed flex items-end justify-center bottom-0 w-screen h-screen">
+                {hook.showSuccess &&
+                    <div className="left-0 fixed flex items-end justify-center bottom-0 w-screen h-screen pointer-events-none">
                         <p className={`
                             w-fit h-fit bg-tan-100 text-tan-10 py-2 px-4 mb-8 rounded-full shadow-xl
                             text-sm md:text-base pointer-events-none
-                            ${animateFadeOut ? "animate-fade-out" : ""}
+                            ${hook.animateFadeOut ? "animate-fade-out" : ""}
                         `}>
                             {AFLEURIES_ILLUSTRATED.CONTACT.FORM.SUCCESS}
                         </p>
+                    </div>
+                }
+                {hook.showError &&
+                    <div className="left-0 fixed flex items-end justify-center bottom-0 w-screen h-screen pointer-events-none">
+                        <ValidationError 
+                            className={`
+                                w-fit h-fit bg-red-100 text-tan-100 py-2 px-4 mb-8 rounded-full shadow-xl
+                                text-sm md:text-base pointer-events-none
+                                ${hook.animateFadeOut ? "animate-fade-out" : ""}
+                            `}
+                            errors={hook.state.errors}
+                        />
                     </div>
                 }
         </form>
