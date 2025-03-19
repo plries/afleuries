@@ -4,7 +4,5 @@ export type ButtonLinkPropTypes = Readonly<{
     button?: string[];
   };
   onClick?: string;
-  type?: "button" | "reset" | "submit";
-  ref?: React.RefObject<HTMLButtonElement>;
   icon?: React.ReactNode;
 }>;

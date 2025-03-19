@@ -11,6 +11,9 @@ export const useSteps = ({ stepsKey }: StepsPropTypes) => {
   const [isFirstVisible, setIsFirstVisible] = useState(true);
   const [isLastVisible, setIsLastVisible] = useState(false);
 
+  const scrollDelay = 300;
+  let isScrolling = false;
+
   useEffect(() => {
     setIsFirstVisible(true);
     if (
@@ -21,18 +24,28 @@ export const useSteps = ({ stepsKey }: StepsPropTypes) => {
   }, [stepsKey]);
 
   const scrollNext = () => {
-    if (scrollRef.current) {
+    if (scrollRef.current && !isScrolling) {
+      isScrolling = true;
       const stepWidth =
         (scrollRef.current.children[0] as HTMLElement)?.offsetWidth || 0;
       scrollRef.current.scrollBy({ left: stepWidth, behavior: "smooth" });
+
+      setTimeout(() => {
+        isScrolling = false;
+      }, scrollDelay);
     }
   };
 
   const scrollPrev = () => {
-    if (scrollRef.current) {
+    if (scrollRef.current && !isScrolling) {
+      isScrolling = true;
       const stepWidth =
         (scrollRef.current.children[0] as HTMLElement)?.offsetWidth || 0;
       scrollRef.current.scrollBy({ left: -stepWidth, behavior: "smooth" });
+
+      setTimeout(() => {
+        isScrolling = false;
+      }, scrollDelay);
     }
   };
 
