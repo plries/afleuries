@@ -1,3 +1,3 @@
 export type StepsPropTypes = {
-    stepsKey: "GUEST_PORTRAIT" | "BRIDE_GROOM";
-}
+  stepsKey: "GUEST_PORTRAIT" | "BRIDE_GROOM";
+};

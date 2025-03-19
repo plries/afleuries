@@ -12,14 +12,14 @@ export default {
     extend: {
       keyframes: {
         "fade-out": {
-            "0%": { opacity: "1", filter: "blur(0)" },
-            "100%": { opacity: "0", filter: "blur(10px)" },
+          "0%": { opacity: "1", filter: "blur(0)" },
+          "100%": { opacity: "0", filter: "blur(10px)" },
         },
         "pulse-scale": {
           "0%": { transform: "scale(1)" },
           "50%": { transform: "scale(1.15)" },
           "100%": { transform: "scale(1)" },
-        }
+        },
       },
       animation: {
         "fade-out": "fade-out 0.3s ease-in-out 5s forwards",

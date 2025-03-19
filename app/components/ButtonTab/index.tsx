@@ -1,27 +1,20 @@
 import type { ButtonTabPropTypes } from "./types";
 
 export const ButtonTab = ({
-    children,
-    additionalClasses,
-    onClick,
-    type,
-    ref,
+  children,
+  additionalClasses,
+  onClick,
+  type,
+  ref,
 }: ButtonTabPropTypes) => {
-    return (
-        <button
-            ref={ref}
-            type={type}
-            className={`
-                h-fit w-full rounded-t-xl text-tan-100
-                border-b-[1px] border-transparent
-                px-4 py-2 text-nowrap
-                ease-in-out transition-all duration-300
-                hover:border-tan-50
-                ${additionalClasses?.button?.join(' ') ?? ''}
-            `}
-            onClick={onClick}
-        >
-            {children}
-        </button>
-    )
+  return (
+    <button
+      ref={ref}
+      type={type}
+      className={`h-fit w-full text-nowrap rounded-t-xl border-b-[1px] border-transparent px-4 py-2 text-tan-100 transition-all duration-300 ease-in-out hover:border-tan-50 ${additionalClasses?.button?.join(" ") ?? ""} `}
+      onClick={onClick}
+    >
+      {children}
+    </button>
+  );
 };

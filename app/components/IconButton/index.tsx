@@ -1,21 +1,16 @@
 import type { IconButtonPropTypes } from "./types";
 
 export const IconButton = ({
-    children,
-    additionalClasses,
-    onClick,
+  children,
+  additionalClasses,
+  onClick,
 }: IconButtonPropTypes) => {
-    return (
-        <button
-            className={`
-                h-11 w-11 aspect-square rounded-lg bg-tan-30 text-tan-100
-                px-4 border-[1px] border-tan-40 shadow-md pointer-events-auto
-                ease-in-out transition-all duration-300 hover:scale-95 hover:shadow-lg
-                ${additionalClasses?.button?.join(' ') ?? ''}
-            `}
-            onClick={onClick}
-        >
-            {children}
-        </button>
-    )
+  return (
+    <button
+      className={`pointer-events-auto aspect-square h-11 w-11 rounded-lg border-[1px] border-tan-40 bg-tan-30 px-4 text-tan-100 shadow-md transition-all duration-300 ease-in-out hover:scale-95 hover:shadow-lg ${additionalClasses?.button?.join(" ") ?? ""} `}
+      onClick={onClick}
+    >
+      {children}
+    </button>
+  );
 };

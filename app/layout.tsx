@@ -7,7 +7,7 @@ import { metadata } from "./metadata";
 const instrumentSerif = Instrument_Serif({
   variable: "--font-instrument-serif",
   subsets: ["latin"],
-  weight: "400"
+  weight: "400",
 });
 
 const geologica = Geologica({
@@ -25,10 +25,30 @@ export default function RootLayout({
       <html lang="en">
         <head>
           <meta name="description" content={metadata.description ?? ""} />
-          <meta name="author" content={(Array.isArray(metadata.authors) ? metadata.authors.join(", ") : metadata.authors?.name) ?? ""} />
-          <meta name="keywords" content={(Array.isArray(metadata.keywords) ? metadata.keywords.join(", ") : metadata.keywords) ?? ""} />
-          <meta name="description" content={metadata.description?.toString() ?? ""} />
-          <meta property="og:description" content={metadata.description ?? ""} />
+          <meta
+            name="author"
+            content={
+              (Array.isArray(metadata.authors)
+                ? metadata.authors.join(", ")
+                : metadata.authors?.name) ?? ""
+            }
+          />
+          <meta
+            name="keywords"
+            content={
+              (Array.isArray(metadata.keywords)
+                ? metadata.keywords.join(", ")
+                : metadata.keywords) ?? ""
+            }
+          />
+          <meta
+            name="description"
+            content={metadata.description?.toString() ?? ""}
+          />
+          <meta
+            property="og:description"
+            content={metadata.description ?? ""}
+          />
           <title>{metadata.title?.toString()}</title>
         </head>
         <body
