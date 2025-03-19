@@ -11,7 +11,7 @@ export const Doodle = ({
   return (
     <motion.div
       style={scrollPosition}
-      className={`pointer-events-none absolute z-20 hidden drop-shadow-xl lg:block ${rightPosition ? "right-6" : "left-6"} ${bottomPosition ? "bottom-6" : "top-6"} `}
+      className={`drop-shadow-doodle pointer-events-none absolute z-20 hidden lg:block ${rightPosition ? "right-6" : "left-6"} ${bottomPosition ? "bottom-6" : "top-6"} `}
     >
       <motion.div
         transition={MOTION_CONFIG.TRANSITION}
