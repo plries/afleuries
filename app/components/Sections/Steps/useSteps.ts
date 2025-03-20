@@ -10,9 +10,9 @@ export const useSteps = ({ stepsKey }: StepsPropTypes) => {
 
   const [isFirstVisible, setIsFirstVisible] = useState(true);
   const [isLastVisible, setIsLastVisible] = useState(false);
+  const [isDisabled, setIsDisabled] = useState(false);
 
   const scrollDelay = 700;
-  let isScrolling = false;
 
   useEffect(() => {
     setIsFirstVisible(true);
@@ -24,38 +24,37 @@ export const useSteps = ({ stepsKey }: StepsPropTypes) => {
   }, [stepsKey]);
 
   const scrollNext = () => {
-    if (scrollRef.current && !isScrolling) {
-      isScrolling = true;
+    if (scrollRef.current && !isDisabled) {
+      setIsDisabled(true);
+
       const stepWidth =
         (scrollRef.current.children[0] as HTMLElement)?.offsetWidth || 0;
-      scrollRef.current.scrollBy({ left: stepWidth, behavior: "smooth" });
       const maxScrollLeft =
         scrollRef.current.scrollWidth - scrollRef.current.clientWidth;
       const currentScroll = scrollRef.current.scrollLeft;
-
       if (currentScroll + stepWidth <= maxScrollLeft) {
         scrollRef.current.scrollBy({ left: stepWidth, behavior: "smooth" });
       }
 
       setTimeout(() => {
-        isScrolling = false;
+        setIsDisabled(false);
       }, scrollDelay);
     }
   };
 
   const scrollPrev = () => {
-    if (scrollRef.current && !isScrolling) {
-      isScrolling = true;
+    if (scrollRef.current && !isDisabled) {
+      setIsDisabled(true);
+
       const stepWidth =
         (scrollRef.current.children[0] as HTMLElement)?.offsetWidth || 0;
-      scrollRef.current.scrollBy({ left: -stepWidth, behavior: "smooth" });
 
       if (scrollRef.current.scrollLeft - stepWidth >= 0) {
         scrollRef.current.scrollBy({ left: -stepWidth, behavior: "smooth" });
       }
 
       setTimeout(() => {
-        isScrolling = false;
+        setIsDisabled(false);
       }, scrollDelay);
     }
   };
