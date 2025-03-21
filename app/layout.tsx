@@ -3,7 +3,7 @@ import { Instrument_Serif, Geologica } from "next/font/google";
 import "./globals.css";
 import { ReactLenis } from "lenis/react";
 import { GoogleReCaptchaProvider } from "react-google-recaptcha-v3";
-import { Head, Footer, NavBar, PageWrapper } from "./components";
+import { Head, Footer, NavBar } from "./components";
 import { AFLEURIES_ILLUSTRATED } from "./const";
 
 const instrumentSerif = Instrument_Serif({
@@ -38,7 +38,9 @@ export default function RootLayout({
             <div className="relative grid w-screen place-items-center scroll-smooth bg-tan-20 md:bg-gradient-to-b md:from-green-10 md:to-green-100 md:p-12 lg:p-14">
               <div className="absolute top-0 hidden min-h-full w-full bg-[image:url('/doodletexture.jpg')] opacity-[2%] md:block"></div>
               <NavBar />
-                <PageWrapper>{children}</PageWrapper>
+              <main className="z-10 grid h-full w-full max-w-screen-xl auto-rows-min grid-cols-4 gap-3 bg-tan-20 px-6 pb-0 pt-12 shadow-none md:grid-cols-8 md:gap-4 md:rounded-3xl md:pt-6 md:shadow-2xl lg:grid-cols-12 lg:pt-[5.5rem]">
+                {children}
+              </main>
               <Footer />
             </div>
           </body>

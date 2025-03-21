@@ -11,6 +11,5 @@ export * from "./Head";
 export * from "./Heading";
 export * from "./MenuButton";
 export * from "./NavBar";
-export * from "./PageWrapper";
 export * from "./Paragraph";
 export * from "./ContactForm";

@@ -97,7 +97,7 @@ export const AFLEURIES_ILLUSTRATED = {
             },
             HEADING: "Enjoy the Event",
             PARAGRAPH:
-              "Guests can go back to partying! Abby can take it from here—creating the portrait in the background.",
+              "Guests can go back to partying! Abby can take it from here—creating your custom portraits in the background.",
           },
           {
             ICON: {
@@ -206,7 +206,7 @@ export const AFLEURIES_ILLUSTRATED = {
     },
   },
   ABOUT: {
-    HEADING: "About Me",
+    HEADING: "Who's Abby?",
     PARAGRAPHS: {
       ONE: [
         "Abby Aries, the creative mind behind ",
