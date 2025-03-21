@@ -36,6 +36,7 @@ export const Portraits = () => {
             "bg-tan-30",
             "border-b-blue-100",
             "!text-blue-100",
+            "shadow-md",
           ]}
           onClick={() => hook.togglePortraits(true)}
         >
@@ -76,7 +77,7 @@ export const Portraits = () => {
                   ? AFLEURIES_ILLUSTRATED.PORTRAITS.IMAGES.GUEST_PORTRAIT.ALT
                   : AFLEURIES_ILLUSTRATED.PORTRAITS.IMAGES.BRIDE_GROOM.ALT
               }
-              className="h-full w-full rounded-2xl border-[1px] border-tan-50 object-cover shadow-lg"
+              className="h-full w-full rounded-2xl border-[1px] border-tan-50 object-cover shadow-md"
             />
           </motion.div>
         </AnimatePresence>

@@ -9,7 +9,7 @@ export const Contact = () => {
   return (
     <section
       id="contact"
-      className="w-[calc(100% + 24px)] relative col-span-full col-start-1 -mx-6 mt-16 grid scroll-mt-24 grid-cols-4 gap-3 bg-tan-30 px-6 py-16 md:grid-cols-8 md:gap-4 md:rounded-b-xl lg:grid-cols-12"
+      className="relative col-span-full col-start-1 -mx-6 mt-16 grid scroll-mt-24 grid-cols-4 gap-3 bg-tan-30 px-6 py-16 md:grid-cols-8 md:gap-4 md:rounded-b-xl lg:grid-cols-12"
     >
       <Doodle scrollPosition={{ y: hook.y, rotate: hook.rotate }}>
         {AFLEURIES_ILLUSTRATED.DOODLES.SPARKLES()}

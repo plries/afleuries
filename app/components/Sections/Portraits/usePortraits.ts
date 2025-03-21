@@ -18,6 +18,7 @@ export const usePortraits = () => {
       "bg-tan-30",
       "border-b-blue-100",
       "!text-blue-100",
+      "shadow-md",
     ];
 
     if (guestPortrait) {

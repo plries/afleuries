@@ -38,6 +38,7 @@ export const MenuButton = () => {
             "md:w-fit",
           ]}
           href="/about"
+          onClick={hook.toggleMenu}
         >
           {AFLEURIES_ILLUSTRATED.HEADER.BUTTONS.ABOUT}
         </ButtonLink>
@@ -48,8 +49,9 @@ export const MenuButton = () => {
             "w-full",
             "md:w-fit",
           ]}
-          href="#contact"
+          href={hook.pathname === "/about" ? "/#contact" : "#contact"}
           icon={<BookNowIcon />}
+          onClick={hook.toggleMenu}
         >
           {AFLEURIES_ILLUSTRATED.HEADER.BUTTONS.BOOK}
         </ButtonLink>

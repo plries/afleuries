@@ -32,13 +32,18 @@ export const AFLEURIES_ILLUSTRATED = {
     HEADING: "An Interactive Experience",
     PARAGRAPHS: {
       ONE: [
-        "Hi, I'm Abby! I'll be sketching ",
+        "Hello! I'm Abby, an ",
+        "illustrator & designer ",
+        "based in British Columbia, Canada.",
+      ],
+      TWO: [
+        "I'll be sketching ",
         "custom portraits ",
         "of guests while they mingle, with a ",
         "live projection ",
         "of the digital canvas so everyone can watch the artwork come to life.",
       ],
-      TWO: [
+      THREE: [
         "It’s a fun, interactive experience that gives your guests both entertainment and a ",
         "personalized keepsake ",
         "to remember the day!",

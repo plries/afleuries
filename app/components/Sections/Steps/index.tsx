@@ -1,6 +1,6 @@
 import { motion, AnimatePresence } from "framer-motion";
-import { AFLEURIES_ILLUSTRATED } from "../../../const";
-import { IconButton } from "../../";
+import { AFLEURIES_ILLUSTRATED, MOTION_CONFIG } from "../../../const";
+import { IconButton, StepIndicator } from "../../";
 import { ChevronRight, ChevronLeft } from "@/public";
 import { StepsPropTypes } from "./types";
 import { useSteps } from "./useSteps";
@@ -28,7 +28,10 @@ export const Steps = ({ stepsKey }: StepsPropTypes) => {
           }
         }}
       >
-        <div
+        <motion.div
+          initial={MOTION_CONFIG.INITIAL}
+          whileInView={MOTION_CONFIG.WHILE_IN_VIEW}
+          transition={MOTION_CONFIG.TRANSITION}
           ref={hook.scrollContainerRef}
           className="lg:mr-0] relative col-span-full -mx-6 mb-14 md:mb-0"
         >
@@ -84,7 +87,7 @@ export const Steps = ({ stepsKey }: StepsPropTypes) => {
                   className="mb-4 flex min-w-full snap-start flex-col items-center px-6 md:last:mr-80 lg:last:mr-0"
                 >
                   <div className="col-span-full grid min-h-full w-full grid-cols-4 gap-3 md:gap-4 lg:grid-cols-12">
-                    <div className="col-span-full flex min-h-full flex-col gap-4 rounded-2xl border-[1px] border-tan-40 bg-tan-30 p-4 shadow-lg lg:col-span-10 lg:col-start-2 lg:max-w-5xl">
+                    <div className="col-span-full flex min-h-full flex-col gap-4 rounded-2xl border-[1px] border-tan-40 bg-tan-30 p-4 shadow-md lg:col-span-10 lg:col-start-2 lg:max-w-5xl">
                       <div className="flex flex-row items-center gap-3">
                         <step.ICON.SRC key={stepsKey} />
                         <h3 className="font-instrument text-3xl font-normal lg:text-4xl">
@@ -99,17 +102,13 @@ export const Steps = ({ stepsKey }: StepsPropTypes) => {
             )}
           </div>
           <div className="col-span-full flex translate-y-6 flex-row items-center justify-center gap-1 lg:translate-y-0">
-            <div
-              className={`h-2 rounded-full border-[1px] transition-all duration-300 ease-in-out ${hook.isFirstVisible ? "w-4 border-blue-100 bg-blue-10" : "w-2 border-tan-50 bg-tan-30"}`}
-            ></div>
-            <div
-              className={`h-2 rounded-full border-[1px] transition-all duration-300 ease-in-out ${!hook.isFirstVisible && !hook.isLastVisible ? "w-4 border-blue-100 bg-blue-10" : "w-2 border-tan-50 bg-tan-30"}`}
-            ></div>
-            <div
-              className={`h-2 rounded-full border-[1px] transition-all duration-300 ease-in-out ${hook.isLastVisible ? "w-4 border-blue-100 bg-blue-10" : "w-2 border-tan-50 bg-tan-30"}`}
-            ></div>
+            <StepIndicator stepVisible={hook.isFirstVisible} />
+            <StepIndicator
+              stepVisible={!hook.isFirstVisible && !hook.isLastVisible}
+            />
+            <StepIndicator stepVisible={hook.isLastVisible} />
           </div>
-        </div>
+        </motion.div>
       </motion.div>
     </AnimatePresence>
   );
