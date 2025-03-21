@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { AFLEURIES_ILLUSTRATED, MOTION_CONFIG } from "../../../const";
-import { ButtonTab, Heading, Doodle } from "../../";
+import { ButtonTab, Heading, Doodle, Paragraph } from "../../";
 import { Steps } from "../";
 import { usePortraits } from "./usePortraits";
 
@@ -20,25 +20,23 @@ export const Portraits = () => {
       <div className="col-span-full mt-16 lg:col-span-10 lg:col-start-2">
         <Heading>{AFLEURIES_ILLUSTRATED.PORTRAITS.HEADING}</Heading>
       </div>
-      <motion.p
-        initial={MOTION_CONFIG.INITIAL}
-        whileInView={MOTION_CONFIG.WHILE_IN_VIEW}
-        transition={MOTION_CONFIG.TRANSITION}
-        className="col-span-full lg:col-span-10 lg:col-start-2"
-      >
-        {AFLEURIES_ILLUSTRATED.PORTRAITS.PARAGRAPH}
-      </motion.p>
+      <div className="col-span-full flex flex-col gap-3 lg:col-span-10 lg:col-start-2">
+        <Paragraph>{AFLEURIES_ILLUSTRATED.PORTRAITS.PARAGRAPHS.ONE}</Paragraph>
+        <Paragraph>{AFLEURIES_ILLUSTRATED.PORTRAITS.PARAGRAPHS.TWO}</Paragraph>
+      </div>
       <motion.div
         initial={MOTION_CONFIG.INITIAL}
         whileInView={MOTION_CONFIG.WHILE_IN_VIEW}
         transition={MOTION_CONFIG.TRANSITION}
-        className="col-span-full flex flex-row md:gap-2 lg:col-span-10 lg:col-start-2"
+        className="col-span-full flex flex-row lg:col-span-10 lg:col-start-2"
       >
         <ButtonTab
           ref={hook.guestButtonRef as React.RefObject<HTMLButtonElement>}
-          additionalClasses={{
-            button: ["bg-tan-30", "border-b-blue-100", "!text-blue-100"],
-          }}
+          additionalClasses={[
+            "bg-tan-30",
+            "border-b-blue-100",
+            "!text-blue-100",
+          ]}
           onClick={() => hook.togglePortraits(true)}
         >
           {AFLEURIES_ILLUSTRATED.PORTRAITS.BUTTONS.GUEST_PORTRAIT}

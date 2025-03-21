@@ -11,3 +11,4 @@ export * from "./BookNowIcon";
 export * from "./SquiggleIcon";
 export * from "./SparklesIcon";
 export * from "./HeartsIcon";
+export * from "./MenuIcon";

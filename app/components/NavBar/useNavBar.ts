@@ -1,7 +1,8 @@
+"use client";
 import { useState, useEffect } from "react";
 import { useScroll } from "framer-motion";
 
-export const useHeader = () => {
+export const useNavBar = () => {
   const { scrollY } = useScroll();
   const [isSticky, setIsSticky] = useState(false);
 

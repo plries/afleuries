@@ -1,3 +1,4 @@
+"use client";
 import { ValidationError } from "@formspree/react";
 import { motion } from "framer-motion";
 import { AFLEURIES_ILLUSTRATED, MOTION_CONFIG } from "../../const";
@@ -75,7 +76,7 @@ export const ContactForm = () => {
       >
         <Button
           type="submit"
-          additionalClasses={{ button: ["bg-blue-100", "border-blue-10"] }}
+          additionalClasses={["bg-blue-100", "border-blue-10"]}
           disabled={hook.state.submitting}
           icon={<SubmitIcon />}
         >

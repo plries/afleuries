@@ -1,3 +1,4 @@
+"use client";
 import { useState, useEffect } from "react";
 import { useForm } from "@formspree/react";
 import { useGoogleReCaptcha } from "react-google-recaptcha-v3";

@@ -17,12 +17,7 @@ export const TextArea = ({
   const moveLabel = (forceMove = false) => {
     if (!textAreaRef.current || !labelRef.current || !labelBgRef.current)
       return;
-    const labelClasses = [
-      "!translate-y-0",
-      "!scale-100",
-      "!text-tan-100",
-      "!opacity-100",
-    ];
+    const labelClasses = ["!translate-y-0", "!scale-100", "!text-tan-100"];
     const labelBgClasses = ["!bg-tan-30"];
 
     if (forceMove || textAreaRef.current.value !== "") {
@@ -49,7 +44,7 @@ export const TextArea = ({
           <label
             ref={labelRef}
             htmlFor={htmlFor}
-            className="pointer-events-none z-10 my-0.5 inline-block origin-left translate-y-6 scale-90 text-base text-[#272727bf] opacity-60 transition-all duration-300 ease-in-out md:translate-y-7 md:text-lg"
+            className="pointer-events-none z-10 my-0.5 inline-block origin-left translate-y-6 scale-90 text-base text-tan-90 transition-all duration-300 ease-in-out md:translate-y-7 md:text-lg"
           >
             {label}
           </label>

@@ -1,3 +1,4 @@
+"use client";
 import { useRef, useEffect, useState } from "react";
 import { AFLEURIES_ILLUSTRATED } from "../../../const";
 import { StepsPropTypes } from "./types";

@@ -1,8 +1,6 @@
 export type ButtonLinkPropTypes = Readonly<{
   children: React.ReactNode;
-  additionalClasses?: {
-    button?: string[];
-  };
-  onClick: string;
+  additionalClasses?: string[];
+  href: string;
   icon?: React.ReactNode;
 }>;

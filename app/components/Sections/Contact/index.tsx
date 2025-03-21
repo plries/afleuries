@@ -1,4 +1,3 @@
-"use client";
 import { motion } from "framer-motion";
 import { AFLEURIES_ILLUSTRATED, MOTION_CONFIG } from "../../../const";
 import { Heading, ContactForm, Doodle } from "../../";

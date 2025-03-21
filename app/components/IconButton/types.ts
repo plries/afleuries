@@ -1,8 +1,7 @@
 export type IconButtonPropTypes = Readonly<{
   children: React.ReactNode;
-  additionalClasses?: {
-    button?: string[];
-  };
+  additionalClasses?: string[];
   disabled: boolean;
   onClick: () => void;
+  name: string;
 }>;

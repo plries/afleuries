@@ -12,8 +12,16 @@ import {
 } from "@/public";
 
 export const AFLEURIES_ILLUSTRATED = {
+  CANVAS_TEXTURE: {
+    SRC: "/CanvasTexture.jpg",
+    ALT: "Canvas Texture",
+  },
   HEADER: {
-    BUTTON: "Book now",
+    BUTTONS: {
+      ABOUT: "About me",
+      BOOK: "Book now",
+      MENU: "Menu",
+    },
   },
   HERO: {
     SR_ONLY: "Afleuries Illustrated",
@@ -43,8 +51,20 @@ export const AFLEURIES_ILLUSTRATED = {
   },
   PORTRAITS: {
     HEADING: "Types of Portraits",
-    PARAGRAPH:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris lacinia, mi vitae maximus porta, risus diam tempus odio, ut ullamcorper risus sapien at neque. Duis quis purus magna. Sed ornare dui id lorem viverra, id tincidunt ex congue.",
+    PARAGRAPHS: {
+      ONE: [
+        "Our live portrait services bring a ",
+        "fun & creative ",
+        "twist to any special occasion. Whether it’s a wedding, a lively celebration, or a sophisticated corporate event, I create ",
+        "personalized digital portraits ",
+        "that make the day unforgettable.",
+      ],
+      TWO: [
+        "From capturing the bride and groom’s love story in stunning live artwork to crafting artistic keepsakes for guests, each portrait is a ",
+        "one-of-a-kind ",
+        "memory to treasure—because the best moments deserve to be turned into art.",
+      ],
+    },
     BUTTONS: {
       GUEST_PORTRAIT: "Guests",
       BRIDE_GROOM: "Bride & Groom",
@@ -69,7 +89,7 @@ export const AFLEURIES_ILLUSTRATED = {
             },
             HEADING: "Snap a Photo",
             PARAGRAPH:
-              "Guests come and line up just like they would for a photo booth. Abby will take a quick photo of each person.",
+              "Step up, strike a pose, and snap! Just like a photo booth—but with a creative twist—I’ll capture a quick shot to kick off your custom digital portrait. Then, it’s time to enjoy the party while the magic happens!",
           },
           {
             ICON: {
@@ -95,7 +115,7 @@ export const AFLEURIES_ILLUSTRATED = {
             },
             HEADING: "Moments Coming to Life",
             PARAGRAPH:
-              "Throughout the night, I create 2-3 unique portraits of the bride & groom, turning special moments from the day into art as the celebration unfolds.",
+              "I'll transform the bride & groom’s candid moments into live portraits. A shared laugh, a stolen glance, or their first kiss—each piece comes to life in real time, turning the day’s memories into lasting artwork.",
           },
           {
             ICON: {
@@ -103,7 +123,7 @@ export const AFLEURIES_ILLUSTRATED = {
             },
             HEADING: "Enjoy the Process",
             PARAGRAPH:
-              "As I work, guests can watch the portraits take shape on the big screen, adding to the excitement of the celebration.",
+              "As I work, guests can watch the portraits take shape on the big screen, adding to the enchantment of the celebration.",
           },
           {
             ICON: {
@@ -114,6 +134,10 @@ export const AFLEURIES_ILLUSTRATED = {
               "Before the night’s over, guests can grab their very own custom portrait of the Bride & Groom—an unforgettable, one-of-a-kind memento to take home!",
           },
         ],
+      },
+      BUTTONS: {
+        PREVIOUS: "Previous",
+        NEXT: "Next",
       },
     },
   },
@@ -179,6 +203,19 @@ export const AFLEURIES_ILLUSTRATED = {
         LINK: "https://policies.google.com/terms",
         TEXT: "Terms of Service ",
       },
+    },
+  },
+  ABOUT: {
+    HEADING: "About Me",
+    PARAGRAPHS: {
+      ONE: [
+        "Abby Aries, the creative mind behind ",
+        "Afleuries Illustrated, ",
+        "is a versatile illustrator & designer based in British Columbia, Canada. With a passion for storytelling through art, she brings moments to life through digital illustration, creating unique & memorable pieces. Her background in ",
+        "production design, props, photography, and graphic design ",
+        "adds depth to her creative approach, blending artistry with immersive experiences.",
+      ],
+      TWO: "Constantly exploring new ways to create, Abby thrives on turning everyday moments into visual narratives—bringing a touch of artistry to every project she takes on. ",
     },
   },
   DOODLES: {

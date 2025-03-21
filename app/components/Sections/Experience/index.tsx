@@ -1,4 +1,3 @@
-"use client";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { AFLEURIES_ILLUSTRATED, MOTION_CONFIG } from "../../../const";

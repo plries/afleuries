@@ -1,4 +1,3 @@
-"use client";
 import { motion, AnimatePresence } from "framer-motion";
 import { AFLEURIES_ILLUSTRATED } from "../../../const";
 import { IconButton } from "../../";
@@ -40,6 +39,9 @@ export const Steps = ({ stepsKey }: StepsPropTypes) => {
               <IconButton
                 onClick={hook.scrollPrev}
                 disabled={hook.isFirstVisible}
+                name={
+                  AFLEURIES_ILLUSTRATED.PORTRAITS.HOW_IT_WORKS.BUTTONS.PREVIOUS
+                }
               >
                 <ChevronLeft />
               </IconButton>
@@ -48,6 +50,7 @@ export const Steps = ({ stepsKey }: StepsPropTypes) => {
               <IconButton
                 onClick={hook.scrollNext}
                 disabled={hook.isLastVisible}
+                name={AFLEURIES_ILLUSTRATED.PORTRAITS.HOW_IT_WORKS.BUTTONS.NEXT}
               >
                 <ChevronRight />
               </IconButton>
@@ -84,9 +87,9 @@ export const Steps = ({ stepsKey }: StepsPropTypes) => {
                     <div className="col-span-full flex min-h-full flex-col gap-4 rounded-2xl border-[1px] border-tan-40 bg-tan-30 p-4 shadow-lg lg:col-span-10 lg:col-start-2 lg:max-w-5xl">
                       <div className="flex flex-row items-center gap-3">
                         <step.ICON.SRC key={stepsKey} />
-                        <h4 className="font-instrument text-3xl font-normal lg:text-4xl">
+                        <h3 className="font-instrument text-3xl font-normal lg:text-4xl">
                           {step.HEADING}
-                        </h4>
+                        </h3>
                       </div>
                       <p>{step.PARAGRAPH}</p>
                     </div>
@@ -94,6 +97,17 @@ export const Steps = ({ stepsKey }: StepsPropTypes) => {
                 </div>
               ),
             )}
+          </div>
+          <div className="col-span-full flex translate-y-6 flex-row items-center justify-center gap-1 lg:translate-y-0">
+            <div
+              className={`h-2 rounded-full border-[1px] transition-all duration-300 ease-in-out ${hook.isFirstVisible ? "w-4 border-blue-100 bg-blue-10" : "w-2 border-tan-50 bg-tan-30"}`}
+            ></div>
+            <div
+              className={`h-2 rounded-full border-[1px] transition-all duration-300 ease-in-out ${!hook.isFirstVisible && !hook.isLastVisible ? "w-4 border-blue-100 bg-blue-10" : "w-2 border-tan-50 bg-tan-30"}`}
+            ></div>
+            <div
+              className={`h-2 rounded-full border-[1px] transition-all duration-300 ease-in-out ${hook.isLastVisible ? "w-4 border-blue-100 bg-blue-10" : "w-2 border-tan-50 bg-tan-30"}`}
+            ></div>
           </div>
         </div>
       </motion.div>
