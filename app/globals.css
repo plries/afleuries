@@ -107,23 +107,39 @@ input[type="datetime-local"]:required:invalid::-webkit-datetime-edit {
   color: transparent;
   transition: all 0.3s ease-in-out;
   text-align: left;
+  direction: ltr;
+  text-align-last: left;
+  appearance: none;
+  -webkit-appearance: none;
 }
 input[type="datetime-local"]:focus::-webkit-datetime-edit {
   color: black !important;
   transition: all 0.3s ease-in-out;
   text-align: left;
+  direction: ltr;
+  text-align-last: left;
+  appearance: none;
+  -webkit-appearance: none;
 }
 
 input[type="datetime-local"]:required:invalid {
   color: transparent;
   transition: all 0.3s ease-in-out;
   text-align: left;
+  direction: ltr;
+  text-align-last: left;
+  appearance: none;
+  -webkit-appearance: none;
 }
 
 input[type="datetime-local"]:focus {
   color: black !important;
   transition: all 0.3s ease-in-out;
   text-align: left;
+  direction: ltr;
+  text-align-last: left;
+  appearance: none;
+  -webkit-appearance: none;
 }
 
 /* reCAPTCHA */
