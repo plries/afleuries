@@ -12,3 +12,4 @@ export * from "./SquiggleIcon";
 export * from "./SparklesIcon";
 export * from "./HeartsIcon";
 export * from "./MenuIcon";
+export * from "./CloseIcon";

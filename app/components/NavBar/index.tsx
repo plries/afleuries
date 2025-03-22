@@ -22,6 +22,7 @@ export const NavBar = () => {
           "hover:rotate-0",
           "!p-0",
         ]}
+        onClick={hook.closeMenu}
       >
         <Image
           src="/AfleuriesLogoBlack.svg"
@@ -31,7 +32,11 @@ export const NavBar = () => {
           className="w-24 transition-all hover:-rotate-1 hover:scale-95 md:w-28 lg:w-32"
         />
       </ButtonLink>
-      <MenuButton />
+      <MenuButton
+        isOpen={hook.isOpen}
+        toggleMenu={hook.toggleMenu}
+        pathname={hook.pathname}
+      />
       <div className="hidden flex-row justify-center gap-2 md:flex">
         <NavButtons pathname={hook.pathname} />
       </div>

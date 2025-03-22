@@ -6,7 +6,17 @@ import { usePathname } from "next/navigation";
 export const useNavBar = () => {
   const { scrollY } = useScroll();
   const [isSticky, setIsSticky] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
+
   const pathname = usePathname();
+
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+  };
+
+  const closeMenu = () => {
+    setIsOpen(false);
+  };
 
   useEffect(() => {
     const updateSticky = () => {
@@ -34,5 +44,8 @@ export const useNavBar = () => {
     maxWidth,
     width,
     pathname,
+    isOpen,
+    toggleMenu,
+    closeMenu,
   };
 };

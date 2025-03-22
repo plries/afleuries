@@ -1,44 +1,47 @@
 import { AFLEURIES_ILLUSTRATED } from "../../../const";
-import { Line1, Line2, Line3 } from "@/public";
-import { useMenuButton } from "./useMenuButton";
+import { IconButton } from "../../";
 import { NavButtons } from "../NavButtons";
+import { MenuIcon, CloseIcon } from "@/public";
+import { MenuButtonPropTypes } from "./types";
 
-export const MenuButton = () => {
-  const hook = useMenuButton();
-
+export const MenuButton = ({
+  isOpen,
+  toggleMenu,
+  pathname,
+}: MenuButtonPropTypes) => {
   return (
     <>
-      <button
-        className="relative h-11 w-11 leading-none md:hidden"
-        onClick={hook.toggleMenu}
+      <IconButton
+        name={
+          isOpen
+            ? AFLEURIES_ILLUSTRATED.HEADER.BUTTONS.MENU.CLOSE
+            : AFLEURIES_ILLUSTRATED.HEADER.BUTTONS.MENU.CLOSE
+        }
+        onClick={toggleMenu}
+        additionalClasses={[
+          "!bg-blue-100",
+          "!border-blue-10",
+          "!text-tan-10",
+          "duration-700",
+          "md:hidden",
+          `${isOpen ? "rotate-90 scale-95" : ""}`,
+        ]}
       >
-        <span className="sr-only">
-          {AFLEURIES_ILLUSTRATED.HEADER.BUTTONS.MENU}
+        <span
+          className={`inline-block transition-all duration-700 ease-in-out ${isOpen ? "scale-100" : "absolute scale-0 opacity-0"}`}
+        >
+          <CloseIcon />
         </span>
         <span
-          className={`inline-block transition-all duration-700 ease-in-out ${hook.isOpen ? "rotate-90" : ""}`}
+          className={`inline-block transition-all duration-700 ease-in-out ${isOpen ? "absolute scale-0 opacity-0" : "scale-100"}`}
         >
-          <span
-            className={`mb-2 inline-block transition-all duration-700 ease-in-out ${hook.isOpen ? "mb-1 translate-y-4 rotate-45" : ""}`}
-          >
-            <Line1 />
-          </span>
-          <span
-            className={`mb-1.5 inline-block transition-all duration-300 ease-in-out ${hook.isOpen ? "scale-0 opacity-0" : ""}`}
-          >
-            <Line2 />
-          </span>
-          <span
-            className={`mb-1 inline-block transition-all duration-700 ease-in-out ${hook.isOpen ? "-translate-y-4 -rotate-45" : ""}`}
-          >
-            <Line3 />
-          </span>
+          <MenuIcon />
         </span>
-      </button>
+      </IconButton>
       <div
-        className={`absolute bottom-0 left-0 flex w-full flex-row justify-center gap-2 transition-all duration-700 ease-in-out md:hidden ${hook.isOpen ? "translate-y-14 opacity-100 blur-none" : "pointer-events-none translate-y-12 opacity-0 blur-[10px]"}`}
+        className={`absolute bottom-0 left-0 flex w-full flex-row justify-center gap-2 transition-all duration-700 ease-in-out md:hidden ${isOpen ? "translate-y-14 opacity-100 blur-none" : "pointer-events-none translate-y-12 opacity-0 blur-[10px]"}`}
       >
-        <NavButtons pathname={hook.pathname} toggleMenu={hook.toggleMenu} />
+        <NavButtons pathname={pathname} toggleMenu={toggleMenu} />
       </div>
     </>
   );

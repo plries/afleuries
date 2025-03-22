@@ -20,7 +20,10 @@ export const AFLEURIES_ILLUSTRATED = {
     BUTTONS: {
       ABOUT: "About me",
       BOOK: "Book now",
-      MENU: "Menu",
+      MENU: {
+        OPEN: "Menu opened",
+        CLOSE: "Menu closed",
+      },
     },
   },
   HERO: {
