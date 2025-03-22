@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
 
 export const useMenuButton = () => {
@@ -10,6 +10,11 @@ export const useMenuButton = () => {
     setIsOpen(!isOpen);
   };
 
+  useEffect(() => {
+    if (pathname !== "") {
+      scrollTo(0, 0);
+    }
+  }, [pathname]);
 
   return {
     isOpen,
