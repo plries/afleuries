@@ -1,6 +1,6 @@
 import Image from "next/image";
-import { motion } from "framer-motion";
 import Link from "next/link";
+import { motion } from "framer-motion";
 import { MenuButton } from "./MenuButton";
 import { NavButtons } from "./NavButtons";
 import { useNavBar } from "./useNavBar";
