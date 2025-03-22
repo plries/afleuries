@@ -33,7 +33,7 @@ export const NavBar = () => {
       </ButtonLink>
       <MenuButton />
       <div className="hidden flex-row justify-center gap-2 md:flex">
-        <NavButtons hook={hook} />
+        <NavButtons pathname={hook.pathname} />
       </div>
     </motion.header>
   );

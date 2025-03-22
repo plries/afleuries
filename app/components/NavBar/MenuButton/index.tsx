@@ -1,6 +1,5 @@
-import { ButtonLink } from "../..";
 import { AFLEURIES_ILLUSTRATED } from "../../../const";
-import { Line1, Line2, Line3, BookNowIcon } from "@/public";
+import { Line1, Line2, Line3 } from "@/public";
 import { useMenuButton } from "./useMenuButton";
 import { NavButtons } from "../NavButtons";
 
@@ -29,7 +28,7 @@ export const MenuButton = () => {
       <div
         className={`absolute bottom-0 left-0 flex w-full flex-row justify-center gap-2 transition-all duration-700 ease-in-out md:hidden ${hook.isOpen ? "translate-y-14 opacity-100 blur-none" : "pointer-events-none translate-y-12 opacity-0 blur-[10px]"}`}
       >
-        <NavButtons hook={hook} />
+        <NavButtons pathname={hook.pathname} toggleMenu={hook.toggleMenu} />
       </div>
     </>
   );

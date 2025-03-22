@@ -1,3 +1,4 @@
 export type NavButtonsPropTypes = {
-  hook: any;
+  pathname: string;
+  toggleMenu?: () => void;
 };

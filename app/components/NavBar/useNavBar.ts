@@ -13,6 +13,12 @@ export const useNavBar = () => {
       setIsSticky(scrollY.get() > 50);
     };
 
+    useEffect(() => {
+      if (pathname !== "/#contact") {
+        scrollTo(0, 0);
+      }
+    }, [pathname]);
+
     const removeWidth = scrollY.on("change", updateSticky);
     return () => removeWidth();
   }, [scrollY]);

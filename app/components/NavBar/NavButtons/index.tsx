@@ -3,7 +3,7 @@ import { AFLEURIES_ILLUSTRATED } from "../../../const";
 import { BookNowIcon } from "@/public";
 import { NavButtonsPropTypes } from "./types";
 
-export const NavButtons = ({ hook }: NavButtonsPropTypes) => {
+export const NavButtons = ({ pathname, toggleMenu }: NavButtonsPropTypes) => {
   return (
     <>
       <ButtonLink
@@ -16,7 +16,7 @@ export const NavButtons = ({ hook }: NavButtonsPropTypes) => {
           "md:w-fit",
         ]}
         href="/about"
-        onClick={hook.toggleMenu}
+        onClick={toggleMenu}
       >
         {AFLEURIES_ILLUSTRATED.HEADER.BUTTONS.ABOUT}
       </ButtonLink>
@@ -27,9 +27,9 @@ export const NavButtons = ({ hook }: NavButtonsPropTypes) => {
           "w-full",
           "md:w-fit",
         ]}
-        href={hook.pathname === "/about" ? "/#contact" : "#contact"}
+        href={pathname === "/about" ? "/#contact" : "#contact"}
         icon={<BookNowIcon />}
-        onClick={hook.toggleMenu}
+        onClick={toggleMenu}
       >
         {AFLEURIES_ILLUSTRATED.HEADER.BUTTONS.BOOK}
       </ButtonLink>
