@@ -27,9 +27,15 @@ export const AFLEURIES_ILLUSTRATED = {
     },
   },
   HERO: {
-    SR_ONLY: "Afleuries Illustrated",
-    HEADING: "Live Portait Artist",
-    ALT: "Illustration of Abby",
+    LOGO: {
+      SRC: "/AfleuriesLogoTitle.svg",
+      ALT: "Afleuries Illustrated ",
+      HEADING: "Live Portait Artist",
+    },
+    IMAGE: {
+      SRC: "/AfleuriesIllustration.svg",
+      ALT: "Illustration of Abby",
+    },
   },
   EXPERIENCE: {
     HEADING: "An Interactive Experience",
@@ -219,11 +225,15 @@ export const AFLEURIES_ILLUSTRATED = {
       ONE: [
         "Abby Aries, the creative mind behind ",
         "Afleuries Illustrated, ",
-        "is a versatile illustrator & designer based in British Columbia, Canada. With a passion for storytelling through art, she brings moments to life through digital illustration, creating unique & memorable pieces. Her background in ",
+        "is a versatile illustrator & designer based in British Columbia, Canada.",
+      ],
+      TWO: [
+        "With a passion for storytelling through art, she brings moments to life through digital illustration, creating unique & memorable pieces. Her background in ",
         "production design, props, photography, and graphic design ",
         "adds depth to her creative approach, blending artistry with immersive experiences.",
       ],
-      TWO: "Constantly exploring new ways to create, Abby thrives on turning everyday moments into visual narratives—bringing a touch of artistry to every project she takes on. ",
+      THREE:
+        "Constantly exploring new ways to create, Abby thrives on turning everyday moments into visual narratives—bringing a touch of artistry to every project she takes on. ",
     },
   },
   DOODLES: {

@@ -13,15 +13,15 @@ export const Hero = () => {
           className="flex flex-col gap-2 text-center font-instrument text-4xl text-blue-100 md:gap-4 md:text-5xl"
         >
           <Image
-            src="/AfleuriesLogoTitle.svg"
+            src={AFLEURIES_ILLUSTRATED.HERO.LOGO.SRC}
             width={0}
             height={0}
-            alt=""
+            alt={AFLEURIES_ILLUSTRATED.HERO.LOGO.ALT}
             aria-hidden="true"
             className="mt-12 w-60 md:w-96 lg:mt-0"
           />
-          <span className="sr-only">{AFLEURIES_ILLUSTRATED.HERO.SR_ONLY}</span>
-          {AFLEURIES_ILLUSTRATED.HERO.HEADING}
+          <span className="sr-only">{AFLEURIES_ILLUSTRATED.HERO.LOGO.ALT}</span>
+          {AFLEURIES_ILLUSTRATED.HERO.LOGO.HEADING}
         </motion.h1>
       </div>
       <motion.div
@@ -31,10 +31,10 @@ export const Hero = () => {
         className="-order-2 col-span-4 col-start-1 md:col-span-8 lg:-order-1 lg:col-span-5"
       >
         <Image
-          src="/AfleuriesIllustration.svg"
+          src={AFLEURIES_ILLUSTRATED.HERO.IMAGE.SRC}
           width={100}
           height={0}
-          alt={AFLEURIES_ILLUSTRATED.HERO.ALT}
+          alt={AFLEURIES_ILLUSTRATED.HERO.IMAGE.ALT}
           className="w-full"
         />
       </motion.div>
