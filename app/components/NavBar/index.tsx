@@ -13,7 +13,7 @@ export const NavBar = () => {
       className={` ${hook.width} ${hook.maxWidth} relative sticky left-0 top-6 z-40 flex h-fit flex-row items-center justify-between gap-4 rounded-3xl border-[1px] border-tan-10 bg-gradient-to-b from-[#f9f9f9bf] from-25% to-[#f9f9f940] p-6 shadow-lg backdrop-blur-sm transition-all duration-500 ease-in-out md:mb-6`}
     >
       <ButtonLink
-        href={"/"}
+        href={hook.pathname === "/" ? "#top" : "/"}
         additionalClasses={[
           "border-none",
           "shadow-none",
