@@ -11,7 +11,7 @@ export const useMenuButton = () => {
   };
 
   useEffect(() => {
-    if (window.location.hash !== "#contact") {
+    if (pathname !== "" && window.location.hash !== "#contact") {
       window.scrollTo(0, 0);
     }
   }, [pathname]);

@@ -9,20 +9,30 @@ export const MenuButton = () => {
   return (
     <>
       <button
-        className="relative h-11 w-11 md:hidden"
+        className="relative h-11 w-11 leading-none md:hidden"
         onClick={hook.toggleMenu}
       >
         <span className="sr-only">
           {AFLEURIES_ILLUSTRATED.HEADER.BUTTONS.MENU}
         </span>
         <span
-          className={`inline-block transition-all duration-700 ease-in-out ${hook.isOpen ? "rotate-45" : "rotate-0"}`}
+          className={`inline-block transition-all duration-700 ease-in-out ${hook.isOpen ? "rotate-90" : ""}`}
         >
-          <Line1 />
-          <span className={`my-1 inline-block`}>
+          <span
+            className={`mb-2 inline-block transition-all duration-700 ease-in-out ${hook.isOpen ? "mb-1 translate-y-4 rotate-45" : ""}`}
+          >
+            <Line1 />
+          </span>
+          <span
+            className={`mb-1.5 inline-block transition-all duration-300 ease-in-out ${hook.isOpen ? "scale-0 opacity-0" : ""}`}
+          >
             <Line2 />
           </span>
-          <Line3 />
+          <span
+            className={`mb-1 inline-block transition-all duration-700 ease-in-out ${hook.isOpen ? "-translate-y-4 -rotate-45" : ""}`}
+          >
+            <Line3 />
+          </span>
         </span>
       </button>
       <div

@@ -18,8 +18,8 @@ export const useNavBar = () => {
   }, [scrollY]);
 
   useEffect(() => {
-    if (pathname !== "/#contact") {
-      scrollTo(0, 0);
+    if (pathname !== "" && window.location.hash !== "#contact") {
+      window.scrollTo(0, 0);
     }
   }, [pathname]);
 
