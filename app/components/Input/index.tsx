@@ -60,7 +60,7 @@ export const Input = ({
           }
           name={name}
           required
-          className="h-14 w-full appearance-none rounded-lg border-[1px] border-[#27272740] bg-tan-20 px-4 pb-3 pt-4 text-base font-light focus:outline-blue-10 md:h-[60px] md:text-lg"
+          className="h-14 w-full appearance-none rounded-lg border-[1px] border-tan-50 bg-tan-30 px-4 pb-3 pt-4 text-base font-light focus:outline-blue-10 md:h-[60px] md:text-lg"
           autoComplete="on"
           onFocus={() => moveLabel(true)}
           onBlur={() => moveLabel()}

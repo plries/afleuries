@@ -14,60 +14,64 @@ export const ContactForm = () => {
       onSubmit={hook.onSubmit}
       className="col-span-full mt-4 flex flex-col gap-4 md:col-span-8 md:col-start-1 lg:col-span-5 lg:col-start-7 lg:mt-0"
     >
-      <motion.p
-        initial={MOTION_CONFIG.INITIAL}
-        whileInView={MOTION_CONFIG.WHILE_IN_VIEW}
-        transition={MOTION_CONFIG.TRANSITION}
-        className="flex flex-row items-center gap-2 text-nowrap text-sm after:h-[1px] after:w-full after:bg-tan-50 md:text-base"
-      >
-        {AFLEURIES_ILLUSTRATED.CONTACT.FORM.CONTACT}
-      </motion.p>
-      <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
+      <fieldset className="contents">
+        <motion.legend
+          initial={MOTION_CONFIG.INITIAL}
+          whileInView={MOTION_CONFIG.WHILE_IN_VIEW}
+          transition={MOTION_CONFIG.TRANSITION}
+          className="flex flex-row items-center gap-2 text-nowrap text-sm after:h-[1px] after:w-full after:bg-tan-50 md:text-base"
+        >
+          {AFLEURIES_ILLUSTRATED.CONTACT.FORM.CONTACT}
+        </motion.legend>
+        <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
+          <Input
+            label={AFLEURIES_ILLUSTRATED.CONTACT.FORM.FIRST_NAME.LABEL}
+            htmlFor={AFLEURIES_ILLUSTRATED.CONTACT.FORM.FIRST_NAME.FOR}
+            name={AFLEURIES_ILLUSTRATED.CONTACT.FORM.FIRST_NAME.NAME}
+          />
+          <Input
+            label={AFLEURIES_ILLUSTRATED.CONTACT.FORM.LAST_NAME.LABEL}
+            htmlFor={AFLEURIES_ILLUSTRATED.CONTACT.FORM.LAST_NAME.FOR}
+            name={AFLEURIES_ILLUSTRATED.CONTACT.FORM.LAST_NAME.NAME}
+          />
+        </div>
         <Input
-          label={AFLEURIES_ILLUSTRATED.CONTACT.FORM.FIRST_NAME.LABEL}
-          htmlFor={AFLEURIES_ILLUSTRATED.CONTACT.FORM.FIRST_NAME.FOR}
-          name={AFLEURIES_ILLUSTRATED.CONTACT.FORM.FIRST_NAME.NAME}
+          label={AFLEURIES_ILLUSTRATED.CONTACT.FORM.EMAIL.LABEL}
+          description={AFLEURIES_ILLUSTRATED.CONTACT.FORM.EMAIL.DESCRIPTION}
+          htmlFor={AFLEURIES_ILLUSTRATED.CONTACT.FORM.EMAIL.FOR}
+          name={AFLEURIES_ILLUSTRATED.CONTACT.FORM.EMAIL.NAME}
         />
-        <Input
-          label={AFLEURIES_ILLUSTRATED.CONTACT.FORM.LAST_NAME.LABEL}
-          htmlFor={AFLEURIES_ILLUSTRATED.CONTACT.FORM.LAST_NAME.FOR}
-          name={AFLEURIES_ILLUSTRATED.CONTACT.FORM.LAST_NAME.NAME}
+      </fieldset>
+      <fieldset className="contents">
+        <motion.legend
+          initial={MOTION_CONFIG.INITIAL}
+          whileInView={MOTION_CONFIG.WHILE_IN_VIEW}
+          transition={MOTION_CONFIG.TRANSITION}
+          className="mt-4 flex flex-row items-center gap-2 text-nowrap text-sm after:h-[1px] after:w-full after:bg-tan-50 md:text-base"
+        >
+          {AFLEURIES_ILLUSTRATED.CONTACT.FORM.EVENT}
+        </motion.legend>
+        <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
+          <Input
+            label={AFLEURIES_ILLUSTRATED.CONTACT.FORM.EVENT_DATE.LABEL}
+            htmlFor={AFLEURIES_ILLUSTRATED.CONTACT.FORM.EVENT_DATE.FOR}
+            name={AFLEURIES_ILLUSTRATED.CONTACT.FORM.EVENT_DATE.NAME}
+          />
+          <Input
+            label={AFLEURIES_ILLUSTRATED.CONTACT.FORM.EVENT_LOCATION.LABEL}
+            htmlFor={AFLEURIES_ILLUSTRATED.CONTACT.FORM.EVENT_LOCATION.FOR}
+            name={AFLEURIES_ILLUSTRATED.CONTACT.FORM.EVENT_LOCATION.NAME}
+          />
+        </div>
+        <TextArea
+          label={AFLEURIES_ILLUSTRATED.CONTACT.FORM.EVENT_DETAILS.LABEL}
+          description={
+            AFLEURIES_ILLUSTRATED.CONTACT.FORM.EVENT_DETAILS.DESCRIPTION
+          }
+          htmlFor={AFLEURIES_ILLUSTRATED.CONTACT.FORM.EVENT_DETAILS.FOR}
+          name={AFLEURIES_ILLUSTRATED.CONTACT.FORM.EVENT_DETAILS.NAME}
         />
-      </div>
-      <Input
-        label={AFLEURIES_ILLUSTRATED.CONTACT.FORM.EMAIL.LABEL}
-        description={AFLEURIES_ILLUSTRATED.CONTACT.FORM.EMAIL.DESCRIPTION}
-        htmlFor={AFLEURIES_ILLUSTRATED.CONTACT.FORM.EMAIL.FOR}
-        name={AFLEURIES_ILLUSTRATED.CONTACT.FORM.EMAIL.NAME}
-      />
-      <motion.p
-        initial={MOTION_CONFIG.INITIAL}
-        whileInView={MOTION_CONFIG.WHILE_IN_VIEW}
-        transition={MOTION_CONFIG.TRANSITION}
-        className="mt-4 flex flex-row items-center gap-2 text-nowrap text-sm after:h-[1px] after:w-full after:bg-tan-50 md:text-base"
-      >
-        {AFLEURIES_ILLUSTRATED.CONTACT.FORM.EVENT}
-      </motion.p>
-      <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
-        <Input
-          label={AFLEURIES_ILLUSTRATED.CONTACT.FORM.EVENT_DATE.LABEL}
-          htmlFor={AFLEURIES_ILLUSTRATED.CONTACT.FORM.EVENT_DATE.FOR}
-          name={AFLEURIES_ILLUSTRATED.CONTACT.FORM.EVENT_DATE.NAME}
-        />
-        <Input
-          label={AFLEURIES_ILLUSTRATED.CONTACT.FORM.EVENT_LOCATION.LABEL}
-          htmlFor={AFLEURIES_ILLUSTRATED.CONTACT.FORM.EVENT_LOCATION.FOR}
-          name={AFLEURIES_ILLUSTRATED.CONTACT.FORM.EVENT_LOCATION.NAME}
-        />
-      </div>
-      <TextArea
-        label={AFLEURIES_ILLUSTRATED.CONTACT.FORM.EVENT_DETAILS.LABEL}
-        description={
-          AFLEURIES_ILLUSTRATED.CONTACT.FORM.EVENT_DETAILS.DESCRIPTION
-        }
-        htmlFor={AFLEURIES_ILLUSTRATED.CONTACT.FORM.EVENT_DETAILS.FOR}
-        name={AFLEURIES_ILLUSTRATED.CONTACT.FORM.EVENT_DETAILS.NAME}
-      />
+      </fieldset>
       <motion.div
         initial={MOTION_CONFIG.INITIAL}
         whileInView={MOTION_CONFIG.WHILE_IN_VIEW}
