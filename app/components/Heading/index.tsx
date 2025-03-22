@@ -1,7 +1,8 @@
 import { motion } from "framer-motion";
 import { MOTION_CONFIG } from "../../const";
+import { HeadingPropTypes } from "./types";
 
-export const Heading = ({ children }: { children: string }) => {
+export const Heading = ({ children }: HeadingPropTypes) => {
   return (
     <motion.h2
       initial={MOTION_CONFIG.INITIAL}

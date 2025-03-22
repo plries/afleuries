@@ -10,7 +10,6 @@ export * from "./IconButton";
 export * from "./Input";
 export * from "./Sections";
 export * from "./TextArea";
-export * from "./MenuButton";
 export * from "./NavBar";
 export * from "./Paragraph";
 export * from "./StepIndicator";

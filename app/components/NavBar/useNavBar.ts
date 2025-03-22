@@ -1,10 +1,12 @@
 "use client";
 import { useState, useEffect } from "react";
 import { useScroll } from "framer-motion";
+import { usePathname } from "next/navigation";
 
 export const useNavBar = () => {
   const { scrollY } = useScroll();
   const [isSticky, setIsSticky] = useState(false);
+  const pathname = usePathname();
 
   useEffect(() => {
     const updateSticky = () => {
@@ -25,5 +27,6 @@ export const useNavBar = () => {
   return {
     maxWidth,
     width,
+    pathname,
   };
 };

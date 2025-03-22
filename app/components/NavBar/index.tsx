@@ -1,8 +1,8 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { AFLEURIES_ILLUSTRATED } from "../../const";
-import { ButtonLink, MenuButton } from "../";
-import { BookNowIcon } from "@/public";
+import { ButtonLink } from "../";
+import { MenuButton } from "./MenuButton";
+import { NavButtons } from "./NavButtons";
 import { useNavBar } from "./useNavBar";
 
 export const NavBar = () => {
@@ -33,23 +33,7 @@ export const NavBar = () => {
       </ButtonLink>
       <MenuButton />
       <div className="hidden flex-row justify-center gap-2 md:flex">
-        <ButtonLink
-          additionalClasses={[
-            "bg-transparent",
-            "border-blue-100",
-            "!text-blue-100",
-          ]}
-          href="/about"
-        >
-          {AFLEURIES_ILLUSTRATED.HEADER.BUTTONS.ABOUT}
-        </ButtonLink>
-        <ButtonLink
-          additionalClasses={["bg-blue-100", "border-blue-10", "w-full"]}
-          href="#contact"
-          icon={<BookNowIcon />}
-        >
-          {AFLEURIES_ILLUSTRATED.HEADER.BUTTONS.BOOK}
-        </ButtonLink>
+        <NavButtons hook={hook} />
       </div>
     </motion.header>
   );
