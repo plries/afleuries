@@ -4,7 +4,6 @@ import Image from "next/image";
 import { motion } from "motion/react";
 import { AFLEURIES_ILLUSTRATED, MOTION_CONFIG } from "../const";
 import { Heading, Paragraph, SocialLink } from "../components";
-import { EmailIcon, InstagramIcon } from "@/public";
 
 export default function About() {
   return (
