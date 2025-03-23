@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { AFLEURIES_ILLUSTRATED } from "../../const";
 import { ButtonLink, Heading, IconButton, Paragraph } from "../";
 import { CloseIcon, PromotionIcon } from "@/public";
