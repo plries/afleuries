@@ -1,8 +1,10 @@
 "use client";
+import React from "react";
 import Image from "next/image";
 import { motion } from "motion/react";
 import { AFLEURIES_ILLUSTRATED, MOTION_CONFIG } from "../const";
-import { Heading, Paragraph } from "../components";
+import { Heading, Paragraph, SocialLink } from "../components";
+import { EmailIcon, InstagramIcon } from "@/public";
 
 export default function About() {
   return (
@@ -23,16 +25,32 @@ export default function About() {
       </motion.div>
       <div className="col col-span-full flex flex-col gap-3 lg:col-span-5 lg:col-start-7 lg:gap-4">
         <Heading>{AFLEURIES_ILLUSTRATED.ABOUT.HEADING}</Heading>
-        <div className="flex flex-col gap-3">
-          <Paragraph>{AFLEURIES_ILLUSTRATED.ABOUT.PARAGRAPHS.ONE}</Paragraph>
-          <Paragraph>{AFLEURIES_ILLUSTRATED.ABOUT.PARAGRAPHS.TWO}</Paragraph>
-          <motion.p
+        <div className="flex h-full flex-col justify-between gap-3">
+          <div className="flex h-full flex-col gap-3">
+            <Paragraph>{AFLEURIES_ILLUSTRATED.ABOUT.PARAGRAPHS.ONE}</Paragraph>
+            <Paragraph>{AFLEURIES_ILLUSTRATED.ABOUT.PARAGRAPHS.TWO}</Paragraph>
+            <motion.p
+              initial={MOTION_CONFIG.INITIAL}
+              whileInView={MOTION_CONFIG.WHILE_IN_VIEW}
+              transition={MOTION_CONFIG.TRANSITION}
+            >
+              {AFLEURIES_ILLUSTRATED.ABOUT.PARAGRAPHS.THREE}
+            </motion.p>
+          </div>
+          <motion.div
             initial={MOTION_CONFIG.INITIAL}
             whileInView={MOTION_CONFIG.WHILE_IN_VIEW}
             transition={MOTION_CONFIG.TRANSITION}
+            className="flex flex-row flex-wrap gap-3"
           >
-            {AFLEURIES_ILLUSTRATED.ABOUT.PARAGRAPHS.THREE}
-          </motion.p>
+            {AFLEURIES_ILLUSTRATED.ABOUT.SOCIALS.map((social, index) => (
+              <React.Fragment key={index}>
+                <SocialLink href={social.HREF} icon={<social.ICON />}>
+                  {social.NAME}
+                </SocialLink>
+              </React.Fragment>
+            ))}
+          </motion.div>
         </div>
       </div>
     </div>

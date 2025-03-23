@@ -9,6 +9,8 @@ import {
   SparklesIcon,
   HeartsIcon,
   SquiggleIcon,
+  InstagramIcon,
+  EmailIcon,
 } from "@/public";
 
 export const AFLEURIES_ILLUSTRATED = {
@@ -250,9 +252,21 @@ export const AFLEURIES_ILLUSTRATED = {
       THREE:
         "Constantly exploring new ways to create, Abby thrives on turning everyday moments into visual narratives—bringing a touch of artistry to every project she takes on. ",
     },
+    SOCIALS: [
+      {
+        ICON: InstagramIcon,
+        HREF: "https://www.instagram.com/afleuries",
+        NAME: "Instagram",
+      },
+      {
+        ICON: EmailIcon,
+        HREF: "mailto:hello@afleuries.com",
+        NAME: "Email",
+      },
+    ],
   },
   MODAL: {
-    HEADING: "Get 20% off!",
+    HEADING: "Redeem now",
     PARAGRAPH: [
       "Book between ",
       "March 23 - March 29 ",

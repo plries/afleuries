@@ -13,4 +13,5 @@ export * from "./Sections";
 export * from "./TextArea";
 export * from "./NavBar";
 export * from "./Paragraph";
+export * from "./SocialLink";
 export * from "./StepIndicator";
