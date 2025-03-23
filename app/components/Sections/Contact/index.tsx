@@ -35,7 +35,7 @@ export const Contact = () => {
           initial={MOTION_CONFIG.INITIAL}
           whileInView={MOTION_CONFIG.WHILE_IN_VIEW}
           transition={MOTION_CONFIG.TRANSITION}
-          className={`mt-3 rounded-2xl border-[1px] border-tan-50 bg-tan-40 p-4 italic ${hook.checkDate() ? "" : "hidden"}`}
+          className={`mt-3 rounded-2xl border-[1px] border-tan-50 bg-tan-40 p-4 italic shadow-md ${hook.checkDate() ? "" : "hidden"}`}
         >
           <p>
             {AFLEURIES_ILLUSTRATED.CONTACT.PROMOTION.map((child, index) =>

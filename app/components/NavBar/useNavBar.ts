@@ -7,8 +7,21 @@ export const useNavBar = () => {
   const { scrollY } = useScroll();
   const [isSticky, setIsSticky] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
 
   const pathname = usePathname();
+
+  useEffect(() => {
+    const checkScreenSize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    checkScreenSize();
+    window.addEventListener("resize", checkScreenSize);
+
+    return () => window.removeEventListener("resize", checkScreenSize);
+  }, []);
+
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -47,5 +60,6 @@ export const useNavBar = () => {
     isOpen,
     toggleMenu,
     closeMenu,
+    isMobile,
   };
 };

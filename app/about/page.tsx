@@ -7,7 +7,7 @@ import { Heading, Paragraph, SocialLink } from "../components";
 
 export default function About() {
   return (
-    <div className="col-span-full grid grid-cols-4 gap-3 pb-16 md:grid-cols-8 md:gap-4 lg:grid-cols-12">
+    <section className="col-span-full grid grid-cols-4 gap-3 pb-16 md:grid-cols-8 md:gap-4 lg:grid-cols-12">
       <motion.div
         initial={MOTION_CONFIG.INITIAL}
         whileInView={MOTION_CONFIG.WHILE_IN_VIEW}
@@ -52,6 +52,6 @@ export default function About() {
           </motion.div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }

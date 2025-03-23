@@ -38,11 +38,11 @@ export const MenuButton = ({
           <MenuIcon />
         </span>
       </IconButton>
-      <div
+      <ul
         className={`absolute bottom-0 left-0 flex w-full flex-row justify-center gap-2 transition-all duration-700 ease-in-out md:hidden ${isOpen ? "translate-y-14 opacity-100 blur-none" : "pointer-events-none translate-y-12 opacity-0 blur-[10px]"}`}
       >
         <NavButtons pathname={pathname} toggleMenu={toggleMenu} />
-      </div>
+      </ul>
     </>
   );
 };
