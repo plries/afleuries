@@ -2,10 +2,10 @@ import { Instrument_Serif, Geologica } from "next/font/google";
 import "./globals.css";
 import Image from "next/image";
 import { ReactLenis } from "lenis/react";
-import { GoogleReCaptchaProvider } from "react-google-recaptcha-v3";
 import { Footer, NavBar, Modal } from "./components";
 import { AFLEURIES_ILLUSTRATED } from "./const";
 import { metadata } from "./layoutMetadata";
+import ReCaptchaProvider from "./ReCaptchaProvider";
 
 const instrumentSerif = Instrument_Serif({
   variable: "--font-instrument-serif",
@@ -24,12 +24,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <GoogleReCaptchaProvider reCaptchaKey="6LfYafYqAAAAAK1HewEyOuicqfv65TE1ufQpRIJ_">
-      <html lang="en">
-        <ReactLenis root>
-          <body
-            className={`${instrumentSerif.variable} ${geologica.variable} min-h-screen antialiased`}
-          >
+    <html lang="en">
+      <ReactLenis root>
+        <body
+          className={`${instrumentSerif.variable} ${geologica.variable} min-h-screen antialiased`}
+        >
+          <ReCaptchaProvider>
             <Modal />
             <Image
               src={AFLEURIES_ILLUSTRATED.CANVAS_TEXTURE.SRC}
@@ -49,10 +49,10 @@ export default function RootLayout({
               </main>
               <Footer />
             </div>
-          </body>
-        </ReactLenis>
-      </html>
-    </GoogleReCaptchaProvider>
+          </ReCaptchaProvider>
+        </body>
+      </ReactLenis>
+    </html>
   );
 }
 
