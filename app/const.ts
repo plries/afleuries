@@ -266,7 +266,7 @@ export const AFLEURIES_ILLUSTRATED = {
     ],
   },
   MODAL: {
-    HEADING: "Redeem now",
+    HEADING: "Get 20% off!",
     PARAGRAPH: [
       "Book between ",
       "March 23 - March 29 ",
@@ -276,7 +276,7 @@ export const AFLEURIES_ILLUSTRATED = {
     ],
     BUTTONS: {
       CLOSE: "Close",
-      CTA: "Get 20% off",
+      CTA: "Redeem now",
     },
   },
   DOODLES: {

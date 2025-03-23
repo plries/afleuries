@@ -1,6 +1,6 @@
 import { AFLEURIES_ILLUSTRATED } from "../../const";
 import { ButtonLink, Heading, IconButton, Paragraph } from "../";
-import { CloseIcon, PromotionIcon } from "@/public";
+import { CloseIcon, PromotionIcon, RedeemIcon } from "@/public";
 import { useModal } from "./useModal";
 
 export const Modal = () => {
@@ -39,6 +39,7 @@ export const Modal = () => {
             additionalClasses={["bg-tan-100", "border-tan-90", "self-end"]}
             href="#contact"
             onClick={() => hook.toggleModal(false)}
+            icon={<RedeemIcon />}
           >
             {AFLEURIES_ILLUSTRATED.MODAL.BUTTONS.CTA}
           </ButtonLink>

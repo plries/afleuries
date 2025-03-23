@@ -12,6 +12,7 @@ export * from "./MenuIcon";
 export * from "./PhotosIcon";
 export * from "./PortraitsIcon";
 export * from "./PromotionIcon";
+export * from "./RedeemIcon";
 export * from "./RingsIcon";
 export * from "./SparklesIcon";
 export * from "./SquiggleIcon";
