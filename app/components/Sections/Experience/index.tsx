@@ -20,7 +20,7 @@ export const Experience = () => {
       >
         <Image
           src={AFLEURIES_ILLUSTRATED.EXPERIENCE.IMAGE.SRC}
-          width={1920}
+          width={1080}
           height={1080}
           alt={AFLEURIES_ILLUSTRATED.EXPERIENCE.IMAGE.ALT}
           className="aspect-square h-full w-full rounded-3xl border-[1px] border-tan-50 object-cover shadow-md"

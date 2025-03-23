@@ -14,11 +14,11 @@ export default function About() {
         className="col-span-full lg:col-span-5 lg:col-start-2"
       >
         <Image
-          src={AFLEURIES_ILLUSTRATED.HERO.IMAGE.SRC}
-          width={100}
-          height={0}
-          alt={AFLEURIES_ILLUSTRATED.HERO.IMAGE.ALT}
-          className="w-full"
+          src={AFLEURIES_ILLUSTRATED.ABOUT.IMAGE.SRC}
+          width={1080}
+          height={1350}
+          alt={AFLEURIES_ILLUSTRATED.ABOUT.IMAGE.ALT}
+          className="w-full rounded-3xl border-[1px] border-tan-50 object-cover shadow-md"
         />
       </motion.div>
       <div className="col col-span-full flex flex-col gap-3 lg:col-span-5 lg:col-start-7 lg:gap-4">

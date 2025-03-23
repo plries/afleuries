@@ -8,6 +8,7 @@ export * from "./Head";
 export * from "./Heading";
 export * from "./IconButton";
 export * from "./Input";
+export * from "./Modal";
 export * from "./Sections";
 export * from "./TextArea";
 export * from "./NavBar";

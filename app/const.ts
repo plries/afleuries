@@ -17,6 +17,10 @@ export const AFLEURIES_ILLUSTRATED = {
     ALT: "Canvas Texture",
   },
   HEADER: {
+    LOGO: {
+      SRC: "/AfleuriesLogoBlack.svg",
+      ALT: "Afleuries Illustrated Logo",
+    },
     BUTTONS: {
       ABOUT: "About me",
       BOOK: "Book now",
@@ -60,7 +64,7 @@ export const AFLEURIES_ILLUSTRATED = {
     },
     IMAGE: {
       SRC: "/images/Experience.jpg",
-      ALT: "Guests looking at custom portraits.",
+      ALT: "Guests looking at custom portraits",
     },
   },
   PORTRAITS: {
@@ -161,6 +165,13 @@ export const AFLEURIES_ILLUSTRATED = {
       ONE: "Have questions? Ready to book?",
       TWO: "Fill out the form and let's bring your event to life with unique digital portraits!",
     },
+    PROMOTION: [
+      "Book between ",
+      "March 23 - March 29 ",
+      "to enjoy ",
+      "20% off ",
+      "your reservation with Afleuries Illustrated!",
+    ],
     FORM: {
       CONTACT: "Contact Details",
       FIRST_NAME: {
@@ -221,6 +232,10 @@ export const AFLEURIES_ILLUSTRATED = {
   },
   ABOUT: {
     HEADING: "Who's Abby?",
+    IMAGE: {
+      SRC: "/images/AfleuriesHeadshot.jpg",
+      ALT: "Abby Aries",
+    },
     PARAGRAPHS: {
       ONE: [
         "Abby Aries, the creative mind behind ",
@@ -234,6 +249,20 @@ export const AFLEURIES_ILLUSTRATED = {
       ],
       THREE:
         "Constantly exploring new ways to create, Abby thrives on turning everyday moments into visual narratives—bringing a touch of artistry to every project she takes on. ",
+    },
+  },
+  MODAL: {
+    HEADING: "Get 20% off!",
+    PARAGRAPH: [
+      "Book between ",
+      "March 23 - March 29 ",
+      "to enjoy ",
+      "20% off ",
+      "your reservation with Afleuries Illustrated!",
+    ],
+    BUTTONS: {
+      CLOSE: "Close",
+      CTA: "Get 20% off",
     },
   },
   DOODLES: {

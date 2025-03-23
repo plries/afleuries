@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import { AFLEURIES_ILLUSTRATED } from "../../const";
 import { MenuButton } from "./MenuButton";
 import { NavButtons } from "./NavButtons";
 import { useNavBar } from "./useNavBar";
@@ -18,10 +19,10 @@ export const NavBar = () => {
         onClick={hook.closeMenu}
       >
         <Image
-          src="/AfleuriesLogoBlack.svg"
+          src={AFLEURIES_ILLUSTRATED.HEADER.LOGO.SRC}
           width={0}
           height={0}
-          alt="Afleuries Logo"
+          alt={AFLEURIES_ILLUSTRATED.HEADER.LOGO.ALT}
           className="w-24 md:w-28 lg:w-32"
         />
       </Link>

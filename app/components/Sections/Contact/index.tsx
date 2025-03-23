@@ -1,3 +1,4 @@
+import React from "react";
 import { motion } from "framer-motion";
 import { AFLEURIES_ILLUSTRATED, MOTION_CONFIG } from "../../../const";
 import { Heading, ContactForm, Doodle } from "../../";
@@ -21,12 +22,32 @@ export const Contact = () => {
         initial={MOTION_CONFIG.INITIAL}
         whileInView={MOTION_CONFIG.WHILE_IN_VIEW}
         transition={MOTION_CONFIG.TRANSITION}
-        className="col-span-full md:col-span-8 md:col-start-1 lg:col-span-4 lg:col-start-2"
+        className="col-span-full gap-3 md:col-span-8 md:col-start-1 lg:col-span-4 lg:col-start-2"
       >
-        <p className="font-medium">
-          {AFLEURIES_ILLUSTRATED.CONTACT.PARAGRAPHS.ONE}
-        </p>
-        <p>{AFLEURIES_ILLUSTRATED.CONTACT.PARAGRAPHS.TWO}</p>
+        <div>
+          <p className="font-medium">
+            {AFLEURIES_ILLUSTRATED.CONTACT.PARAGRAPHS.ONE}
+          </p>
+          <p>{AFLEURIES_ILLUSTRATED.CONTACT.PARAGRAPHS.TWO}</p>
+        </div>
+        <motion.div
+          initial={MOTION_CONFIG.INITIAL}
+          whileInView={MOTION_CONFIG.WHILE_IN_VIEW}
+          transition={MOTION_CONFIG.TRANSITION}
+          className={`mt-3 rounded-2xl bg-tan-40 p-4 italic ${hook.checkDate() ? "" : "hidden"}`}
+        >
+          <p>
+            {AFLEURIES_ILLUSTRATED.CONTACT.PROMOTION.map((child, index) =>
+              index % 2 === 0 ? (
+                <React.Fragment key={index}>{child}</React.Fragment>
+              ) : (
+                <span key={index} className="font-medium">
+                  {child}
+                </span>
+              ),
+            )}
+          </p>
+        </motion.div>
       </motion.div>
       <ContactForm />
     </section>

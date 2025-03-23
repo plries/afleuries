@@ -3,7 +3,7 @@ import { Instrument_Serif, Geologica } from "next/font/google";
 import "./globals.css";
 import { ReactLenis } from "lenis/react";
 import { GoogleReCaptchaProvider } from "react-google-recaptcha-v3";
-import { Head, Footer, NavBar } from "./components";
+import { Head, Footer, NavBar, Modal } from "./components";
 import { AFLEURIES_ILLUSTRATED } from "./const";
 
 const instrumentSerif = Instrument_Serif({
@@ -30,13 +30,14 @@ export default function RootLayout({
           <body
             className={`${instrumentSerif.variable} ${geologica.variable} min-h-screen antialiased`}
           >
+            <Modal />
             <img
               src={AFLEURIES_ILLUSTRATED.CANVAS_TEXTURE.SRC}
-              className="pointer-events-none fixed left-0 top-0 z-50 h-screen w-screen opacity-50 mix-blend-multiply"
+              className="pointer-events-none fixed left-0 top-0 z-50 min-h-screen w-screen opacity-30 mix-blend-multiply"
               alt={AFLEURIES_ILLUSTRATED.CANVAS_TEXTURE.ALT}
             />
             <div className="relative grid min-h-screen w-screen auto-rows-min place-items-center scroll-smooth bg-tan-20 md:bg-gradient-to-b md:from-green-10 md:to-green-100 md:p-12 lg:p-14">
-              <div className="absolute top-0 hidden min-h-full w-full bg-[image:url('/doodletexture.jpg')] opacity-[2%] md:block"></div>
+              <div className="absolute top-0 hidden min-h-full w-full bg-[image:url('/DoodleBG.svg')] bg-center bg-repeat-y opacity-5 md:block"></div>
               <NavBar />
               <main
                 id="top"
