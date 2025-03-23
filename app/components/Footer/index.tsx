@@ -1,3 +1,4 @@
+"use client";
 import { AFLEURIES_ILLUSTRATED } from "../../const";
 import { useFooter } from "./useFooter";
 

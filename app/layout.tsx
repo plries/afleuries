@@ -1,4 +1,3 @@
-"use client";
 import { Instrument_Serif, Geologica } from "next/font/google";
 import "./globals.css";
 import Image from "next/image";
