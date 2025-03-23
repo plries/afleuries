@@ -4,7 +4,6 @@ export * from "./ButtonTab";
 export * from "./ContactForm";
 export * from "./Doodle";
 export * from "./Footer";
-export * from "./Head";
 export * from "./Heading";
 export * from "./IconButton";
 export * from "./Input";
