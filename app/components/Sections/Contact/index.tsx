@@ -24,26 +24,27 @@ export const Contact = () => {
         transition={MOTION_CONFIG.TRANSITION}
         className="col-span-full gap-3 md:col-span-8 md:col-start-1 lg:col-span-4 lg:col-start-2"
       >
-        <div>
-          <p className="font-medium">
+        <p>
+          <strong className="font-medium">
             {AFLEURIES_ILLUSTRATED.CONTACT.PARAGRAPHS.ONE}
-          </p>
-          <p>{AFLEURIES_ILLUSTRATED.CONTACT.PARAGRAPHS.TWO}</p>
-        </div>
+          </strong>
+          <br />
+          {AFLEURIES_ILLUSTRATED.CONTACT.PARAGRAPHS.TWO}
+        </p>
         <motion.div
           initial={MOTION_CONFIG.INITIAL}
           whileInView={MOTION_CONFIG.WHILE_IN_VIEW}
           transition={MOTION_CONFIG.TRANSITION}
-          className={`mt-3 rounded-2xl bg-tan-40 p-4 italic ${hook.checkDate() ? "" : "hidden"}`}
+          className={`mt-3 rounded-2xl border-[1px] border-tan-50 bg-tan-40 p-4 italic ${hook.checkDate() ? "" : "hidden"}`}
         >
           <p>
             {AFLEURIES_ILLUSTRATED.CONTACT.PROMOTION.map((child, index) =>
               index % 2 === 0 ? (
                 <React.Fragment key={index}>{child}</React.Fragment>
               ) : (
-                <span key={index} className="font-medium">
+                <strong key={index} className="font-medium">
                   {child}
-                </span>
+                </strong>
               ),
             )}
           </p>

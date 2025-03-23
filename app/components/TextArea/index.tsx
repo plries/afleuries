@@ -53,7 +53,7 @@ export const TextArea = ({
           ref={textAreaRef}
           id={htmlFor}
           name={name}
-          className="h-48 w-full resize-none rounded-lg border-[1px] border-tan-50 bg-tan-30 p-4 text-base font-light transition-all duration-300 ease-in-out focus:shadow-md focus:outline-blue-10 md:text-lg"
+          className="border-tan-60 h-48 w-full resize-none rounded-lg border-[1px] bg-tan-30 p-4 text-base font-light transition-all duration-300 ease-in-out focus:shadow-md focus:outline-blue-10 md:text-lg"
           onFocus={() => {
             moveLabel(true);
           }}
@@ -65,7 +65,7 @@ export const TextArea = ({
       {description && (
         <p className="text-sm md:text-base">
           {description[0]}
-          <span className="font-medium">{description[1]}</span>
+          <strong className="font-medium">{description[1]}</strong>
           {description[2]}
         </p>
       )}

@@ -60,7 +60,7 @@ export const Input = ({
           }
           name={name}
           required
-          className="h-14 w-full appearance-none rounded-lg border-[1px] border-tan-50 bg-tan-30 p-4 text-base font-light transition-all duration-300 ease-in-out focus:shadow-md focus:outline-blue-10 md:h-[60px] md:text-lg"
+          className="border-tan-60 h-14 w-full appearance-none rounded-lg border-[1px] bg-tan-30 p-4 text-base font-light transition-all duration-300 ease-in-out focus:shadow-md focus:outline-blue-10 md:h-[60px] md:text-lg"
           autoComplete="on"
           onFocus={() => moveLabel(true)}
           onBlur={() => moveLabel()}
@@ -69,7 +69,7 @@ export const Input = ({
       {description && (
         <p className="text-sm md:text-base">
           {description[0]}
-          <span className="font-medium">{description[1]}</span>
+          <strong className="font-medium">{description[1]}</strong>
           {description[2]}
         </p>
       )}

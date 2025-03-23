@@ -23,7 +23,7 @@ export const Experience = () => {
           width={1080}
           height={1080}
           alt={AFLEURIES_ILLUSTRATED.EXPERIENCE.IMAGE.ALT}
-          className="aspect-square h-full w-full rounded-3xl border-[1px] border-tan-50 object-cover shadow-md"
+          className="border-tan-60 aspect-square h-full w-full rounded-3xl border-[1px] object-cover shadow-md"
         />
       </motion.div>
       <div className="col-span-4 col-start-1 flex flex-col gap-3 md:col-span-8 lg:col-span-5 lg:gap-4">

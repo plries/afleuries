@@ -19,7 +19,7 @@ export default function About() {
           width={1080}
           height={1350}
           alt={AFLEURIES_ILLUSTRATED.ABOUT.IMAGE.ALT}
-          className="w-full rounded-3xl border-[1px] border-tan-50 object-cover shadow-md"
+          className="border-tan-60 w-full rounded-3xl border-[1px] object-cover shadow-md"
         />
       </motion.div>
       <div className="col col-span-full flex flex-col gap-3 lg:col-span-5 lg:col-start-7 lg:gap-4">

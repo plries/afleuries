@@ -45,7 +45,8 @@ export default {
         tan: {
           100: "var(--color-tan-100)",
           90: "var(--color-tan-90)",
-          50: "var(--color-tan-50)",
+          60: "var(--color-tan-60)",
+          50: "var(--color-tan-60)",
           40: "var(--color-tan-40)",
           30: "var(--color-tan-30)",
           20: "var(--color-tan-20)",

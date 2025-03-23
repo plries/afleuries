@@ -23,7 +23,8 @@
   --color-orange-10: #f0af81;
   --color-tan-100: #272727;
   --color-tan-90: #413f3f;
-  --color-tan-50: #a49b92;
+  --color-tan-60: #a49b92;
+  --color-tan-50: #afa599;
   --color-tan-40: #ddcfc0;
   --color-tan-30: #ede3d8;
   --color-tan-20: #f3eae1;
@@ -103,43 +104,23 @@ a {
 
 /* Inputs */
 
+input[type="datetime-local"] {
+  text-align: left;
+  direction: ltr;
+  text-align-last: left;
+  appearance: none;
+  -webkit-appearance: none;
+  transition: all 0.3s ease-in-out;
+}
+
+input[type="datetime-local"]:required:invalid,
 input[type="datetime-local"]:required:invalid::-webkit-datetime-edit {
   color: transparent;
-  transition: all 0.3s ease-in-out;
-  text-align: left;
-  direction: ltr;
-  text-align-last: left;
-  appearance: none;
-  -webkit-appearance: none;
 }
+
+input[type="datetime-local"]:focus,
 input[type="datetime-local"]:focus::-webkit-datetime-edit {
   color: black !important;
-  transition: all 0.3s ease-in-out;
-  text-align: left;
-  direction: ltr;
-  text-align-last: left;
-  appearance: none;
-  -webkit-appearance: none;
-}
-
-input[type="datetime-local"]:required:invalid {
-  color: transparent;
-  transition: all 0.3s ease-in-out;
-  text-align: left;
-  direction: ltr;
-  text-align-last: left;
-  appearance: none;
-  -webkit-appearance: none;
-}
-
-input[type="datetime-local"]:focus {
-  color: black !important;
-  transition: all 0.3s ease-in-out;
-  text-align: left;
-  direction: ltr;
-  text-align-last: left;
-  appearance: none;
-  -webkit-appearance: none;
 }
 
 /* reCAPTCHA */

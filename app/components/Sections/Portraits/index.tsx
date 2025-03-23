@@ -77,7 +77,7 @@ export const Portraits = () => {
                   ? AFLEURIES_ILLUSTRATED.PORTRAITS.IMAGES.GUEST_PORTRAIT.ALT
                   : AFLEURIES_ILLUSTRATED.PORTRAITS.IMAGES.BRIDE_GROOM.ALT
               }
-              className="h-full w-full rounded-2xl border-[1px] border-tan-50 object-cover shadow-md"
+              className="border-tan-60 h-full w-full rounded-2xl border-[1px] object-cover shadow-md"
             />
           </motion.div>
         </AnimatePresence>

@@ -19,7 +19,7 @@ export const ContactForm = () => {
           initial={MOTION_CONFIG.INITIAL}
           whileInView={MOTION_CONFIG.WHILE_IN_VIEW}
           transition={MOTION_CONFIG.TRANSITION}
-          className="flex flex-row items-center gap-2 text-nowrap text-sm after:h-[1px] after:w-full after:bg-tan-50 md:text-base"
+          className="after:bg-tan-60 flex flex-row items-center gap-2 text-nowrap text-sm after:h-[1px] after:w-full md:text-base"
         >
           {AFLEURIES_ILLUSTRATED.CONTACT.FORM.CONTACT}
         </motion.legend>
@@ -47,7 +47,7 @@ export const ContactForm = () => {
           initial={MOTION_CONFIG.INITIAL}
           whileInView={MOTION_CONFIG.WHILE_IN_VIEW}
           transition={MOTION_CONFIG.TRANSITION}
-          className="mt-4 flex flex-row items-center gap-2 text-nowrap text-sm after:h-[1px] after:w-full after:bg-tan-50 md:text-base"
+          className="after:bg-tan-60 mt-4 flex flex-row items-center gap-2 text-nowrap text-sm after:h-[1px] after:w-full md:text-base"
         >
           {AFLEURIES_ILLUSTRATED.CONTACT.FORM.EVENT}
         </motion.legend>

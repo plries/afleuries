@@ -14,9 +14,9 @@ export const Paragraph = ({ children }: ParagraphPropTypes) => {
         index % 2 === 0 ? (
           <React.Fragment key={index}>{child}</React.Fragment>
         ) : (
-          <span key={index} className="font-medium">
+          <strong key={index} className="font-medium">
             {child}
-          </span>
+          </strong>
         ),
       )}
     </motion.p>
