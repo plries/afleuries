@@ -1,3 +1,4 @@
+"use client";
 import { AFLEURIES_ILLUSTRATED } from "../../const";
 import { ButtonLink, Heading, IconButton, Paragraph } from "../";
 import { CloseIcon, PromotionIcon, RedeemIcon } from "@/public";
