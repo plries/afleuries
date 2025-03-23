@@ -36,7 +36,7 @@ export const NavBar = () => {
           />
         )}
         {!hook.isMobile && (
-          <ul className="hidden flex-row justify-center gap-2 md:flex">
+          <ul className="flex flex-row justify-center gap-2">
             <NavButtons pathname={hook.pathname} />
           </ul>
         )}
