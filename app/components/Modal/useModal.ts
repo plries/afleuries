@@ -18,7 +18,6 @@ export const useModal = () => {
       modalRef.current?.close();
       setIsOpen(false);
     }
-    console.log(value);
   };
 
   const checkDate = () => {

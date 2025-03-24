@@ -15,7 +15,7 @@ export const Modal = () => {
         <dialog
           ref={hook.modalRef}
           open={hook.isOpen}
-          className={`flex w-[calc(100%-3rem)] max-w-md flex-col gap-3 rounded-3xl bg-tan-10 p-6 shadow-lg transition-all duration-700 ease-in-out ${hook.isOpen ? "opacity-100" : "pointer-events-none opacity-0"}`}
+          className={`flex w-[calc(100%-3rem)] max-w-md flex-col gap-3 rounded-3xl border-[1px] border-tan-30 bg-tan-20 p-6 shadow-lg transition-all duration-700 ease-in-out ${hook.isOpen ? "opacity-100" : "pointer-events-none opacity-0"}`}
         >
           <div className="flex flex-col">
             <IconButton
