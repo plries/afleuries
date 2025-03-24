@@ -1,6 +1,7 @@
 import { Instrument_Serif, Geologica } from "next/font/google";
 import "./globals.css";
 import Image from "next/image";
+import Script from "next/script";
 import { ReactLenis } from "lenis/react";
 import { Analytics } from "@vercel/analytics/react";
 import { Footer, NavBar, Modal } from "./components";
@@ -30,6 +31,21 @@ export default function RootLayout({
         <body
           className={`${instrumentSerif.variable} ${geologica.variable} min-h-screen antialiased`}
         >
+          <Script
+            async
+            strategy="afterInteractive"
+            src="https://www.googletagmanager.com/gtag/js?id=G-B9FNVH0GJX"
+          />
+          <Script id="google-analytics" strategy="afterInteractive">
+            {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-B9FNVH0GJX', {
+              page_path: window.location.pathname,
+            });
+          `}
+          </Script>
           <ReCaptchaProvider>
             <Modal />
             <Image
