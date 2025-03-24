@@ -62,6 +62,7 @@ export const metadata: Metadata = {
       },
     ],
     siteName: "Afleuries Illustrated: Live Portrait Art",
+    url: "https://afleuries.com",
   },
   robots: {
     index: true,
