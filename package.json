@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@formspree/react": "^2.5.5",
+    "@vercel/analytics": "^1.5.0",
     "lenis": "^1.2.0",
     "motion": "^12.4.10",
     "next": "15.1.7",

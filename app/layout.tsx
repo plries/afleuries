@@ -2,6 +2,7 @@ import { Instrument_Serif, Geologica } from "next/font/google";
 import "./globals.css";
 import Image from "next/image";
 import { ReactLenis } from "lenis/react";
+import { Analytics } from "@vercel/analytics/react";
 import { Footer, NavBar, Modal } from "./components";
 import { AFLEURIES_ILLUSTRATED } from "./const";
 import { metadata } from "./layoutMetadata";
@@ -46,6 +47,7 @@ export default function RootLayout({
                 className="z-10 grid h-full w-full max-w-screen-xl auto-rows-min grid-cols-4 gap-3 bg-tan-20 px-6 pb-0 pt-12 shadow-none md:grid-cols-8 md:gap-4 md:rounded-3xl md:pt-6 md:shadow-2xl lg:grid-cols-12 lg:pt-[5.5rem]"
               >
                 {children}
+                <Analytics />
               </main>
               <Footer />
             </div>
