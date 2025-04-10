@@ -57,7 +57,7 @@ export default function RootLayout({
               tabIndex={-1}
             />
             <div
-              className="relative grid min-h-screen w-screen auto-rows-min place-items-center scroll-smooth bg-tan-20 md:bg-gradient-to-b md:from-green-10 md:to-green-100 md:p-12 lg:p-14"
+              className="relative grid min-h-screen auto-rows-min place-items-center scroll-smooth bg-tan-20 md:bg-gradient-to-b md:from-green-10 md:to-green-100 md:p-12 lg:p-14"
               tabIndex={-1}
             >
               <div className="absolute top-0 hidden min-h-full w-full bg-[image:url('/DoodleBG.svg')] bg-center bg-repeat-y opacity-5 md:block"></div>
