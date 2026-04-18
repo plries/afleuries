@@ -18,7 +18,7 @@ export const Hero = () => {
             height={0}
             alt={AFLEURIES_ILLUSTRATED.HERO.LOGO.ALT}
             aria-hidden="true"
-            className="mt-12 w-60 md:w-96 lg:mt-0"
+            className="mt-12 w-60 md:w-96 lg:mt-0 mx-auto"
           />
           <span className="sr-only">{AFLEURIES_ILLUSTRATED.HERO.LOGO.ALT}</span>
           {AFLEURIES_ILLUSTRATED.HERO.LOGO.HEADING}

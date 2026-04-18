@@ -36,7 +36,7 @@ export const AFLEURIES_ILLUSTRATED = {
     LOGO: {
       SRC: "/AfleuriesLogoTitle.svg",
       ALT: "Afleuries Illustrated ",
-      HEADING: "Live Portait Artist",
+      HEADING: "Interactive Keepsake Experiences",
     },
     IMAGE: {
       SRC: "/AfleuriesIllustration.svg",
@@ -44,24 +44,20 @@ export const AFLEURIES_ILLUSTRATED = {
     },
   },
   EXPERIENCE: {
-    HEADING: "An Interactive Experience",
+    HEADING: "The keepsake they'll talk about all night.",
     PARAGRAPHS: {
       ONE: [
-        "Hello! I'm Abby, an ",
-        "illustrator & designer ",
-        "based in British Columbia, Canada.",
+        "Every great wedding has a moment guests can't stop talking about. Imagine yours being the one where everyone left with a ",
+        "custom illustrated keepsake",
+        ", unlike anything they’ve seen at a wedding before.",
       ],
       TWO: [
-        "I'll be sketching ",
-        "custom portraits ",
-        "of guests while they mingle, with a ",
-        "live projection ",
-        "of the digital canvas so everyone can watch the artwork come to life.",
+        "I'm Abby! An illustrator based in ",
+        "British Columbia. ",
+        "I design and bring custom illustrated keepsake experiences to weddings and events. "
       ],
       THREE: [
-        "It’s a fun, interactive experience that gives your guests both entertainment and a ",
-        "personalized keepsake ",
-        "to remember the day!",
+        "No templates, no stock art or AI. Just something made with love, for you and your people!",
       ],
     },
     IMAGE: {
@@ -70,35 +66,57 @@ export const AFLEURIES_ILLUSTRATED = {
     },
   },
   PORTRAITS: {
-    HEADING: "Types of Portraits",
+    HEADING: "Choose your Experience",
     PARAGRAPHS: {
       ONE: [
-        "Our live portrait services bring a ",
-        "fun & creative ",
-        "twist to any special occasion. Whether it’s a wedding, a lively celebration, or a sophisticated corporate event, I create ",
-        "personalized digital portraits ",
-        "that make the day unforgettable.",
+        "From sticker stations guests can't stop using to custom pins, illustrated guest books, and more, ",
+        "every Afleuries experience is designed from scratch",
+        ", in Abby's signature style, for your event only.",
       ],
-      TWO: [
-        "From capturing the bride and groom’s love story in stunning live artwork to crafting artistic keepsakes for guests, each portrait is a ",
-        "one-of-a-kind ",
-        "memory to treasure—because the best moments deserve to be turned into art.",
-      ],
+      TWO: [],
     },
-    BUTTONS: {
-      GUEST_PORTRAIT: "Guests",
-      BRIDE_GROOM: "Bride & Groom",
-    },
-    IMAGES: {
-      GUEST_PORTRAIT: {
-        SRC: "/images/GuestPortraits.jpg",
-        ALT: "Guest Portraits",
+    BUTTONS: [
+      "Illustrated Sticker Booth",
+      "Gacha Pin Machine",
+      "Live Guest Portrait",
+      "Live Signature Portrait",
+    ],
+    IMAGES: [
+      {
+        KEY: 'Illustrated Sticker Booth',
+        SRC: "/images/StickerBooth.jpg",
       },
-      BRIDE_GROOM: {
-        SRC: "/images/BrideGroom.jpg",
-        ALT: "Bride & Groom Portraits",
+      {
+        KEY: 'Gacha Pin Machine',
+        SRC: "/images/GachaPins.jpg",
       },
-    },
+      {
+        KEY: 'Live Guest Portrait',
+        SRC: "/images/LiveGuest.jpg",
+      },
+      {
+        KEY: 'Live Signature Portrait',
+        SRC: "/images/LiveSignature.jpg",
+      }
+    ],
+    DESCRIPTIONS: [
+      {
+        KEY: 'Illustrated Sticker Booth',
+        TEXT: "A custom sticker vending experience at your event. Guests interact, collect, and leave with something custom-made and exclusive to the day!",
+      },
+      {
+        KEY: 'Gacha Pin Machine',
+        TEXT: "Custom illustrated button pins in a capsule vending machine. Twist the wheel, keep what you get!",
+      },
+      {
+        KEY: 'Live Guest Portrait',
+        TEXT: "Abby draws custom digital portraits of your guests live at the event. It becomes a timeless keepsake, created right before their eyes.",
+      },
+      {
+        KEY: 'Live Signature Portrait',
+        TEXT: "Abby creates one dedicated illustrated artwork of the bride & groom, celebrant, or guest of honour. Live at your event, finished by the end of the night!",
+      }
+    ],
     HOW_IT_WORKS: {
       HEADING: "How it Works",
       STEPS: {
@@ -164,8 +182,7 @@ export const AFLEURIES_ILLUSTRATED = {
   CONTACT: {
     HEADING: "Get in Touch",
     PARAGRAPHS: {
-      ONE: "Have questions? Ready to book?",
-      TWO: "Fill out the form and let's bring your event to life with unique digital portraits!",
+      TWO: "Fill out the form and let's bring something Illustrated, unique and unforgettable to your day.",
     },
     PROMOTION: [
       "Book between ",
@@ -209,7 +226,7 @@ export const AFLEURIES_ILLUSTRATED = {
       },
       EVENT_DETAILS: {
         LABEL: "Description",
-        DESCRIPTION: ["Please provide a ", "brief summary ", "of the event!"],
+        DESCRIPTION: ["Tell us about your ", "event ", "and ", "which experience(s) ", "you're interested in!"],
         FOR: "details",
         NAME: "Event Details",
       },

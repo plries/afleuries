@@ -25,9 +25,9 @@ export const Contact = () => {
         className="col-span-full gap-3 md:col-span-8 md:col-start-1 lg:col-span-4 lg:col-start-2"
       >
         <p>
-          <strong className="font-medium">
+          {/* <strong className="font-medium">
             {AFLEURIES_ILLUSTRATED.CONTACT.PARAGRAPHS.ONE}
-          </strong>
+          </strong> */}
           <br />
           {AFLEURIES_ILLUSTRATED.CONTACT.PARAGRAPHS.TWO}
         </p>

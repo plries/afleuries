@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   title: "Afleuries Illustrated: Live Portrait Art",
   publisher: "Abigail Aries",
   description:
-    "Live digital portraits, drawn on the spot and projected in real time for everyone to see. It’s live art in action—plus a keepsake to take home!",
+    "Custom stickers, button pins and live digital portraits; drawn on the spot and projected in real time for everyone to see. It’s live art in action—plus a keepsake to take home!",
   authors: { name: "Abigail Aries" },
   keywords: [
     "abigail aries",
@@ -20,6 +20,10 @@ export const metadata: Metadata = {
     "live portrait art",
     "live event artist",
     "digital portraits",
+    "sticker booth",
+    "button pin machine",
+    "live guest portraits",
+    "gacha pin machine",
     "custom illustrations",
     "live sketching",
     "event entertainment",
@@ -52,7 +56,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Afleuries Illustrated: Live Portrait Art",
     description:
-      "Live digital portraits, drawn on the spot and projected in real time for everyone to see. It’s live art in action—plus a keepsake to take home!",
+      "Custom stickers, button pins and live digital portraits; drawn on the spot and projected in real time for everyone to see. It’s live art in action—plus a keepsake to take home!",
     images: [
       {
         url: "https://afleuries.com/opengraph-image.png",

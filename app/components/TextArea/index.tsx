@@ -64,9 +64,11 @@ export const TextArea = ({
       </div>
       {description && (
         <p className="text-sm md:text-base">
-          {description[0]}
-          <strong className="font-medium">{description[1]}</strong>
-          {description[2]}
+          {description.map((part, index) => (
+            index % 2 === 0
+            ? <span key={index}>{part}</span>
+            : <strong key={index} className="font-medium">{part}</strong>
+          ))}
         </p>
       )}
     </motion.div>

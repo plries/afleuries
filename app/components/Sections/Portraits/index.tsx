@@ -28,36 +28,27 @@ export const Portraits = () => {
         initial={MOTION_CONFIG.INITIAL}
         whileInView={MOTION_CONFIG.WHILE_IN_VIEW}
         transition={MOTION_CONFIG.TRANSITION}
-        className="col-span-full flex flex-row lg:col-span-10 lg:col-start-2"
+        className="col-span-full grid grid-cols-1 gap-1 md:grid-cols-2 lg:grid-cols-4 lg:col-span-10 lg:col-start-2"
       >
-        <ButtonTab
-          ref={hook.guestButtonRef as React.RefObject<HTMLButtonElement>}
-          additionalClasses={[
-            "bg-tan-30",
-            "border-b-blue-100",
-            "!text-blue-100",
-            "shadow-md",
-          ]}
-          onClick={() => hook.togglePortraits(true)}
-        >
-          {AFLEURIES_ILLUSTRATED.PORTRAITS.BUTTONS.GUEST_PORTRAIT}
-        </ButtonTab>
-        <ButtonTab
-          ref={hook.brideGroomButtonRef as React.RefObject<HTMLButtonElement>}
-          onClick={() => hook.togglePortraits(false)}
-        >
-          {AFLEURIES_ILLUSTRATED.PORTRAITS.BUTTONS.BRIDE_GROOM}
-        </ButtonTab>
+        {AFLEURIES_ILLUSTRATED.PORTRAITS.BUTTONS.map((button) => (
+          <ButtonTab
+            key={button}
+            additionalClasses={hook.getStyles(button)}
+            onClick={() => hook.setTab(button)}
+          >
+            {button}
+          </ButtonTab>
+        ))}
       </motion.div>
       <motion.div
         initial={MOTION_CONFIG.INITIAL}
         whileInView={MOTION_CONFIG.WHILE_IN_VIEW}
         transition={MOTION_CONFIG.TRANSITION}
-        className="col-span-full aspect-video lg:col-span-10 lg:col-start-2"
+        className="col-span-full lg:col-span-10 lg:col-start-2 relative"
       >
         <AnimatePresence mode="wait">
           <motion.div
-            key={hook.isGuestPortrait ? "guest-portrait" : "bride-groom"}
+            key={hook.tab}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -65,32 +56,36 @@ export const Portraits = () => {
             className="aspect-video lg:max-w-5xl"
           >
             <Image
-              src={
-                hook.isGuestPortrait
-                  ? AFLEURIES_ILLUSTRATED.PORTRAITS.IMAGES.GUEST_PORTRAIT.SRC
-                  : AFLEURIES_ILLUSTRATED.PORTRAITS.IMAGES.BRIDE_GROOM.SRC
-              }
+              src={AFLEURIES_ILLUSTRATED.PORTRAITS.IMAGES.find(img => img.KEY === hook.tab)?.SRC || ""}
+              alt={AFLEURIES_ILLUSTRATED.PORTRAITS.IMAGES.find(img => img.KEY === hook.tab)?.KEY || ""}
               width={1920}
               height={1080}
-              alt={
-                hook.isGuestPortrait
-                  ? AFLEURIES_ILLUSTRATED.PORTRAITS.IMAGES.GUEST_PORTRAIT.ALT
-                  : AFLEURIES_ILLUSTRATED.PORTRAITS.IMAGES.BRIDE_GROOM.ALT
-              }
               className="border-tan-60 h-full w-full rounded-2xl border-[1px] object-cover shadow-md"
             />
           </motion.div>
+
+          <motion.p
+            key={hook.tab+'desc'}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.3, ease: "easeInOut" }}
+            className="col-span-full mt-4 mx-auto rounded-2xl border-[1px] border-tan-40 bg-tan-30 p-4 shadow-md lg:col-span-10 lg:col-start-2 lg:max-w-5xl md:w-[calc(100%-4rem)] w-full"
+          >
+            {AFLEURIES_ILLUSTRATED.PORTRAITS.DESCRIPTIONS.find(desc => desc.KEY === hook.tab)?.TEXT || ""}
+          </motion.p>
         </AnimatePresence>
       </motion.div>
       <motion.div
+        key={hook.tab}
         initial={MOTION_CONFIG.INITIAL}
         whileInView={MOTION_CONFIG.WHILE_IN_VIEW}
         transition={MOTION_CONFIG.TRANSITION}
         className="contents"
       >
-        <Steps
-          stepsKey={hook.isGuestPortrait ? "GUEST_PORTRAIT" : "BRIDE_GROOM"}
-        />
+        {/* <Steps
+          stepsKey={hook.tab}
+        /> */}
       </motion.div>
     </section>
   );
